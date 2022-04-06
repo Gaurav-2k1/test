@@ -20,6 +20,7 @@ const theme = createTheme({
         size: "small",
         variant: "contained",
         disableElevation: true,
+        color: "primary",
       },
       styleOverrides: {
         root: {
@@ -61,8 +62,8 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: "light",
-    primary: { main: "#404040" }, // neutral[700]
-    secondary: { main: "#0d9488" }, // teal[600]
+    primary: { main: "#7C3384" }, // neutral[700]
+    secondary: { main: "#3254A2" }, // teal[600]
   },
 });
 
