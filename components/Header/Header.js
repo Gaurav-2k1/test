@@ -1,24 +1,22 @@
+import { Twitter } from "@mui/icons-material";
+import { Instagram } from "@mui/icons-material";
+import { WhatsApp } from "@mui/icons-material";
+import { Facebook } from "@mui/icons-material";
 import Image from "next/image";
 import React from "react";
 
 export default function Header() {
   return (
-    <div className="relative w-full bg-slate-50 sticky top-0 left-0 bottom-0 shadow-md">
-      <div className="absolute h-full w-full px-2 lg:px-4 flex flex-row justify-between items-center lg:justify-around">
-        <span className="flex flex-col items-start">
-          <h1 className="font-semibold">United Kingdom</h1>
-          <a href="tel:+44 7457 666010" className="underline">
-            +44 7457 666010
-          </a>
-        </span>
-        <span className="flex flex-col items-end">
-          <h1 className="font-semibold">India</h1>
-          <a href="tel:+91 9302 584 342" className="underline">
-            +91 9302 584 342
-          </a>
-        </span>
+    <div className="relative w-full bg-slate-50 sticky top-0 left-0 bottom-0">
+      <div className="h-8 bg-purple-700 w-full">
+        <div className="m-auto flex flex-row w-1/2 lg:w-1/4 justify-between text-white items-center h-full">
+          <Facebook />
+          <Twitter />
+          <Instagram />
+          <WhatsApp />
+        </div>
       </div>
-      <div className="relative w-24 h-24 m-auto lg:w-28 lg:h-28">
+      <div className="relative w-24 h-24 ml-5 lg:ml-[10vh] lg:w-28 lg:h-28">
         <Image
           src="/logo.png"
           alt="Logo"

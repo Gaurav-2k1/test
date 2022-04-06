@@ -1,4 +1,6 @@
 import Head from "next/head";
+import AvailableServers from "../components/Body/AvailableServers";
+import LandingScreen from "../components/Body/LandingScreen";
 
 import Header from "../components/Header/Header";
 import LiveCourse from "../components/LiveCourse";
@@ -50,26 +52,9 @@ export default function Home() {
       <header>
         <Header />
       </header>
-
-      <div className="flex p-4 flex-col">
-        <h1 className="text-xl text-center px-1 py-1 bg-purple-500 text-white m-auto lg:w-1/3">
-          Our SAP Live Courses
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5 h-auto grid-flow-row">
-          {sapCourseList.map((course, i) => (
-            <LiveCourse key={i} name={course.name} image={course.image} />
-          ))}
-        </div>
-      </div>
-      <div className="flex p-4 flex-col mt-10">
-        <h1 className="text-xl text-center px-1 py-1 bg-blue-500 text-white m-auto lg:w-1/3">
-          Our Oracle Live Courses
-        </h1>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-5 h-auto grid-flow-row">
-          {oracleCourseList.map((course, i) => (
-            <LiveCourse key={i} name={course.name} image={course.image} />
-          ))}
-        </div>
+      <div>
+        <LandingScreen />
+        <AvailableServers />
       </div>
     </div>
   );
