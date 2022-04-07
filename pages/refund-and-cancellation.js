@@ -26,7 +26,7 @@ export default function RefundAndCancellation() {
         <h2 className={classes.subheading}>Overview</h2>
         <p className={classes.paragraph}>
           {
-            'This website is operated by Infodal Trainings Pvt Ltd. Throughout the site, the terms "we", "us" and "our" refer to Pazit Infotech Limited. Pazit Infotech limited offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here'
+            'This website is operated by Infodal Trainings Pvt Ltd. Throughout the site, the terms "we", "us" and "our" refer to Infodal Trainings Pvt Ltd. Infodal Trainings Pvt Ltd offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here'
           }
         </p>
         <h2 className="text-black text-2xl mt-5 font-semibold">
