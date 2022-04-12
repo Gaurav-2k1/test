@@ -3,6 +3,36 @@ import React from "react";
 import ServerComponent from "../Shared/ServerComponent";
 
 export default function AvailableServers() {
+  const servers = [
+    {
+      name: "Oracle DBS",
+      duration: "12",
+      image: "/logo.png",
+      shortDescription:
+        "Get any ECC based oracle sandbox IDES server access for any duration.",
+    },
+    {
+      name: "Oracle DBS",
+      duration: "12",
+      image: "/logo.png",
+      shortDescription:
+        "Get any ECC based oracle sandbox IDES server access for any duration.",
+    },
+    {
+      name: "Oracle DBS",
+      duration: "12",
+      image: "/logo.png",
+      shortDescription:
+        "Get any ECC based oracle sandbox IDES server access for any duration.",
+    },
+    {
+      name: "Oracle DBS",
+      duration: "12",
+      image: "/logo.png",
+      shortDescription:
+        "Get any ECC based oracle sandbox IDES server access for any duration.",
+    },
+  ];
   return (
     <div className="p-4 lg:px-20">
       <div className="text-center mb-5 lg:mb-12">
@@ -13,48 +43,15 @@ export default function AvailableServers() {
         </p>
       </div>
       <div className="lg:grid lg:grid-cols-3 gap-6 flex flex-col">
-        <ServerComponent
-          name="Oracle DBS"
-          duration="12"
-          img="/logo.png"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
-        <ServerComponent
-          name="Oracle DBS"
-          img="/logo.png"
-          duration="12"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
-        <ServerComponent
-          name="Oracle DBS"
-          img="/logo.png"
-          duration="12"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
-        <ServerComponent
-          name="Oracle DBS"
-          duration="12"
-          img="/logo.png"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
-        <ServerComponent
-          name="Oracle DBS"
-          img="/logo.png"
-          duration="12"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
-        <ServerComponent
-          name="Oracle DBS"
-          img="/logo.png"
-          duration="12"
-          shortDescription="Get any ECC based oracle sandbox IDES 
-    server access for any duration."
-        />
+        {servers.map((server, id) => (
+          <ServerComponent
+            key={id}
+            name={server.name}
+            duration={server.duration}
+            img={server.image}
+            shortDescription={server.shortDescription}
+          />
+        ))}
       </div>
       <Button
         className="mt-10 w-4/5 lg:w-1/3 bg-blue-900 flex flex-row m-auto text-lg"
