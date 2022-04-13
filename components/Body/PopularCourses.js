@@ -7,25 +7,22 @@ export default function PopularCourses() {
       <h1 className="text-white text-3xl font-semibold w-full text-center ">
         Popular Courses
       </h1>
-      <p className="text-white w-full text-center mt-3">
-        Sed a eros sodales diam sagittis faucibus. Cras id erat nisl. Fusce
-        faucibus nulla sed finibus egestas. Vestibulum purus magna.
-      </p>
+      <p className="text-white w-full text-center mt-3"></p>
       <div className="mt-10 flex flex-col lg:flex-row justify-between">
         <CourseComponent
-          name="WordPress Plugin Development"
-          shortDescription="Everything you need to become hirable WordPress Developer.Learn how to building a professional."
-          img="/images/oracle/apex.png"
+          name="SAP FICO"
+          shortDescription="SAP Finance and Controlling (FICO) is a core module in SAP ERP the place FI stands for Financial Accounting and CO stands for Controlling."
+          img="/images/sap/fico.png"
         />
         <CourseComponent
-          name="WordPress Plugin Development"
-          shortDescription="Everything you need to become hirable WordPress Developer.Learn how to building a professional."
-          img="/images/oracle/apex.png"
+          name="SAP SD"
+          shortDescription="SAP SD (Sales and Distribution) is one of the core useful modules of SAP ERP that approves corporations to shop and control customer-related as properly as product-related data."
+          img="/images/sap/sd.png"
         />
         <CourseComponent
-          name="WordPress Plugin Development"
-          shortDescription="Everything you need to become hirable WordPress Developer.Learn how to building a professional."
-          img="/images/oracle/apex.png"
+          name="SAP SuccessFactor"
+          shortDescription="SAP SuccessFactors is a main cloud-based human capital administration (HCM) and intelligence administration software."
+          img="/images/sap/sfc.png"
         />
       </div>
     </div>

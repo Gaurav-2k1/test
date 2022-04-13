@@ -5,29 +5,29 @@ import ServerComponent from "../Shared/ServerComponent";
 export default function AvailableServers() {
   const servers = [
     {
-      name: "Oracle DBS",
-      duration: "12",
+      name: "SAP Servers",
+      duration: "1,3,6 & 12",
       image: "/logo.png",
       shortDescription:
         "Get any ECC based oracle sandbox IDES server access for any duration.",
     },
     {
-      name: "Oracle DBS",
-      duration: "12",
+      name: "SAP HANA Modules",
+      duration: "1,3,6 & 12",
       image: "/logo.png",
       shortDescription:
         "Get any ECC based oracle sandbox IDES server access for any duration.",
     },
     {
-      name: "Oracle DBS",
-      duration: "12",
+      name: "SAP Success Factors",
+      duration: "1,3,6 & 12",
       image: "/logo.png",
       shortDescription:
         "Get any ECC based oracle sandbox IDES server access for any duration.",
     },
     {
-      name: "Oracle DBS",
-      duration: "12",
+      name: "SAP BODS",
+      duration: "1",
       image: "/logo.png",
       shortDescription:
         "Get any ECC based oracle sandbox IDES server access for any duration.",
