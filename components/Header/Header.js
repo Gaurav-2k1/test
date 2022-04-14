@@ -1,13 +1,13 @@
 import { Twitter } from "@mui/icons-material";
 import { Menu } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
-import { WhatsApp } from "@mui/icons-material";
 import { LinkedIn } from "@mui/icons-material";
 import { Facebook } from "@mui/icons-material";
 import { SwipeableDrawer, IconButton, useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { headerPaths } from "../../config/config";
 import { theme } from "../../utils/theme";
 
 export default function Header() {
@@ -17,29 +17,6 @@ export default function Header() {
   const toggleDrawer = (bool) => {
     setIsOpen(bool);
   };
-
-  const headerPaths = [
-    {
-      name: "Home",
-      path: "/",
-    },
-    {
-      name: "All Courses",
-      path: "/courses",
-    },
-    {
-      name: "Servers",
-      path: "/servers",
-    },
-    {
-      name: "About Us",
-      path: "/about",
-    },
-    {
-      name: "Contact Us",
-      path: "/contact",
-    },
-  ];
 
   return (
     <div className="w-full bg-slate-50 sticky top-0 left-0 right-0">
@@ -137,7 +114,7 @@ export default function Header() {
   );
 }
 
-function HeaderItem({ name, route }) {
+export function HeaderItem({ name, route }) {
   const router = useRouter();
   const onClickHandler = () => {
     router.push(route);

@@ -3,6 +3,7 @@ import AvailableServers from "../components/Body/AvailableServers";
 import LandingScreen from "../components/Body/LandingScreen";
 import PopularCourses from "../components/Body/PopularCourses";
 import WhyUs from "../components/Body/WhyUs";
+import Footer from "../components/Footer/Footer";
 
 import Header from "../components/Header/Header";
 import LiveCourse from "../components/LiveCourse";
@@ -28,6 +29,9 @@ export default function Home() {
         <PopularCourses />
         <WhyUs />
       </div>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
