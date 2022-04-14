@@ -7,10 +7,10 @@ export const headerPaths = [
     name: "All Courses",
     path: "/courses",
   },
-  {
-    name: "Servers",
-    path: "/servers",
-  },
+  //   {
+  //     name: "Servers",
+  //     path: "/servers",
+  //   },
   {
     name: "About Us",
     path: "/about",
