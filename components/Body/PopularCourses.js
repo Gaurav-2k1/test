@@ -3,7 +3,7 @@ import CourseComponent from "../Shared/CourseComponent";
 
 export default function PopularCourses() {
   return (
-    <div className="bg-blue-600 w-full p-4 lg:px-40">
+    <div className="bg-purple-600 w-full p-4 lg:px-40">
       <h1 className="text-white text-3xl font-semibold w-full text-center ">
         Popular Courses
       </h1>
