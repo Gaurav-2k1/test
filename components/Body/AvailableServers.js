@@ -42,7 +42,7 @@ export default function AvailableServers() {
           today!
         </p>
       </div>
-      <div className="lg:grid lg:grid-cols-3 gap-6 flex flex-col">
+      <div className="lg:grid lg:grid-cols-4 gap-6 flex flex-col">
         {servers.map((server, id) => (
           <ServerComponent
             key={id}
@@ -53,12 +53,6 @@ export default function AvailableServers() {
           />
         ))}
       </div>
-      <Button
-        className="mt-10 w-4/5 lg:w-1/3 bg-blue-900 flex flex-row m-auto text-lg"
-        color="secondary"
-      >
-        View More Servers
-      </Button>
     </div>
   );
 }

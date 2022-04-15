@@ -1,4 +1,5 @@
 import { UsbRounded } from "@mui/icons-material";
+import Image from "next/image";
 import React from "react";
 
 export default function WhyUs() {
@@ -18,6 +19,9 @@ export default function WhyUs() {
           courses on the virtual platform with all updated knowledge and
           applications at use.
         </p>
+        <div className="relative h-[80vw] w-[80vw] lg:h-[30vw] lg:w-[30vw] m-auto">
+          <Image src="/images/why.png" alt="Why Infodal" layout="fill" />
+        </div>
         <div className="lg:grid lg:grid-cols-2 gap-4">
           <ChoseUsSection
             heading=" Highly Trained Teachers"

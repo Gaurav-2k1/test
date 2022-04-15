@@ -20,3 +20,33 @@ export const headerPaths = [
     path: "/contact",
   },
 ];
+
+export const coursesList = [
+  {
+    name: "Python",
+    image: "https://www.python.org/static/opengraph-icon-200x200.png",
+    shortDescription:
+      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
+    description: "",
+    duration: "40 Hours",
+    fee: "$500",
+  },
+  {
+    name: "Python",
+    image: "https://www.python.org/static/opengraph-icon-200x200.png",
+    shortDescription:
+      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
+    description: "",
+    duration: "40 Hours",
+    fee: "$500",
+  },
+  {
+    name: "Python",
+    image: "https://www.python.org/static/opengraph-icon-200x200.png",
+    shortDescription:
+      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
+    description: "",
+    duration: "40 Hours",
+    fee: "$500",
+  },
+];

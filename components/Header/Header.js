@@ -3,7 +3,12 @@ import { Menu } from "@mui/icons-material";
 import { Instagram } from "@mui/icons-material";
 import { LinkedIn } from "@mui/icons-material";
 import { Facebook } from "@mui/icons-material";
-import { SwipeableDrawer, IconButton, useMediaQuery } from "@mui/material";
+import {
+  SwipeableDrawer,
+  IconButton,
+  useMediaQuery,
+  Divider,
+} from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
@@ -75,7 +80,7 @@ export default function Header() {
           <div className="w-1/2 self-center flex flex-row justify-evenly font-semibold">
             {headerPaths.map((headerPath) => (
               <HeaderItem
-                key={headerPath.path}
+                key={headerPath.name}
                 name={headerPath.name}
                 route={headerPath.path}
               />
@@ -97,14 +102,17 @@ export default function Header() {
           onClose={() => toggleDrawer(false)}
           className="flex flex-col"
         >
-          <div className="w-[70vw] text-center text-3xl bg-purple-200 h-full">
-            <div className="flex flex-col justify-evenly h-[70vh]">
+          <div className="w-[70vw] text-center text-2xl bg-purple-200 h-full">
+            <div className="flex flex-col justify-evenly h-[50vh]">
               {headerPaths.map((headerPath) => (
-                <HeaderItem
-                  key={headerPath.path}
-                  name={headerPath.name}
-                  route={headerPath.path}
-                />
+                <>
+                  <HeaderItem
+                    key={headerPath.path}
+                    name={headerPath.name}
+                    route={headerPath.path}
+                  />
+                  <Divider />
+                </>
               ))}
             </div>
           </div>

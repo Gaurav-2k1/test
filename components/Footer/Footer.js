@@ -28,7 +28,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-col justify-between font-semibold h-[30vh] lg:h-[25vh] lg:w-[20vw] w-1/2  pr-5">
           <h1 className="text-2xl font-semibold text-white">Contact Us</h1>
-          <p>Address: H-0794, ROW, Whitefield, Bengaluru, India</p>
+          <p>
+            Address: G28 Vita S.A, Pebble Mill Studios, Pershore Road,
+            Birmingham B29 7ES, United Kingdom
+          </p>
           <a href="mailto: contact@infodal.com">Email: contact@infodal.com</a>
           <a href="tel: +44 7454 66601">Phone: +44 7454 666010</a>
         </div>
