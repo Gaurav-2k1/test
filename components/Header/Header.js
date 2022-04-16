@@ -25,7 +25,7 @@ export default function Header() {
 
   return (
     <div className="w-full bg-slate-50 sticky top-0 left-0 right-0">
-      <div className="h-8 bg-purple-700 w-full">
+      <div className="h-8 bg-blue-700 w-full">
         <div className="m-auto flex flex-row w-1/3 lg:w-1/6 justify-between text-white items-center h-full">
           <IconButton
             color="inherit"

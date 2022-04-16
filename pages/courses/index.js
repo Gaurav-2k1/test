@@ -58,7 +58,7 @@ const CourseTile = ({ course }) => {
     router.push(`/courses/${course._id}`);
   };
   return (
-    <div className="p-4 border-2 rounded-sm mb-4 border-purple-800 h-[60vh] flex flex-col justify-between">
+    <div className="p-4 border-2 rounded-sm mb-4 border-purple-800 h-auto flex flex-col justify-between">
       <div className="relative w-auto h-max">
         <Image
           src={`https://infodal.blob.core.windows.net/${

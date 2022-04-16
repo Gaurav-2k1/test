@@ -11,7 +11,7 @@ export default function LandingScreen() {
           more..
         </h1>
         <p className="text-purple-900 text-center">
-          25000 Courses | 15000 Elite Tutors | 1,000,000 students trained
+          25000 Courses | 15000 Elite Tutors | Thousands of Students Trained
           worldwide!
         </p>
       </div>
