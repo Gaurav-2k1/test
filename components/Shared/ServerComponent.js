@@ -18,7 +18,7 @@ export default function ServerComponent({
         SERVER ACCESS | {duration} MONTHS
       </p>
       <p className="text-center">{shortDescription}</p>
-      <Button className="text-lg h-8 mt-5 bg-purple-900">Know More</Button>
+      {/* <Button className="text-lg h-8 mt-5 bg-purple-900">Know More</Button> */}
     </div>
   );
 }

@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    //domains: ['assets.acme.com'],
+    domains: ["infodal.blob.core.windows.net"],
   },
 };
 
