@@ -7,7 +7,7 @@ export default function BreadCrumbComponent({
 }) {
   return (
     <div
-      className={`bg-purple-300 ${mobileHeight ? mobileHeight : "h-[15vh]"} ${
+      className={`bg-blue-300 ${mobileHeight ? mobileHeight : "h-[15vh]"} ${
         desktopHeight ? desktopHeight : "h-[20vh]"
       }`}
     >
