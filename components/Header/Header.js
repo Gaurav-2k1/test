@@ -14,6 +14,7 @@ import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { headerPaths } from "../../config/config";
 import { theme } from "../../utils/theme";
+import image from "next/image";
 
 export default function Header() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
