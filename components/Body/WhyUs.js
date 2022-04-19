@@ -19,9 +19,7 @@ export default function WhyUs() {
           courses on the virtual platform with all updated knowledge and
           applications at use.
         </p>
-        <div className="relative h-[80vw] w-[80vw] lg:h-[30vw] lg:w-[30vw] m-auto">
-          <Image src="/images/why.png" alt="Why Infodal" layout="fill" />
-        </div>
+
         <div className="lg:grid lg:grid-cols-2 gap-4">
           <ChoseUsSection
             heading=" Highly Trained Teachers"
@@ -29,17 +27,21 @@ export default function WhyUs() {
             trainers in all the domains of courses provided. With constant
             monitoring and help the trainers assure an aced learning of the
             user"
+            image="/images/why/teacher.png"
           />
           <ChoseUsSection
             heading="Interactive Platform"
             text="With being virtual, Infodal ensures user-friendly interaction with the user in order to have a pre-dynamic interaction and platform."
+            image="/images/why/interactive.png"
           />
           <ChoseUsSection
             heading="Your Go-to Platform"
+            image="/images/why/goto.png"
             text="Name the course and its available here, ranging from basic to advanced all the needs of the individuals would be catered to at Infodal. We provide more than 1000+ courses, catering to the needs of all the individuals."
           />
           <ChoseUsSection
             heading="Budget-Friendly"
+            image="/images/why/budget.png"
             text="With the vast courses available we ensure on providing budget-friendly courses in order to allow individuals to practice their interests and pursue their ambitions with Infodal."
           />
         </div>
@@ -48,9 +50,12 @@ export default function WhyUs() {
   );
 }
 
-function ChoseUsSection({ heading, text }) {
+function ChoseUsSection({ heading, text, image }) {
   return (
     <div className="flex flex-col mt-5">
+      <div className="relative h-[80vw] w-[80vw] lg:h-[20vh] lg:w-[20vh] m-auto">
+        <Image src={image} alt="Why Infodal" layout="fill" />
+      </div>
       <h1 className="text-purple-800 font-semibold text-lg">{heading}</h1>
       <p className="lg:pr-10">{text}</p>
     </div>
