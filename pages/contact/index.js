@@ -64,9 +64,14 @@ export default function ContactUs() {
                 </div>
                 <div className="w-full flex flex-row justify-start text-white text-sm items-center pt-5">
                   <Call color="inherit" fontSize="large" />
-                  <a href="tel: +44 7454 66601" className="pl-4">
-                    +44 7454 666010
-                  </a>
+                  <div className="flex flex-col">
+                    <a href="tel: +44 7454 66601" className="pl-4">
+                      +44 7454 666010
+                    </a>
+                    <a href="tel: +91 9302584342" className="pl-4">
+                      +91 9302584342
+                    </a>
+                  </div>
                 </div>
                 <div className="w-full flex flex-row justify-start text-white text-sm items-center pt-5">
                   <Email color="inherit" fontSize="large" />

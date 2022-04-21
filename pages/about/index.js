@@ -23,7 +23,7 @@ export default function About() {
       <div>
         <BreadCrumbComponent>About Us</BreadCrumbComponent>
         <div className="flex flex-col justify-evenly m-auto lg:grid lg:grid-cols-2 lg:gap-4 p-4">
-          <div className="relative w-[80vw] h-[80vw] lg:w-[20vw] lg:h-[20vw] m-auto">
+          <div className="relative w-[90vw] h-[90vw] lg:w-[20vw] lg:h-[20vw] m-auto">
             <Image
               src="/images/about/1.png"
               alt="about"
