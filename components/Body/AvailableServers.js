@@ -1,58 +1,66 @@
 import { Button } from "@mui/material";
 import React from "react";
 import ServerComponent from "../Shared/ServerComponent";
+import PossiblitiesComponent from "./PossiblitiesComponent";
 
 export default function AvailableServers() {
-  const servers = [
+
+
+  const possiblities = [
     {
-      name: "SAP Servers",
-      duration: "1,3,6 & 12",
-      image: "/logo.png",
+      name: "Premium Courses", 
+      image: "/images/possiblities/premium Courses.jpg",
       shortDescription:
-        "Get any ECC based oracle sandbox IDES server access for any duration.",
+        "Browse job-oriented courses & certifications. Request a customized course for you.",
     },
     {
-      name: "SAP HANA Modules",
-      duration: "1,3,6 & 12",
-      image: "/logo.png",
+      name: "Instructor-Led Courses", 
+      image: "/images/possiblities/Instructor-led courses.jpg",
       shortDescription:
-        "Get any ECC based oracle sandbox IDES server access for any duration.",
+        "Enrol in an online instructor-led course. Learn 1:1 with a tutor in an online classroom.",
     },
     {
-      name: "SAP Success Factors",
-      duration: "1,3,6 & 12",
-      image: "/logo.png",
+      name: "Self-paced Courses", 
+      image: "/images/possiblities/Self-paced courses.jpg",
       shortDescription:
-        "Get any ECC based oracle sandbox IDES server access for any duration.",
+        "Enrol in self-paced training with online video-based courses. Learn at your own pace.",
     },
     {
-      name: "SAP BODS",
-      duration: "1",
-      image: "/logo.png",
+      name: "Diploma & Professional Certificate", 
+      image: "/images/possiblities/Diploma & Professional courses.jpg",
       shortDescription:
-        "Get any ECC based oracle sandbox IDES server access for any duration.",
+        "Get trained for professional certification. Enhance your CV with our Diploma or Professional Certificate.",
     },
-  ];
+    {
+      name: "Unlimited Courses", 
+      image: "/images/possiblities/Unlimited courses.jpg",
+      shortDescription:
+        "Subscribe for unlimited training. Get access to Uplatz's premium courses on IT, Data Science, SAP, Salesforce, MS Excel and more.",
+    },
+  ]
   return (
+    <>
     <div className="p-4 lg:px-20">
       <div className="text-center mb-5 lg:mb-12">
-        <h1 className="text-3xl mb-2">Available Servers</h1>
-        <p>
-          Featured services on trending technologies & hot modules. Get hired
-          today!
-        </p>
+        <p className="text-lg mt-10" >What We Do</p>
+        <h1 className="text-3xl mb-2 text-blue-700" >
+        Unlimited Possibilities
+        </h1>
       </div>
-      <div className="lg:grid lg:grid-cols-4 gap-6 flex flex-col">
-        {servers.map((server, id) => (
-          <ServerComponent
+      <div className="lg:grid lg:grid-cols-3 gap-6 flex flex-col">
+        {possiblities.map((server, id) => (
+          <PossiblitiesComponent
             key={id}
             name={server.name}
-            duration={server.duration}
             img={server.image}
             shortDescription={server.shortDescription}
           />
         ))}
       </div>
+
+     
+      
     </div>
+    </>
   );
 }
