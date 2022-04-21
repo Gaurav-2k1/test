@@ -41,13 +41,11 @@ export default function AvailableServers() {
   return (
     <>
     <div className="p-4 lg:px-20">
-      <div className="text-center mb-5 lg:mb-12">
-        <p className="text-lg mt-10" >What We Do</p>
-        <h1 className="text-3xl mb-2 text-blue-700" >
-        Unlimited Possibilities
-        </h1>
+    <div className="mt-40  sm:mt-5">
+      <p  className="text-center text-lg font-light pt-5   ">What We Do</p>
+      <h1 className="text-center text-3xl mb-2 text-blue-700 mt-5 mb-10 sm:mb-10 ">  Unlimited Possibilities</h1>
       </div>
-      <div className="lg:grid lg:grid-cols-3 gap-6 flex flex-col">
+      <div className="lg:grid lg:grid-cols-3 gap-6 flex flex-col ">
         {possiblities.map((server, id) => (
           <PossiblitiesComponent
             key={id}
@@ -57,10 +55,15 @@ export default function AvailableServers() {
           />
         ))}
       </div>
+    </div>
+ 
+
+
+    
+     
 
      
-      
-    </div>
+ 
     </>
   );
 }

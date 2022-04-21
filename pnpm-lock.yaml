@@ -11,7 +11,8 @@ specifiers:
   eslint: 8.11.0
   eslint-config-next: 12.1.0
   lodash: ^4.17.21
-  next: 12.1.0
+  material-ui-phone-number: ^3.0.0
+  next: ^12.1.0
   postcss: ^8.4.12
   react: 17.0.2
   react-dom: 17.0.2
@@ -29,6 +30,7 @@ dependencies:
   axios: 0.26.1
   cssnano: 5.1.7_postcss@8.4.12
   lodash: 4.17.21
+  material-ui-phone-number: 3.0.0_oyoi4xk4zadorayxl2vr3c5jge
   next: 12.1.0_7cvnitghizepsonag6tkegq6mu
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
@@ -1009,6 +1011,10 @@ packages:
       path-type: 4.0.0
       yaml: 1.10.2
     dev: true
+
+  /country-flag-icons/1.4.25:
+    resolution: {integrity: sha512-1sF/6cit7MYfmxrqNiVN0ijLGv10xtV8egAUwUgIW6Q/Y6d7SuuVw5TOBnG7qIFqrNjxaPNoIAZmx7yOEuZvDA==}
+    dev: false
 
   /cross-spawn/7.0.3:
     resolution: {integrity: sha512-iRDPJKUPVEND7dHPO8rkbOnPpyDygcDFtWjpeWNCgy8WP2rXcxXL8TskReQl6OrB2G7+UJrags1q15Fudc7G6w==}
@@ -2003,6 +2009,27 @@ packages:
     dependencies:
       '@babel/runtime': 7.17.8
       remove-accents: 0.4.2
+    dev: false
+
+  /material-ui-phone-number/3.0.0_oyoi4xk4zadorayxl2vr3c5jge:
+    resolution: {integrity: sha512-wZX1PYv990nJUBko93AQxIfvFARHfMtnV/UT1/hVnbJP5x/K7MDuT5T2/ckIG6xyqTZ/wCcHdEK1P60uTOORwA==}
+    peerDependencies:
+      '@emotion/react': ^11.4.1
+      '@emotion/styled': ^11.3.0
+      '@mui/material': ^5.0.0
+      '@mui/styles': ^5.0.0
+      clsx: ^1.1.1
+      prop-types: ^15.7.2
+      react: ^17.0.2
+      react-dom: ^17.0.2
+    dependencies:
+      '@emotion/react': 11.8.2_react@17.0.2
+      '@emotion/styled': 11.8.1_7iymjiytgosd2i5e7zyi4dobpa
+      '@mui/material': 5.5.3_5ocylxoabzwy4o2auzyb2wpnha
+      country-flag-icons: 1.4.25
+      lodash: 4.17.21
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
     dev: false
 
   /mdn-data/2.0.14:

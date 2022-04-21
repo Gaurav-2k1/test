@@ -49,7 +49,7 @@ export default function LandingScreen() {
           description="Get your doubts solved by our experienced tutors."
         />
       </div>
-      <div className="h-[50vh] w-full bg-[url('/images/why/discount.jpg')] bg-cover bg-center py-10">
+      <div className="h-[50vh] w-full bg-[url('/images/why/discount.jpg')] bg-cover bg-center py-10 ">
         <h1 className="p-4 bg-white font-semibold w-fit text-3xl mb-3">
           Get 10% Off on your First Course
         </h1>
