@@ -8,7 +8,6 @@ import Image from "next/image";
 import Offerings from "../components/Body/Offerings";
 
 import Header from "../components/Header/Header";
-import LiveCourse from "../components/LiveCourse";
 
 export default function Home() {
   return (
