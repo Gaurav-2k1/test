@@ -47,6 +47,7 @@ export default function About() {
               provide the best of the deals and courses on the virtual platform
               with all updated knowledge and applications at use.
             </p>
+            <whatweOffer />
           </div>
         </div>
       </div>
