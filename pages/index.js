@@ -7,7 +7,6 @@ import Footer from "../components/Footer/Footer";
 import Image from "next/image";
 
 import Header from "../components/Header/Header";
-import LiveCourse from "../components/LiveCourse";
 
 export default function Home() {
   return (
