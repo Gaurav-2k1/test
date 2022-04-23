@@ -71,38 +71,35 @@ export default function Header() {
           </IconButton>
         </div>
       </div>
-      <div className="lg:flex flex-row gap-4  ">
-        <div className="hidden lg:flex relative w-24 h-24 ml-5 lg:mt-2 lg:ml-[15vh] lg:w-52 lg:h-28 ">
+      <div className="lg:flex  flex-row gap-40 justify-around">
+        <div className="hidden lg:flex relative w-24 h-24  lg:mt-2 lg:ml-2 lg:w-30 lg:h-30 ">
           <Image
-            className="lg:w-20"
+            className="lg:w-30"
             src="/logo.png"
             alt="Logo"
             layout="fill"
             objectFit="scale-down"
           />
         </div>
-        <div className="hidden lg:flex">
-
-
-          <div className="text-base  font-bold mt-2 ml-5 lg:ml-12  ">
-            <CallIcon className="text-3xl" />
+        <div className="hidden lg:flex  lg:self-center ">
+ <div className="text-base  font-bold mt-2 ml-5 lg:justify-items-center  ">
+            <CallIcon className="text-3xl " />
             +44 7454 666010
             <br />
             <div className="lg:mt-2">
               <CallIcon className="text-3xl" />
               +91 93025 84342
             </div>
-
-          </div>
-          <div className="text-base font-bold  lg:mt-8 lg:ml-10"> <EmailIcon className="text-3xl" />contact@infodal.com</div>
-          <div >
-          <Button className="bg-orange-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+ </div>
+          <div className="text-base font-bold lg:self-center  lg:ml-10"> <EmailIcon className="text-3xl" />contact@infodal.com</div>
+          <div className="lg:self-center" >
+          <Button className="bg-orange-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 ">
               Register
             </Button>
             
           </div>
-          <div>
-          <Button className="bg-green-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+          <div className="lg:self-center">
+          <Button className="bg-green-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12">
               Sign In
             </Button>
           </div>
@@ -122,24 +119,24 @@ export default function Header() {
         ) : (
          <>
 
-         <div className="flex">
-           <div className="relative w-24 h-24 ml-5 lg:mt-2 lg:ml-[15vh] lg:w-52 lg:h-28">
+         <div className="flex flex-row w-full justify-between">
+           <div className="relative w-24 h-24 ml-5 lg:self-center lg:ml-[15vh]">
               <Image
-            className="lg:w-20"
+            className="lg:w-1/3"
             src="/logo.png"
             alt="Logo"
             layout="fill"
             objectFit="scale-down"
           /></div>
          
-           <div className="flex" >
-            <div className="relative mt-5 ml-[50vh]">
+           
+            <div className="relative self-center ">
             <IconButton size="large" onClick={() => toggleDrawer(true)}>
               <Menu />
             </IconButton>
             </div>
             
-          </div>
+          
         
 
          </div>
