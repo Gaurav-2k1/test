@@ -8,6 +8,7 @@ import {
   IconButton,
   useMediaQuery,
   Divider,
+  Button,
 } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -16,6 +17,7 @@ import { headerPaths } from "../../config/config";
 import { theme } from "../../utils/theme";
 import CallIcon from '@mui/icons-material/Call';
 import EmailIcon from '@mui/icons-material/Email';
+
 
 export default function Header() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
@@ -94,14 +96,15 @@ export default function Header() {
           </div>
           <div className="text-base font-bold  lg:mt-8 lg:ml-10"> <EmailIcon className="text-3xl" />contact@infodal.com</div>
           <div >
-            <button class="bg-orange-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+          <Button className="bg-orange-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
               Register
-            </button>
+            </Button>
+            
           </div>
           <div>
-            <button class="bg-green-500 underline hover:bg-red-500 hover:no-underline text-white font-medium   text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+          <Button className="bg-green-500 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
               Sign In
-            </button>
+            </Button>
           </div>
         </div>
       </div>
@@ -191,14 +194,17 @@ export default function Header() {
                 </div>
                 <div className="text-base font-bold  lg:mt-8 lg:ml-10"> <EmailIcon className="text-3xl" />contact@infodal.com</div>
                 <div >
-                  <button class="bg-orange-500 px-2 py-2 w-30 h-10 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+                <Button className="bg-orange-500 px-2 py-2 w-30 h-10 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
                     Register
-                  </button>
+                  </Button>
                 </div>
                 <div>
-                  <button class="bg-green-500 px-3 py-2 w-30 h-10 mt-3 underline hover:bg-red-500 hover:no-underline text-white font-medium   text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
+
+                <Button className="bg-green-500 mt-3 px-3 py-2 w-30 h-10 underline hover:bg-red-500 hover:no-underline text-white font-medium text-base lg:px-7 lg:py-1 rounded-sm  lg:ml-12 lg:mt-8">
                     Sign In
-                  </button>
+                  </Button>
+                    
+                  
                 </div>
               </div>
           </div>
