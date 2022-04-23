@@ -33,7 +33,7 @@ export default function AvailableServers() {
       name: "Unlimited Courses",
       image: "/images/possiblities/Unlimited courses.jpg",
       shortDescription:
-        "Subscribe for unlimited training. Get access to Uplatz's premium courses on IT, Data Science, SAP, Salesforce, MS Excel and more.",
+        "Subscribe for unlimited training. Get access to Infodal's premium courses on IT, Data Science, SAP, Salesforce, MS Excel and more.",
     },
   ];
   return (
