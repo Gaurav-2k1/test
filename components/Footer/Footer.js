@@ -33,7 +33,8 @@ export default function Footer() {
             Birmingham B29 7ES, United Kingdom
           </p>
           <a href="mailto: contact@infodal.com">Email: contact@infodal.com</a>
-          <a href="tel: +44 7454 66601">Phone: +44 7454 666010</a>
+          <a href="tel: +44 7454 666010">Phone: +44 7454 666010</a>
+          <a href="tel: +91 93025 84342">Phone: +91 93025 84342</a>
         </div>
       </div>
     </div>
