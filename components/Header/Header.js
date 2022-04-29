@@ -111,7 +111,7 @@ export default function Header() {
           <div className="w-full self-center  text-white font-normal   flex flex-rows-4  lg:w-15  justify-evenly display:block m-auto text-sm ">
             {headerPaths.map((headerPath) => (
               <HeaderItem
-                key={headerPath.name}
+                key={headerPath.id}
                 name={headerPath.name}
                 route={headerPath.path}
               />

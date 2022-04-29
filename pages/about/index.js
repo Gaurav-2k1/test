@@ -1,3 +1,4 @@
+import { LinkedIn } from "@mui/icons-material";
 import Head from "next/head";
 import Image from "next/image";
 import React from "react";
@@ -47,6 +48,26 @@ export default function About() {
               provide the best of the deals and courses on the virtual platform
               with all updated knowledge and applications at use.
             </p>
+            <whatweOffer />
+          </div>
+        </div>
+        <div className="flex flex-col justify-evenly m-auto lg:grid lg:grid-cols-2 lg:gap-4 p-4">
+          <div className="relative w-[90vw] h-[90vw] lg:w-[20vw] lg:h-[20vw] m-auto">
+            <Image
+              src="/images/about/anchit.jpeg"
+              alt="about"
+              layout="fill"
+              objectFit="scale-down"
+            />
+          </div>
+          <div className="flex flex-col justify-center text-center lg:text-left">
+            <h1 className="text-3xl font-semibold my-5 lg:m-0">
+              Founder & Managing Director
+            </h1>
+            <p className="text-xl">Mr Anchit Agarwal</p>
+            <a href="https://www.linkedin.com/in/anchit-agarwal-18576b11a">
+              <LinkedIn fontSize="large" />
+            </a>
             <whatweOffer />
           </div>
         </div>
