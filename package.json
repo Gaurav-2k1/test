@@ -23,6 +23,7 @@
     "react-hot-toast": "^2.2.0",
     "react-query": "^3.34.19",
     "react-redux": "^7.2.8",
+    "react-responsive-carousel": "^3.2.23",
     "sass": "^1.50.0"
   },
   "devDependencies": {

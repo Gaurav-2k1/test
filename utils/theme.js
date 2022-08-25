@@ -62,8 +62,8 @@ export const lightTheme = createTheme({
   ...theme,
   palette: {
     mode: "light",
-    primary: { main: "#7C3384" }, // neutral[700]
-    secondary: { main: "#3254A2" }, // teal[600]
+    primary: { main: "#02C39A" },
+    secondary: { main: "#313189" },
   },
 });
 
