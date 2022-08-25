@@ -1,4 +1,5 @@
 import React from "react";
+import CourseComponent from "../Shared/CourseComponent";
 
 export default function LiveCourses() {
   return (
@@ -14,6 +15,15 @@ export default function LiveCourses() {
         Sub-content: It helps in creating drafts of the content on the pages of
         the website. It originates from the Latin text but is seen as gibberish.
       </p>
+      <div className="mt-3">
+        <CourseComponent
+          name="Data Analysis Training"
+          img="/images/temp/course.png"
+          isSale
+          duration="20"
+          classType="1-1 Live Interactive Classes"
+        />
+      </div>
     </div>
   );
 }
