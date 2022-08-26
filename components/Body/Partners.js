@@ -1,6 +1,11 @@
 import React from "react";
 import Image from "next/image";
 import Logo from "../../public/logo.png";
+import Udemy from "../../public//images/home/partners/udemy.png";
+import Reed from "../../public//images/home/partners/reed.png";
+import Liamoon from "../../public//images/home/partners/liamoon.png";
+import Unisnacks from "../../public//images/home/partners/unisnacks.png";
+import UrbanPro from "../../public//images/home/partners/up.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
@@ -15,7 +20,6 @@ export default function Partners() {
         axis="horizontal"
         swipeable
         className="mt-6"
-        dynamicHeight
         infiniteLoop
         autoPlay
         showStatus={false}
@@ -24,13 +28,19 @@ export default function Partners() {
         centerSlidePercentage={30}
       >
         <div className="w-20 h-fit">
-          <Image src={Logo} alt="Infodal Logo" />
+          <Image src={Udemy} alt="Udemy Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={Logo} alt="Infodal Logo" />
+          <Image src={Reed} alt="Reed Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={Logo} alt="Infodal Logo" />
+          <Image src={Liamoon} alt="Liamoon Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={Unisnacks} alt="Liamoon Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={UrbanPro} alt="Liamoon Logo" />
         </div>
       </Carousel>
     </div>
