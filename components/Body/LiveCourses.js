@@ -1,4 +1,6 @@
 import React from "react";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CourseComponent from "../Shared/CourseComponent";
 
 export default function LiveCourses() {
@@ -22,6 +24,7 @@ export default function LiveCourses() {
           isSale
           duration="20"
           classType="1-1 Live Interactive Classes"
+          rating={{ stars: 4, reviews: 132 }}
         />
       </div>
     </div>

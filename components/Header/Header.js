@@ -26,7 +26,9 @@ export default function Header() {
         <div className=" w-20">
           <MenuIcon fontSize="large" className="justify-self-start" />
         </div>
-        <Image src={Logo} alt="Infodal Logo" className="w-20 h-fit" />
+        <div className="w-20 h-fit">
+          <Image src={Logo} alt="Infodal Logo" />
+        </div>
         <div className="w-20 flex flex-row justify-around">
           <SearchOutlinedIcon />
           <ShoppingCartOutlinedIcon />

@@ -23,9 +23,15 @@ export default function Partners() {
         centerMode
         centerSlidePercentage={30}
       >
-        <Image src={Logo} alt="logo" />
-        <Image src={Logo} alt="logo" />
-        <Image src={Logo} alt="logo" />
+        <div className="w-20 h-fit">
+          <Image src={Logo} alt="Infodal Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={Logo} alt="Infodal Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={Logo} alt="Infodal Logo" />
+        </div>
       </Carousel>
     </div>
   );
