@@ -1,14 +1,12 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CourseComponent from "../Shared/CourseComponent";
 import NewSection from "../Shared/NewSection";
 
-export default function LiveCourses() {
+export default function VideoCourses() {
   return (
     <div>
       <NewSection
-        title="LIVE INTERACTIVE COURSES"
+        title="VIDEO COURSES"
         para1="One or two liner title: It helps the designer plan where the content
           will sit."
         para2="Sub-content: It helps in creating drafts of the content on the pages
@@ -20,6 +18,7 @@ export default function LiveCourses() {
         <CourseComponent
           name="Data Analysis Training"
           img="/images/temp/course.png"
+          isSale
           duration="20"
           classType="1-1 Live Interactive Classes"
           rating={{ stars: 4, reviews: 132 }}
@@ -27,6 +26,7 @@ export default function LiveCourses() {
         <CourseComponent
           name="Data Analysis Training"
           img="/images/temp/course.png"
+          isSale
           duration="20"
           classType="1-1 Live Interactive Classes"
           rating={{ stars: 4, reviews: 132 }}
@@ -34,6 +34,7 @@ export default function LiveCourses() {
         <CourseComponent
           name="Data Analysis Training"
           img="/images/temp/course.png"
+          isSale
           duration="20"
           classType="1-1 Live Interactive Classes"
           rating={{ stars: 4, reviews: 132 }}

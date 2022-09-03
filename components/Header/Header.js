@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <div className="sticky top-0 left-0 right-0 bg-white z-50">
+    <div className="sticky top-0 left-0 right-0 bg-white z-50 shadow-md">
       <div className="flex flex-row justify-between py-2 px-2 items-center">
         <div className=" w-20">
           <MenuIcon fontSize="large" className="justify-self-start" />

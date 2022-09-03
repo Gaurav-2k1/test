@@ -28,3 +28,13 @@
   width: 0; /* Remove scrollbar space */
   background: transparent; /* Optional: just make scrollbar invisible */
 }
+
+@layer utilities {
+
+  .clip {
+
+      clip-path: polygon(0 44%, 100% 9%, 100% 100%, 0% 100%);
+
+  }
+
+}

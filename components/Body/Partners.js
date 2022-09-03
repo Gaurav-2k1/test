@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import Logo from "../../public/logo.png";
 import Udemy from "../../public//images/home/partners/udemy.png";
 import Reed from "../../public//images/home/partners/reed.png";
 import Liamoon from "../../public//images/home/partners/liamoon.png";
@@ -12,7 +11,7 @@ import { Carousel } from "react-responsive-carousel";
 export default function Partners() {
   return (
     <div>
-      <div className="text-primary text-center text-base mt-4 w-full">
+      <div className="text-primary text-center text-base mt-4 w-full font-bold">
         OUR PARTNERS
       </div>
 

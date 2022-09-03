@@ -50,7 +50,7 @@ export default function LandingScreen() {
 function Feature({ image, title }) {
   return (
     <div className="flex flex-col w-full justify-center align-center rounded-md border-primary border h-20">
-      <Image src={image} alt={title} />
+      <Image src={image} alt={title} height="20rem" width="20rem" />
       <p className="text-center text-secondary text-sm">{title}</p>
     </div>
   );

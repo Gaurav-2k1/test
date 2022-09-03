@@ -9,6 +9,7 @@ import Header from "../components/Header/Header";
 import ActionButton from "../components/Shared/ActionButton";
 import Partners from "../components/Body/Partners";
 import LiveCourses from "../components/Body/LiveCourses";
+import VideoCourses from "../components/Body/VideoCourses";
 
 export default function Home() {
   return (
@@ -30,14 +31,14 @@ export default function Home() {
 
       <div>
         <LandingScreen />
-
         <Partners />
         <LiveCourses />
-        <ActionButton />
+        <VideoCourses />
       </div>
       <footer>
         <Footer />
       </footer>
+      <ActionButton />
     </div>
   );
 }
