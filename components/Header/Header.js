@@ -6,25 +6,29 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 import Logo from "../../public/logo.png";
-import { headerPaths } from "../../config/config";
 import { theme } from "../../utils/theme";
-import CallIcon from "@mui/icons-material/Call";
-import EmailIcon from "@mui/icons-material/Email";
-import { Phone } from "@mui/icons-material";
+import { useDispatch, useSelector } from "react-redux";
+import { getMenuToggle, setMenuToggle } from "../../store/modalSlice";
+import MenuBar from "./MenuBar";
 
 export default function Header() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleDrawer = (bool) => {
-    setIsOpen(bool);
+  const isMenuOpen = useSelector(getMenuToggle);
+  const dispatch = useDispatch();
+  const toggleDrawer = () => {
+    dispatch(setMenuToggle(!isMenuOpen));
   };
 
   return (
     <div className="sticky top-0 left-0 right-0 bg-white z-50 shadow-md">
       <div className="flex flex-row justify-between py-2 px-2 items-center">
         <div className=" w-20">
-          <MenuIcon fontSize="large" className="justify-self-start" />
+          <MenuIcon
+            fontSize="large"
+            className="justify-self-start"
+            onClick={toggleDrawer}
+          />
+          <MenuBar />
         </div>
         <div className="w-20 h-fit">
           <Image src={Logo} alt="Infodal Logo" />

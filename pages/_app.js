@@ -4,22 +4,26 @@ import ThemeWrapper from "../wrappers/ThemeWrapper";
 import { ReactQueryDevtools } from "react-query/devtools";
 import queryClient from "../service/react-query";
 import { Toaster } from "react-hot-toast";
+import { Provider as ReduxProvider } from "react-redux";
+import store from "../store";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <QueryClientProvider client={queryClient}>
-      {process.env.NODE_ENV === "development" && <ReactQueryDevtools />}
-      <ThemeWrapper>
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            duration: 4000,
-            className: "toast",
-          }}
-        />
-        <Component {...pageProps} />
-      </ThemeWrapper>
-    </QueryClientProvider>
+    <ReduxProvider store={store}>
+      <QueryClientProvider client={queryClient}>
+        {process.env.NODE_ENV === "development" && <ReactQueryDevtools />}
+        <ThemeWrapper>
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              duration: 4000,
+              className: "toast",
+            }}
+          />
+          <Component {...pageProps} />
+        </ThemeWrapper>
+      </QueryClientProvider>
+    </ReduxProvider>
   );
 }
 

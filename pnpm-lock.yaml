@@ -5,6 +5,7 @@ specifiers:
   '@emotion/styled': ^11.8.1
   '@mui/icons-material': ^5.6.0
   '@mui/material': ^5.5.3
+  '@reduxjs/toolkit': ^1.8.5
   autoprefixer: ^10.4.4
   axios: ^0.26.1
   cssnano: ^5.1.7
@@ -29,6 +30,7 @@ dependencies:
   '@emotion/styled': 11.8.1_7iymjiytgosd2i5e7zyi4dobpa
   '@mui/icons-material': 5.6.0_vziv2khkkxcrbceqcnagillqoe
   '@mui/material': 5.5.3_5ocylxoabzwy4o2auzyb2wpnha
+  '@reduxjs/toolkit': 1.8.5_bjryulbxll5jujtwpu5a2wm2cy
   axios: 0.26.1
   cssnano: 5.1.7_postcss@8.4.12
   lodash: 4.17.21
@@ -557,6 +559,25 @@ packages:
 
   /@popperjs/core/2.11.4:
     resolution: {integrity: sha512-q/ytXxO5NKvyT37pmisQAItCFqA7FD/vNb8dgaJy3/630Fsc+Mz9/9f2SziBoIZ30TJooXyTwZmhi1zjXmObYg==}
+    dev: false
+
+  /@reduxjs/toolkit/1.8.5_bjryulbxll5jujtwpu5a2wm2cy:
+    resolution: {integrity: sha512-f4D5EXO7A7Xq35T0zRbWq5kJQyXzzscnHKmjnu2+37B3rwHU6mX9PYlbfXdnxcY6P/7zfmjhgan0Z+yuOfeBmA==}
+    peerDependencies:
+      react: ^16.9.0 || ^17.0.0 || ^18
+      react-redux: ^7.2.1 || ^8.0.2
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-redux:
+        optional: true
+    dependencies:
+      immer: 9.0.15
+      react: 17.0.2
+      react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
+      redux: 4.1.2
+      redux-thunk: 2.4.1_redux@4.1.2
+      reselect: 4.1.6
     dev: false
 
   /@rushstack/eslint-patch/1.1.1:
@@ -2175,6 +2196,10 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  /immer/9.0.15:
+    resolution: {integrity: sha512-2eB/sswms9AEUSkOm4SbV5Y7Vmt/bKRwByd52jfLkW4OLYeaTP3EEiJ9agqU0O/tq6Dk62Zfj+TJSqfm1rLVGQ==}
+    dev: false
+
   /immutable/4.0.0:
     resolution: {integrity: sha512-zIE9hX70qew5qTUjSS7wi1iwj/l7+m54KWU247nhM3v806UdGj1yDndXj+IOYxxtW9zyLI+xqFNZjTuDaLUqFw==}
 
@@ -3564,6 +3589,14 @@ packages:
       indent-string: 4.0.0
       strip-indent: 3.0.0
 
+  /redux-thunk/2.4.1_redux@4.1.2:
+    resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}
+    peerDependencies:
+      redux: ^4
+    dependencies:
+      redux: 4.1.2
+    dev: false
+
   /redux/4.1.2:
     resolution: {integrity: sha512-SH8PglcebESbd/shgf6mii6EIoRM0zrQyjcuQ+ojmfxjTtE0z9Y8pa62iA/OJ58qjP6j27uyW4kUF4jl/jd6sw==}
     dependencies:
@@ -3619,6 +3652,10 @@ packages:
   /require-directory/2.1.1:
     resolution: {integrity: sha512-fGxEI7+wsG9xrvdjsrlmL22OMTTiHRwAMroiEeMgq8gzoLC/PQr7RsRDSTLUg/bZAZtF+TVIkHc6/4RIKrui+Q==}
     engines: {node: '>=0.10.0'}
+
+  /reselect/4.1.6:
+    resolution: {integrity: sha512-ZovIuXqto7elwnxyXbBtCPo9YFEr3uJqj2rRbcOOog1bmu2Ag85M4hixSwFWyaBMKXNgvPaJ9OSu9SkBPIeJHQ==}
+    dev: false
 
   /resolve-from/4.0.0:
     resolution: {integrity: sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==}

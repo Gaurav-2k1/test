@@ -1,3 +1,15 @@
+import About from "../public/images/menu/about.png";
+import Live from "../public/images/menu/live.png";
+import AllCat from "../public/images/menu/all-cat.png";
+import Contact from "../public/images/menu/contact.png";
+import FreeCourse from "../public/images/menu/free-course.png";
+import More from "../public/images/menu/more.png";
+import Video from "../public/images/menu/video.png";
+import Blog from "../public/images/menu/blog.png";
+import CareerPath from "../public/images/menu/career-path.png";
+import PromoVideo from "../public/images/menu/promo-video.png";
+import Instructor from "../public/images/menu/become-instructor.png";
+
 export const headerPaths = [
   {
     name: "Home",
@@ -21,32 +33,52 @@ export const headerPaths = [
   },
 ];
 
-export const coursesList = [
+export const topMenuList = [
   {
-    name: "Python",
-    image: "https://www.python.org/static/opengraph-icon-200x200.png",
-    shortDescription:
-      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
-    description: "",
-    duration: "40 Hours",
-    fee: "$500",
+    name: "Live 1:1 Interactive Courses",
+    image: Live,
   },
   {
-    name: "Python",
-    image: "https://www.python.org/static/opengraph-icon-200x200.png",
-    shortDescription:
-      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
-    description: "",
-    duration: "40 Hours",
-    fee: "$500",
+    name: "Video Courses",
+    image: Video,
+  },
+];
+
+export const menuList = [
+  {
+    name: "All Categories",
+    image: AllCat,
   },
   {
-    name: "Python",
-    image: "https://www.python.org/static/opengraph-icon-200x200.png",
-    shortDescription:
-      "Python is an interpreted, object-oriented, high-level programming language with dynamic semantics.",
-    description: "",
-    duration: "40 Hours",
-    fee: "$500",
+    name: "Free Courses",
+    image: FreeCourse,
+  },
+  {
+    name: "Promotional video",
+    image: PromoVideo,
+  },
+  {
+    name: "Career Path",
+    image: CareerPath,
+  },
+  {
+    name: "More",
+    image: More,
+  },
+  {
+    name: "Become an Instructor",
+    image: Instructor,
+  },
+  {
+    name: "Blog",
+    image: Blog,
+  },
+  {
+    name: "About Us",
+    image: About,
+  },
+  {
+    name: "Contact Us",
+    image: Contact,
   },
 ];

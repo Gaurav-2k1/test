@@ -14,10 +14,13 @@ export const theme = createTheme({
       xl: 1280,
     },
   },
+  //   <Button className="bg-primary text-white w-1/2 font-semibold">
+  //   Explore Courses
+  // </Button>
   components: {
     MuiButton: {
       defaultProps: {
-        size: "small",
+        size: "medium",
         variant: "contained",
         disableElevation: true,
         color: "primary",
@@ -26,6 +29,8 @@ export const theme = createTheme({
         root: {
           textTransform: "none",
           padding: "6px 20px",
+          color: "white",
+          backgroundColor: "primary",
         },
       },
     },
