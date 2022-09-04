@@ -18,7 +18,7 @@ export default function CourseComponent({
   averageSalary,
 }) {
   return (
-    <div className="w-[70vw] h-[33vh] bg-white pb-5 mb-5 mx-3 relative">
+    <div className="w-[70vw] h-[38vh] bg-white pb-5 mb-5 mx-3 relative">
       <div
         style={{ backgroundImage: `url(${img})` }}
         className="h-full w-[70vw] rounded-md"
@@ -28,9 +28,9 @@ export default function CourseComponent({
           <Image src={SaleIcon} alt="Sale"></Image>
         </div>
       )}
-      <div className="h-[33vh] bg-gradient-to-b from-cardStart to-cardEnd clip absolute bottom-0 left-0 right-0 rounded-md">
-        <div className="absolute top-32 left-3 z-50 text-sm text-white">
-          <div className="font-semibold mb-3">{name}</div>
+      <div className="h-[38vh] bg-gradient-to-b from-cardStart to-cardEnd clip absolute bottom-0 left-0 right-0 rounded-md">
+        <div className="absolute top-[16vh] left-3 z-50 text-sm text-white">
+          <div className="font-semibold mb-3 break-words">{name}</div>
           {duration && classType ? (
             <div>
               <CardDetail
@@ -43,7 +43,7 @@ export default function CourseComponent({
               />
             </div>
           ) : (
-            <div className="flex flex-row w-12 ">
+            <div className="flex flex-row w-12">
               <p className="text-lg">{discountedPrice}</p>
               <p className="text-sm">{price}</p>
             </div>
@@ -58,7 +58,7 @@ export default function CourseComponent({
             {`(${rating.reviews})`}
           </div>
         </div>
-        <div className="absolute bottom-0 z-50 w-full h-10 flex flex-col justify-evenly ">
+        <div className="absolute bottom-0 z-50 w-full h-[5vh] flex flex-col justify-evenly ">
           <Divider color="white" />
           <p className="text-white text-center">View Course</p>
         </div>
