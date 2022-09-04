@@ -24,7 +24,7 @@ export default function CourseComponent({
         className="h-full w-[70vw] rounded-md"
       />
       {isSale && (
-        <div className="absolute top-4 left-0 z-50 w-12">
+        <div className="absolute top-4 left-0 z-30 w-12">
           <Image src={SaleIcon} alt="Sale"></Image>
         </div>
       )}
