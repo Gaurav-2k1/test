@@ -9,8 +9,8 @@ module.exports = {
     extend: {
       colors: {
         transparent: "transparent",
-        primary: "#02C39A",
-        secondary: "#313189",
+        primary: "#00B4D8",
+        secondary: "#03045E",
         cardStart: "#313189F7",
         cardEnd: "#02C39A",
         black: colors.black,

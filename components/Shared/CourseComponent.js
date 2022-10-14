@@ -28,7 +28,7 @@ export default function CourseComponent({
           <Image src={SaleIcon} alt="Sale"></Image>
         </div>
       )}
-      <div className="h-[38vh] bg-gradient-to-b from-cardStart to-cardEnd clip absolute bottom-0 left-0 right-0 rounded-md">
+      <div className="h-[38vh] bg-gradient-to-b from-secondary to-primary clip absolute bottom-0 left-0 right-0 rounded-md">
         <div className="absolute top-[16vh] left-3 z-50 text-sm text-white">
           <div className="font-semibold mb-3 break-words">{name}</div>
           {duration && classType ? (

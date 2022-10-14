@@ -1,57 +1,79 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment } from "@mui/material";
-import mentorship from "../../public/images/home/mentorship.svg";
+import GroupsIcon from "@mui/icons-material/Groups";
 import success from "../../public/images/home/success.svg";
-import userfriendly from "../../public/images/home/userfriendly.svg";
+import UpgradeImg from "../../public/images/home/subLanding/upgrade-img.png";
 import { Button, IconButton, TextField } from "@mui/material";
-import Image from "next/image";
+import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
 import React from "react";
+import PublicIcon from "@mui/icons-material/Public";
+import Image from "next/image";
 
 export default function LandingScreen() {
   return (
     <div>
-      <div className="w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-secondary">
-        <div className="flex flex-col justify-end h-5/6 items-center">
-          <Button className="bg-primary mb-4 text-white w-1/2 font-semibold">
-            Sign Up
-          </Button>
-          <Button className="bg-primary text-white w-1/2 font-semibold">
-            Explore Courses
-          </Button>
+      <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-black">
+        <div className="flex flex-col justify-end h-1/2 items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
+          <div className="p-3">
+            <div>Crack dream jobs with top rated certificate courses</div>
+            <div className="flex flex-row justify-between items-center">
+              <TextField
+                variant="outlined"
+                className="m-3 bg-white align-center w-[70vw] rounded"
+                size="normal"
+                placeholder="What do you want to learn today?"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchOutlinedIcon />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Button className="bg-primary">Search</Button>
+            </div>
+          </div>
+
+          <div className="px-10 grid grid-cols-3 gap-2 justify-between align-center bg-black/80 w-full">
+            <Feature icon={<GroupsIcon />} title="5000+" subtitle="Learners" />
+
+            <Feature
+              icon={<SmartDisplayIcon />}
+              title="250+"
+              subtitle="Courses"
+            />
+
+            <Feature icon={<PublicIcon />} title="56+" subtitle="Countries" />
+          </div>
         </div>
       </div>
-
-      <div>
-        <TextField
-          variant="standard"
-          fullWidth
-          className="p-4 mt-3"
-          size="normal"
-          placeholder="What do you want to learn today?"
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <SearchOutlinedIcon />
-              </InputAdornment>
-            ),
-          }}
-        />
-      </div>
-
-      <div className="p-4 grid grid-cols-3 gap-2 justify-between">
-        <Feature image={mentorship} title="1-1 Mentorship" />
-        <Feature image={userfriendly} title="User Friendly" />
-        <Feature image={success} title="Career Assistance" />
+      <div className="my-4">
+        <div className="w-full bg-secondary text-white flex flex-row p-4">
+          <div>
+            <h1 className="font-bold text-lg">{`Learn the latest digital skills for tomorrow's jobs`}</h1>
+            <p className="text-sm my-3">
+              Put your concerns to rest, because INFODAL offers you certified,
+              digital, and leading-edge finest courses that you can take in the
+              convenience of your own home, complete with practice activities to
+              ensure that you get the most out of the course.
+            </p>
+            <Button className="bg-primary">Register Now</Button>
+          </div>
+        </div>
+        <Image src={UpgradeImg} alt="Infodal" className="" />
       </div>
     </div>
   );
 }
 
-function Feature({ image, title }) {
+function Feature({ icon, title, subtitle }) {
   return (
-    <div className="flex flex-col w-full justify-center align-center rounded-md border-primary border h-20">
-      <Image src={image} alt={title} height="20rem" width="20rem" />
-      <p className="text-center text-secondary text-sm">{title}</p>
+    <div className="flex flex-row justify-start items-center text-center text-primary text-sm font-normal">
+      {icon}
+      <div className="flex flex-col w-full justify-center align-center rounded-md h-20">
+        <p>{title}</p>
+        <p className="text-xs">{subtitle}</p>
+      </div>
     </div>
   );
 }

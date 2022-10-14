@@ -10,6 +10,7 @@ import ActionButton from "../components/Shared/ActionButton";
 import Partners from "../components/Body/Partners";
 import LiveCourses from "../components/Body/LiveCourses";
 import VideoCourses from "../components/Body/VideoCourses";
+import WhyChose from "../components/Body/WhyChose";
 
 export default function Home() {
   return (
@@ -31,6 +32,7 @@ export default function Home() {
 
       <div>
         <LandingScreen />
+        <WhyChose />
         <Partners />
         <LiveCourses />
         <VideoCourses />
