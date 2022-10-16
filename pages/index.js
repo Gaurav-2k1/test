@@ -11,6 +11,8 @@ import Partners from "../components/Body/Partners";
 import LiveCourses from "../components/Body/LiveCourses";
 import VideoCourses from "../components/Body/VideoCourses";
 import WhyChose from "../components/Body/WhyChose";
+import BecomeInstructor from "../components/Body/BecomeInstructor";
+import InstructorForm from "../components/Body/InstructorForm";
 
 export default function Home() {
   return (
@@ -36,6 +38,8 @@ export default function Home() {
         <Partners />
         <LiveCourses />
         <VideoCourses />
+        <BecomeInstructor />
+        <InstructorForm />
       </div>
       <footer>
         <Footer />
