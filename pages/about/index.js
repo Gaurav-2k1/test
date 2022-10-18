@@ -48,7 +48,6 @@ export default function About() {
               provide the best of the deals and courses on the virtual platform
               with all updated knowledge and applications at use.
             </p>
-            <whatweOffer />
           </div>
         </div>
         <div className="flex flex-col justify-evenly m-auto lg:grid lg:grid-cols-2 lg:gap-4 p-4">
@@ -68,7 +67,6 @@ export default function About() {
             <a href="https://www.linkedin.com/in/anchit-agarwal-18576b11a">
               <LinkedIn fontSize="large" />
             </a>
-            <whatweOffer />
           </div>
         </div>
       </div>

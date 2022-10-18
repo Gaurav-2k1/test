@@ -43,9 +43,9 @@ export default function CourseComponent({
               />
             </div>
           ) : (
-            <div className="flex flex-row w-12">
-              <p className="text-lg">{discountedPrice}</p>
-              <p className="text-sm">{price}</p>
+            <div className="flex flex-row w-12 items-center">
+              <p className="text-lg pr-1">₹{discountedPrice}</p>
+              <p className="text-sm line-through">₹{price}</p>
             </div>
           )}
           <div className="flex flex-row w-20 items-center mt-2">

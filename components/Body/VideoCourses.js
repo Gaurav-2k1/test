@@ -1,4 +1,5 @@
 import React from "react";
+import { videoCoursesList } from "../../config/config";
 import CourseComponent from "../Shared/CourseComponent";
 import NewSection from "../Shared/NewSection";
 
@@ -15,30 +16,18 @@ export default function VideoCourses() {
       />
 
       <div className="flex flex-row overflow-x-auto whitespace-nowrap mt-5">
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          isSale
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          isSale
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          isSale
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
+        {videoCoursesList.map((course, index) => (
+          <CourseComponent
+            key={course.id}
+            id={course.id}
+            name={course.name}
+            img={course.image}
+            isSale={course.isSale}
+            price={course.price}
+            discountedPrice={course.discountedPrice}
+            rating={{ stars: course.stars, reviews: course.reviews }}
+          />
+        ))}
       </div>
     </div>
   );

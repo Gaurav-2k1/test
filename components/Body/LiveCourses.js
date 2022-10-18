@@ -1,6 +1,7 @@
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { liveCoursesList } from "../../config/config";
 import CourseComponent from "../Shared/CourseComponent";
 import NewSection from "../Shared/NewSection";
 
@@ -17,27 +18,20 @@ export default function LiveCourses() {
       />
 
       <div className="flex flex-row overflow-x-auto whitespace-nowrap mt-5">
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
-        <CourseComponent
-          name="Data Analysis Training"
-          img="/images/temp/course.png"
-          duration="20"
-          classType="1-1 Live Interactive Classes"
-          rating={{ stars: 4, reviews: 132 }}
-        />
+        {liveCoursesList.map((course, index) => (
+          <CourseComponent
+            key={course.id}
+            id={course.id}
+            name={course.name}
+            img={course.image}
+            isSale={course.isSale}
+            duration={course.duration}
+            classType={course.classType}
+            price={course.price}
+            discountedPrice={course.discountedPrice}
+            rating={{ stars: course.stars, reviews: course.reviews }}
+          />
+        ))}
       </div>
     </div>
   );
