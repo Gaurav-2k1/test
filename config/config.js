@@ -140,6 +140,34 @@ export const liveCoursesList = [
     classType: "1-1 Live Interactive Classes",
     stars: 4,
     reviews: 132,
+    overview:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
+    skillsCovered: [
+      "Python Programming",
+      "Data Visualisation",
+      "Data Analysis",
+      "Machine Learning",
+      "Data Science Methodology",
+    ],
+    reviews: [
+      {
+        id: 1,
+        name: "Aadhar",
+        designation: "Software Engineer",
+        rating: 3,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+      {
+        id: 2,
+        name: "Aadhar",
+        designation: "Senior Software Engineer",
+        rating: 4,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+    ],
+    certificateImg: "/images/temp/course.png",
   },
   {
     id: 2,
@@ -152,6 +180,34 @@ export const liveCoursesList = [
     classType: "1-1 Live Interactive Classes",
     stars: 3,
     reviews: 120,
+    overview:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
+    skillsCovered: [
+      "Python Programming",
+      "Data Visualisation",
+      "Data Analysis",
+      "Machine Learning",
+      "Data Science Methodology",
+    ],
+    reviews: [
+      {
+        id: 1,
+        name: "Aadhar",
+        designation: "Software Engineer",
+        rating: 3,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+      {
+        id: 2,
+        name: "Aadhar",
+        designation: "Senior Software Engineer",
+        rating: 4,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+    ],
+    certificateImg: "/images/temp/course.png",
   },
   {
     id: 4,
@@ -164,6 +220,34 @@ export const liveCoursesList = [
     classType: "1-1 Live Interactive Classes",
     stars: 5,
     reviews: 190,
+    overview:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
+    skillsCovered: [
+      "Python Programming",
+      "Data Visualisation",
+      "Data Analysis",
+      "Machine Learning",
+      "Data Science Methodology",
+    ],
+    reviews: [
+      {
+        id: 1,
+        name: "Aadhar",
+        designation: "Software Engineer",
+        rating: 3,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+      {
+        id: 2,
+        name: "Aadhar",
+        designation: "Senior Software Engineer",
+        rating: 4,
+        review:
+          "Sub-content: It helps in creating drafts of the content on the pages of the website. It originates from the Latin text but is seen as gibberish. One or two liner title: It helps the designer plan where the content will sit.",
+      },
+    ],
+    certificateImg: "/images/temp/course.png",
   },
 ];
 

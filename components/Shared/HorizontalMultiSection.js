@@ -1,28 +1,71 @@
+import CheckIcon from "@mui/icons-material/Check";
 import { Divider } from "@mui/material";
+import { Button } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 import {
   ScrollingProvider,
   useScrollSection,
   Section,
 } from "react-scroll-section";
-export default function HorizontalMultiSection({ className }) {
+
+import ReviewCard from "./ReviewCard";
+export default function HorizontalMultiSection({
+  className,
+  overview,
+  skillsCovered,
+  reviews,
+  certificate,
+}) {
   return (
-    <div className={className}>
+    <div>
       <ScrollingProvider offset={-120}>
         <StaticMenu />
 
-        <div className="p-5">
-          <Section id="overview">
-            <div className="h-[30vh]">overview</div>
+        <div>
+          <Section id="overview" className="p-5">
+            <div>{overview}</div>
           </Section>
-          <Section id="syllabus">
-            <div className="h-[30vh]">syllabus</div>
+
+          <Section id="syllabus" className="p-5">
+            <div className="border p-3 my-4">
+              <p className="text-primary font-semibold">SKILLS COVERED</p>
+              {skillsCovered.map((skill) => (
+                <div className="flex flex-row pt-2">
+                  <CheckIcon color="primary" />
+                  <p className="pl-2">{skill}</p>
+                </div>
+              ))}
+            </div>
+            <Button className="bg-primary z-10 mb-5" fullWidth>
+              Download Syllabus
+            </Button>
           </Section>
+
           <Section id="reviews">
-            <div className="h-[30vh]">reviews</div>
+            <div className="flex flex-row overflow-x-auto text-white">
+              <div className="flex flex-row">
+                {reviews.map((review) => (
+                  <ReviewCard
+                    id={review.id}
+                    name={review.name}
+                    designation={review.designation}
+                    stars={review.rating}
+                    review={review.review}
+                  />
+                ))}
+              </div>
+            </div>
           </Section>
+
           <Section id="certification">
-            <div className="h-[30vh]">certificate</div>
+            <div className="h-[40vh] bg-secondary text-primary py-4 px-3">
+              <p className="text-lg font-bold">Certificate</p>
+              <Divider className="h-1 bg-primary w-16" />
+              <div className="w-full h-[30vh] relative mt-4">
+                <Image src={certificate} alt="Certificate" layout="fill" />
+              </div>
+            </div>
           </Section>
         </div>
       </ScrollingProvider>
@@ -44,7 +87,7 @@ const StaticMenu = () => {
   const reviews = useScrollSection("reviews");
   const certification = useScrollSection("certification");
   return (
-    <div className="flex flex-row justify-between bg-secondary text-white p-3 sticky top-16">
+    <div className="flex flex-row justify-between bg-secondary text-white p-3 sticky top-16 z-20">
       <MenuItem
         onClick={overview.onClick}
         selected={overview.selected}
