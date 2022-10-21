@@ -24,6 +24,7 @@ specifiers:
   react-query: ^3.34.19
   react-redux: ^7.2.8
   react-responsive-carousel: ^3.2.23
+  react-scroll-section: ^3.2.5
   sass: ^1.50.0
   tailwindcss: ^3.0.23
 
@@ -46,6 +47,7 @@ dependencies:
   react-query: 3.34.19_sfoxds7t5ydpegc3knd667wn6m
   react-redux: 7.2.8_sfoxds7t5ydpegc3knd667wn6m
   react-responsive-carousel: 3.2.23
+  react-scroll-section: 3.2.5_sfoxds7t5ydpegc3knd667wn6m
   sass: 1.50.0
 
 devDependencies:
@@ -3555,6 +3557,17 @@ packages:
       react-easy-swipe: 0.0.21
     dev: false
 
+  /react-scroll-section/3.2.5_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-zirZM01Z2fA9HezCMQlGDi+S4OkJZZb0S997lHOzYKSyHefB5rGUXKi2DR/njXpiKTWMCA4qqmp7mkTxqGhxIA==}
+    peerDependencies:
+      react: 16.8.0 || 17.x
+      react-dom: 16.8.0 || 17.x
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2_react@17.0.2
+      smoothscroll-polyfill: 0.4.4
+    dev: false
+
   /react-transition-group/4.4.2_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-/RNYfRAMlZwDSr6z4zNKV6xu53/e2BuaBbGhbyYIXTrmgu/bGHzmqOs7mJSJBHy9Ud+ApHx3QjrkKSp1pxvlFg==}
     peerDependencies:
@@ -3821,6 +3834,10 @@ packages:
   /smart-buffer/4.2.0:
     resolution: {integrity: sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg==}
     engines: {node: '>= 6.0.0', npm: '>= 3.0.0'}
+
+  /smoothscroll-polyfill/0.4.4:
+    resolution: {integrity: sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==}
+    dev: false
 
   /socks-proxy-agent/6.2.1:
     resolution: {integrity: sha512-a6KW9G+6B3nWZ1yB8G7pJwL3ggLy1uTzKAgCb7ttblwqdz9fMGJUuTy3uFzEP48FAs9FLILlmzDlE2JJhVQaXQ==}
