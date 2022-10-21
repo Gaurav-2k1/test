@@ -21,14 +21,12 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
-      <body>
-        {children}
-        <ActionButton />
-      </body>
+      <body>{children}</body>
 
       <footer>
         <Footer />
       </footer>
+      <ActionButton />
     </div>
   );
 }
