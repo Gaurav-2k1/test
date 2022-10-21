@@ -30,6 +30,7 @@ export default function LiveCourses() {
             price={course.price}
             discountedPrice={course.discountedPrice}
             rating={{ stars: course.stars, reviews: course.reviews }}
+            isLiveCourse={true}
           />
         ))}
       </div>

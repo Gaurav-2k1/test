@@ -6,7 +6,9 @@ import StarOutlinedIcon from "@mui/icons-material/StarOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import RecordVoiceOverOutlinedIcon from "@mui/icons-material/RecordVoiceOverOutlined";
+import { useRouter } from "next/router";
 export default function CourseComponent({
+  id,
   name,
   img,
   duration,
@@ -16,9 +18,19 @@ export default function CourseComponent({
   rating,
   isSale,
   averageSalary,
+  isLiveCourse,
 }) {
+  const router = useRouter();
+  const handlePageRoute = () => {
+    isLiveCourse
+      ? router.push(`/live-courses/${id}`)
+      : router.push(`/video-courses/${id}`);
+  };
   return (
-    <div className="w-[70vw] h-[38vh] bg-white pb-5 mb-5 mx-3 relative">
+    <div
+      className="w-[70vw] h-[38vh] bg-white pb-5 mb-5 mx-3 relative"
+      onClick={handlePageRoute}
+    >
       <div
         style={{ backgroundImage: `url(${img})` }}
         className="h-full w-[70vw] rounded-md"

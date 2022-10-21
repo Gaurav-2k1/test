@@ -14,18 +14,6 @@ import BreadCrumbComponent from "../../components/Shared/BreadCrumbComponent";
 export default function ContactUs() {
   return (
     <div>
-      <Head>
-        <title>Contact Us- Infodal</title>
-        <meta
-          name="description"
-          content="Infodal Learning- India's No.1 IT Learning Platform"
-        />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
-      <header>
-        <Header />
-      </header>
       <BreadCrumbComponent>Contact Us</BreadCrumbComponent>
       <div className="h-40 lg:h-[40vh] w-3/4 m-auto flex flex-row justify-between items-center text-purple-900">
         <LocationOn className="h-[10vw] w-[10vw]" color="inherit" />
@@ -84,9 +72,6 @@ export default function ContactUs() {
           </CardContent>
         </Card>
       </BreadCrumbComponent>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

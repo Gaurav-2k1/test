@@ -15,18 +15,6 @@ export default function Courses() {
 
   return (
     <div>
-      <Head>
-        <title>All Courses</title>
-        <meta
-          name="description"
-          content="Infodal Learning- India's No.1 IT Learning Platform"
-        />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
-      <header>
-        <Header />
-      </header>
       <BreadCrumbComponent>Courses</BreadCrumbComponent>
       <div className="lg:px-12 px-8">
         <div className="w-full h-40 lg:h-auto py-8 flex lg:flex-row flex-col justify-evenly">
@@ -45,9 +33,6 @@ export default function Courses() {
             ))}
         </div>
       </div>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

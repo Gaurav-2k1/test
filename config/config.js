@@ -133,6 +133,8 @@ export const liveCoursesList = [
     id: 1,
     name: "Data Analysis Training",
     image: "/images/temp/course.png",
+    description:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     isSale: true,
     duration: "20",
     classType: "1-1 Live Interactive Classes",
@@ -142,6 +144,8 @@ export const liveCoursesList = [
   {
     id: 2,
     name: "Data Analysis Training",
+    description:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     image: "/images/temp/course.png",
     isSale: true,
     duration: "20",
@@ -152,6 +156,8 @@ export const liveCoursesList = [
   {
     id: 4,
     name: "Data Analysis Training",
+    description:
+      "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     image: "/images/temp/course.png",
     isSale: false,
     duration: "40",

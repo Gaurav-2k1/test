@@ -29,18 +29,6 @@ export default function CourseDetail() {
 
   return (
     <div>
-      <Head>
-        <title>Course Detail</title>
-        <meta
-          name="description"
-          content="Infodal Learning- India's No.1 IT Learning Platform"
-        />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
-      <header>
-        <Header />
-      </header>
       <BreadCrumbComponent>Course/{courseDetail.name}</BreadCrumbComponent>
       <div className="p-4 lg:p-10">
         <div className="relative w-full lg:w-[60vw] h-max m-auto">
@@ -83,9 +71,6 @@ export default function CourseDetail() {
           </div>
         </div>
       </div>
-      <footer>
-        <Footer />
-      </footer>
     </div>
   );
 }

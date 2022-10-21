@@ -17,34 +17,13 @@ import InstructorForm from "../components/Body/InstructorForm";
 export default function Home() {
   return (
     <div>
-      <Head>
-        <title>Infodal</title>
-        <meta
-          name="description"
-          content="Infodal Learning- India's No.1 IT Learning Platform"
-        />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-        />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
-      <Header />
-
-      <div>
-        <LandingScreen />
-        <WhyChose />
-        <Partners />
-        <LiveCourses />
-        <VideoCourses />
-        <BecomeInstructor />
-        <InstructorForm />
-      </div>
-      <footer>
-        <Footer />
-      </footer>
-      <ActionButton />
+      <LandingScreen />
+      <WhyChose />
+      <Partners />
+      <LiveCourses />
+      <VideoCourses />
+      <BecomeInstructor />
+      <InstructorForm />
     </div>
   );
 }
