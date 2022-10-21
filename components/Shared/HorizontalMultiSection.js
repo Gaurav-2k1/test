@@ -30,8 +30,8 @@ export default function HorizontalMultiSection({
           <Section id="syllabus" className="p-5">
             <div className="border p-3 my-4">
               <p className="text-primary font-semibold">SKILLS COVERED</p>
-              {skillsCovered.map((skill) => (
-                <div className="flex flex-row pt-2">
+              {skillsCovered.map((skill, index) => (
+                <div className="flex flex-row pt-2" key={index}>
                   <CheckIcon color="primary" />
                   <p className="pl-2">{skill}</p>
                 </div>
