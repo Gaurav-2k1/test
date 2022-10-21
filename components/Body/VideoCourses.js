@@ -25,7 +25,7 @@ export default function VideoCourses() {
             isSale={course.isSale}
             price={course.price}
             discountedPrice={course.discountedPrice}
-            rating={{ stars: course.stars, reviews: course.reviews }}
+            rating={{ stars: course.stars, reviews: course.reviewNos }}
             isLiveCourse={false}
           />
         ))}

@@ -133,13 +133,15 @@ export const liveCoursesList = [
     id: 1,
     name: "Data Analysis Training",
     image: "/images/temp/course.png",
+    price: 30000,
+    discountedPrice: 3000,
     description:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     isSale: true,
     duration: "20",
     classType: "1-1 Live Interactive Classes",
     stars: 4,
-    reviews: 132,
+    reviewNos: 132,
     overview:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     skillsCovered: [
@@ -172,6 +174,8 @@ export const liveCoursesList = [
   {
     id: 2,
     name: "Data Analysis Training",
+    price: 30000,
+    discountedPrice: 3000,
     description:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     image: "/images/temp/course.png",
@@ -179,7 +183,7 @@ export const liveCoursesList = [
     duration: "20",
     classType: "1-1 Live Interactive Classes",
     stars: 3,
-    reviews: 120,
+    reviewNos: 120,
     overview:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     skillsCovered: [
@@ -212,6 +216,8 @@ export const liveCoursesList = [
   {
     id: 4,
     name: "Data Analysis Training",
+    price: 30000,
+    discountedPrice: 3000,
     description:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     image: "/images/temp/course.png",
@@ -219,7 +225,7 @@ export const liveCoursesList = [
     duration: "40",
     classType: "1-1 Live Interactive Classes",
     stars: 5,
-    reviews: 190,
+    reviewNos: 190,
     overview:
       "Full-stack web developers are experts who are familiar with both client-side and server-side programming. They perform the roles of front-end and back-end developers. Full-stack development is in huge demand. Companies need full stack developers because of quite a few reasons. Full-stack developers can work with many technologies; they can handle more aspects of a project than an average programmer. They cut costs for companies because they can do the work of many specialists alone. A full-stack developer is familiar with many stacks, including the MEAN stack and the LAMP stack.",
     skillsCovered: [
@@ -260,7 +266,7 @@ export const videoCoursesList = [
     duration: "20",
     classType: "1-1 Live Interactive Classes",
     stars: 4,
-    reviews: 132,
+    reviewNos: 132,
     price: 30000,
     discountedPrice: 3000,
   },
@@ -272,7 +278,7 @@ export const videoCoursesList = [
     duration: "20",
     classType: "1-1 Live Interactive Classes",
     stars: 3,
-    reviews: 120,
+    reviewNos: 120,
     price: 30000,
     discountedPrice: 3000,
   },
@@ -284,7 +290,7 @@ export const videoCoursesList = [
     duration: "40",
     classType: "1-1 Live Interactive Classes",
     stars: 5,
-    reviews: 190,
+    reviewNos: 190,
     price: 30000,
     discountedPrice: 3000,
   },

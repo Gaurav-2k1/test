@@ -29,7 +29,7 @@ export default function LiveCourses() {
             classType={course.classType}
             price={course.price}
             discountedPrice={course.discountedPrice}
-            rating={{ stars: course.stars, reviews: course.reviews }}
+            rating={{ stars: course.stars, reviews: course.reviewNos }}
             isLiveCourse={true}
           />
         ))}
