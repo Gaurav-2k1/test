@@ -6,6 +6,7 @@ import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
 import { liveCoursesList } from "../../config/config";
+import HorizontalMultiSection from "../../components/Shared/HorizontalMultiSection";
 
 export default function LiveCourse() {
   const router = useRouter();
@@ -45,6 +46,7 @@ export default function LiveCourse() {
           {courseDetail.description}
         </ShowMore>
       </div>
+      <HorizontalMultiSection />
     </div>
   ) : (
     <div></div>
