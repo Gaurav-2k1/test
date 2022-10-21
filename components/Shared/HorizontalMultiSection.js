@@ -8,7 +8,7 @@ import {
 export default function HorizontalMultiSection({ className }) {
   return (
     <div className={className}>
-      <ScrollingProvider>
+      <ScrollingProvider offset={-120}>
         <StaticMenu />
 
         <div className="p-5">
@@ -30,13 +30,13 @@ export default function HorizontalMultiSection({ className }) {
   );
 }
 
-export function MenuItem({ name, onClick, selected }) {
+const MenuItem = ({ name, onClick, selected }) => {
   return (
     <div onClick={onClick} selected={selected}>
       <p className={`${selected && "text-primary underline"}`}>{name}</p>
     </div>
   );
-}
+};
 
 const StaticMenu = () => {
   const overview = useScrollSection("overview");
