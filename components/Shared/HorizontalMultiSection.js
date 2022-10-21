@@ -47,7 +47,7 @@ export default function HorizontalMultiSection({
               <div className="flex flex-row">
                 {reviews.map((review) => (
                   <ReviewCard
-                    id={review.id}
+                    key={review.id}
                     name={review.name}
                     designation={review.designation}
                     stars={review.rating}
