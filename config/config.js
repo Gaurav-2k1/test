@@ -88,13 +88,9 @@ export const menuList = [
     image: Blog,
   },
   {
-    name: "About Us",
+    name: "About Us/Contact Us",
     image: About,
     link: "/about",
-  },
-  {
-    name: "Contact Us",
-    image: Contact,
   },
 ];
 

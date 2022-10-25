@@ -1,24 +1,9 @@
-import Head from "next/head";
 import React from "react";
-import Header from "../components/Header/Header";
 import classes from "../styles/pages/refunds.module.scss";
 
 export default function RefundAndCancellation() {
   return (
     <div>
-      <Head>
-        <title>Infodal</title>
-        <meta
-          name="description"
-          content="Infodal Learning- India's No.1 IT Learning Platform"
-        />
-        <link rel="icon" href="/logo.png" />
-      </Head>
-
-      <header>
-        <Header />
-      </header>
-
       <div className="p-4 lg:px-40">
         <h1 className="text-2xl font-semibold">
           Refund and Cancellation Policy
@@ -26,7 +11,7 @@ export default function RefundAndCancellation() {
         <h2 className={classes.subheading}>Overview</h2>
         <p className={classes.paragraph}>
           {
-            'This website is operated by Infodal Trainings Pvt Ltd. Throughout the site, the terms "we", "us" and "our" refer to Infodal Trainings Pvt Ltd. Infodal Trainings Pvt Ltd offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here'
+            'This website is operated by Infodal1 Trainings Pvt Ltd. Throughout the site, the terms "we", "us" and "our" refer to Infodal Trainings Pvt Ltd. Infodal Trainings Pvt Ltd offers this website, including all information, tools and services available from this site to you, the user, conditioned upon your acceptance of all terms, conditions, policies and notices stated here'
           }
         </p>
         <h2 className="text-black text-2xl mt-5 font-semibold">

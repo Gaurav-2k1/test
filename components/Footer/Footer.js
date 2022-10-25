@@ -6,6 +6,7 @@ import YouTubeIcon from "@mui/icons-material/YouTube";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import { Divider } from "@mui/material";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -35,11 +36,14 @@ export default function Footer() {
       <div className="text-left text-white w-[90vw]">
         <p className="text-lg font-semibold">Company</p>
         <div className="flex flex-col justify-between mt-3">
-          <p>About Us</p>
-          <p>Contact Us</p>
-          <p>Blog</p>
-          <p>Refund and Cancellation</p>
-          <p>Become an Instructor</p>
+          <Link href="/about" passHref>
+            About Us
+          </Link>
+          <Link href="/blog">Blog</Link>
+          <Link href="/refund-and-cancellation">Refund and Cancellation</Link>
+          <Link href="request-a-course" passHref>
+            Request a Course
+          </Link>
         </div>
       </div>
       <Divider
