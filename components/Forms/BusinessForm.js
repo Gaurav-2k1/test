@@ -1,28 +1,22 @@
-import { Button, TextField } from "@mui/material";
+import { Button } from "@mui/material";
+import { TextField } from "@mui/material";
 import React from "react";
 
-export default function InstructorForm() {
-  const styles = (theme) => ({
-    field: {
-      margin: "10px 0",
-    },
-    countryList: {
-      ...theme.typography.body1,
-    },
-  });
+export default function BusinessForm() {
   return (
     <div className="py-5 px-6">
-      <form className="bg-gray-200 rounded w-full text-center p-3 flex flex-col justify-between h-[40vh]">
-        <p className="text-primary">BECOME AN INSTRUCTOR</p>
+      <form className="bg-gray-200 rounded w-full text-center p-3 flex flex-col justify-between gap-5">
+        <p className="text-primary">GET IN TOUCH</p>
         <TextField label="Name" fullWidth variant="filled" required />
         <TextField label="Email" fullWidth variant="filled" required />
         <TextField label="Phone Number" fullWidth variant="filled" required />
         <TextField
-          label="Specialization"
+          multiline
+          minRows={5}
           fullWidth
           variant="filled"
           required
-          className="mb-3"
+          label="Requirements"
         />
         <Button className="bg-primary">Submit</Button>
       </form>

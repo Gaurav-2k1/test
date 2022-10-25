@@ -9,12 +9,21 @@ import { IconButton } from "@mui/material";
 import { menuList, topMenuList } from "../../config/config";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
+import { useRouter } from "next/router";
 export default function MenuBar() {
   const isMenuOpen = useSelector(getMenuToggle);
   const dispatch = useDispatch();
   const toggleDrawer = (bool) => {
     dispatch(setMenuToggle(bool));
   };
+
+  const router = useRouter();
+
+  const routeToPage = (path) => {
+    router.push(path);
+    toggleDrawer(false);
+  };
+
   return (
     <SwipeableDrawer
       open={isMenuOpen}
@@ -36,7 +45,11 @@ export default function MenuBar() {
 
         <div className="flex flex-col justify-evenly h-[70vh] p-4">
           {topMenuList.map((item, index) => (
-            <div key={index} className="w-[60vw] flex flex-row">
+            <div
+              key={index}
+              className="w-[60vw] flex flex-row"
+              onClick={() => routeToPage(item.link)}
+            >
               <div className="w-5 h-5 mr-2">
                 <Image src={item.image} alt={item.name} />
               </div>
@@ -45,7 +58,11 @@ export default function MenuBar() {
           ))}
           <Divider className="bg-slate" />
           {menuList.map((item, index) => (
-            <div key={index} className="w-[60vw] flex flex-row">
+            <div
+              key={index}
+              className="w-[60vw] flex flex-row"
+              onClick={() => routeToPage(item.link)}
+            >
               <div className="w-5 h-5 mr-2">
                 <Image src={item.image} alt={item.name} />
               </div>

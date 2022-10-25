@@ -43,10 +43,12 @@ export const topMenuList = [
   {
     name: "Live 1:1 Interactive Courses",
     image: Live,
+    link: "/live-courses",
   },
   {
     name: "Video Courses",
     image: Video,
+    link: "/video-courses",
   },
 ];
 
@@ -54,26 +56,32 @@ export const menuList = [
   {
     name: "All Categories",
     image: AllCat,
+    link: "/video-courses",
   },
   {
     name: "Free Courses",
     image: FreeCourse,
+    link: "/video-courses",
   },
   {
-    name: "Promotional video",
+    name: "Request a Server",
     image: PromoVideo,
+    link: "/request-a-server",
   },
   {
     name: "Career Path",
     image: CareerPath,
+    link: "/video-courses",
   },
   {
-    name: "More",
+    name: "Request a Course",
     image: More,
+    link: "/request-a-course",
   },
   {
     name: "Become an Instructor",
     image: Instructor,
+    link: "/become-an-instructor",
   },
   {
     name: "Blog",

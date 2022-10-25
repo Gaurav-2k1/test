@@ -7,6 +7,7 @@ import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
 import { liveCoursesList } from "../../config/config";
 import HorizontalMultiSection from "../../components/Shared/HorizontalMultiSection";
+import HeadImage from "../../components/Shared/HeadImage";
 
 export default function LiveCourse() {
   const router = useRouter();
@@ -21,9 +22,11 @@ export default function LiveCourse() {
 
   return courseDetail ? (
     <div>
-      <div className="w-full h-[30vh] relative">
-        <Image src={courseDetail.image} alt={courseDetail.name} layout="fill" />
-      </div>
+      <HeadImage
+        src={courseDetail.image}
+        alt={courseDetail.name}
+        className=""
+      />
       <div className="p-5">
         <div className="flex flex-col h-[14vh] justify-between mb-2">
           <p className="text-secondary text-lg font-semibold">

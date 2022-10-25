@@ -10,6 +10,7 @@ import { theme } from "../../utils/theme";
 import { useDispatch, useSelector } from "react-redux";
 import { getMenuToggle, setMenuToggle } from "../../store/modalSlice";
 import MenuBar from "./MenuBar";
+import Link from "next/link";
 
 export default function Header() {
   const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
@@ -30,12 +31,14 @@ export default function Header() {
           />
           <MenuBar />
         </div>
-        <div className="w-20 h-fit">
-          <Image src={Logo} alt="Infodal Logo" />
-        </div>
-        <div className="w-20 flex flex-row justify-around">
+        <Link href="/" passHref>
+          <div className="w-20 h-fit">
+            <Image src={Logo} alt="Infodal Logo" />
+          </div>
+        </Link>
+        <div className="w-20 flex flex-row justify-end">
           <SearchOutlinedIcon />
-          <ShoppingCartOutlinedIcon />
+          {/* <ShoppingCartOutlinedIcon /> */}
         </div>
       </div>
     </div>
