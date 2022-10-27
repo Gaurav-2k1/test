@@ -1,8 +1,10 @@
+import { Button } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { liveCoursesList } from "../../config/config";
-import CourseComponent from "../Shared/CourseComponent";
+import LiveCourseComponent from "../Shared/LiveCourseComponent";
 import NewSection from "../Shared/NewSection";
 
 export default function LiveCourses() {
@@ -18,8 +20,8 @@ export default function LiveCourses() {
       />
 
       <div className="flex flex-row overflow-x-auto whitespace-nowrap mt-5">
-        {liveCoursesList.map((course, index) => (
-          <CourseComponent
+        {liveCoursesList.slice(0, 5).map((course, index) => (
+          <LiveCourseComponent
             key={course.id}
             id={course.id}
             name={course.name}
@@ -30,9 +32,14 @@ export default function LiveCourses() {
             price={course.price}
             discountedPrice={course.discountedPrice}
             rating={{ stars: course.stars, reviews: course.reviewNos }}
-            isLiveCourse={true}
+            width="70vw"
           />
         ))}
+      </div>
+      <div className="w-full flex flex-row justify-center mb-5">
+        <Link href="/live-courses" passHref>
+          <Button className="bg-primary">Explore All Live Courses</Button>
+        </Link>
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import InstructorForm from "../../components/Forms/InstructorForm";
 export default function BecomeAnInstructor() {
   return (
     <>
-      <BecomeInstructor></BecomeInstructor>
+      <BecomeInstructor />
       <InstructorForm />
     </>
   );

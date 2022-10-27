@@ -1,7 +1,9 @@
 import React from "react";
 import { videoCoursesList } from "../../config/config";
-import CourseComponent from "../Shared/CourseComponent";
+import VideoCourseComponent from "../Shared/VideoCourseComponent";
 import NewSection from "../Shared/NewSection";
+import Link from "next/link";
+import { Button } from "@mui/material";
 
 export default function VideoCourses() {
   return (
@@ -16,8 +18,8 @@ export default function VideoCourses() {
       />
 
       <div className="flex flex-row overflow-x-auto whitespace-nowrap mt-5">
-        {videoCoursesList.map((course, index) => (
-          <CourseComponent
+        {videoCoursesList.slice(0, 5).map((course, index) => (
+          <VideoCourseComponent
             key={course.id}
             id={course.id}
             name={course.name}
@@ -26,9 +28,14 @@ export default function VideoCourses() {
             price={course.price}
             discountedPrice={course.discountedPrice}
             rating={{ stars: course.stars, reviews: course.reviewNos }}
-            isLiveCourse={false}
+            width="70vw"
           />
         ))}
+      </div>
+      <div className="w-full flex flex-row justify-center mb-5">
+        <Link href="/video-courses" passHref>
+          <Button className="bg-primary">Explore All Video Courses</Button>
+        </Link>
       </div>
     </div>
   );

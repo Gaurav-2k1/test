@@ -1,9 +1,9 @@
 import React from "react";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
-import LiveCourseComponent from "../../components/Shared/LiveCourseComponent";
-import { liveCoursesList } from "../../config/config";
+import VideoCourseComponent from "../../components/Shared/LiveCourseComponent";
+import { videoCoursesList } from "../../config/config";
 
-export default function LiveCourses() {
+export default function VideoCourses() {
   return (
     <div>
       <HeadImageWithText
@@ -11,12 +11,12 @@ export default function LiveCourses() {
         className="mb-10"
       >
         <div className="text-white text-xl p-5 font-semibold">
-          Explore Live Courses
+          Explore Video Courses
         </div>
       </HeadImageWithText>
       <div className="flex flex-col gap-5 items-center mb-10">
-        {liveCoursesList.map((course, index) => (
-          <LiveCourseComponent
+        {videoCoursesList.map((course, index) => (
+          <VideoCourseComponent
             key={course.id}
             id={course.id}
             name={course.name}
