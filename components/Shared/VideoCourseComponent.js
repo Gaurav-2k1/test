@@ -26,7 +26,7 @@ export default function VideoCourseComponent({
   };
   return (
     <div
-      className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 relative`}
+      className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative`}
       onClick={handlePageRoute}
     >
       <div
