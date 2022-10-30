@@ -11,7 +11,6 @@ import {
 
 import ReviewCard from "./ReviewCard";
 export default function HorizontalMultiSection({
-  className,
   overview,
   skillsCovered,
   reviews,
@@ -30,10 +29,10 @@ export default function HorizontalMultiSection({
           <Section id="syllabus" className="p-5">
             <div className="border p-3 my-4">
               <p className="text-primary font-semibold">SKILLS COVERED</p>
-              {skillsCovered.map((skill, index) => (
+              {skillsCovered.data.map((skill, index) => (
                 <div className="flex flex-row pt-2" key={index}>
                   <CheckIcon color="primary" />
-                  <p className="pl-2">{skill}</p>
+                  <p className="pl-2">{skill.attributes.name}</p>
                 </div>
               ))}
             </div>
@@ -45,7 +44,7 @@ export default function HorizontalMultiSection({
           <Section id="reviews">
             <div className="flex flex-row overflow-x-auto text-white">
               <div className="flex flex-row">
-                {reviews.map((review) => (
+                {reviews.data.map((review) => (
                   <ReviewCard
                     key={review.id}
                     name={review.name}

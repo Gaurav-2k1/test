@@ -300,3 +300,28 @@ export const videoCoursesList = [
     discountedPrice: 3000,
   },
 ];
+
+export const getCurrencyAmounts = (setCurrency, prices) => {
+  switch (setCurrency) {
+    case "INR":
+      return {
+        discountedPrice: prices.disc_price_inr,
+        price: prices.price_inr,
+      };
+    case "EUR":
+      return {
+        discountedPrice: prices.disc_price_eur,
+        price: prices.price_eur,
+      };
+    case "GBP":
+      return {
+        discountedPrice: prices.disc_price_gbp,
+        price: prices.price_gbp,
+      };
+    case "USD":
+      return {
+        discountedPrice: prices.disc_price_usd,
+        price: prices.price_usd,
+      };
+  }
+};

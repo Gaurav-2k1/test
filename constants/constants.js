@@ -1,1 +1,1 @@
-export const BASE_URL = "https://api.dev.swifcure.com/v1";
+export const BASE_URL = "https://sleepy-plateau-85996.herokuapp.com/api";
