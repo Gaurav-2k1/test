@@ -1,5 +1,6 @@
 import { isNull, isUndefined } from "lodash";
 import React, { useState } from "react";
+import { LoaderIcon } from "react-hot-toast";
 import { useQuery } from "react-query";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
 import LiveCourseComponent from "../../components/Shared/LiveCourseComponent";
@@ -11,15 +12,12 @@ export default function LiveCourses() {
     //   setCourse(data.data);
     // },
   });
-  if (
+  const isLoading =
     isUndefined(courses) ||
     isNull(courses) ||
     courses.isFetching ||
-    courses.isLoading
-  )
-    return <div></div>;
+    courses.isLoading;
 
-  console.log(courses.data.data);
   return (
     <div>
       <HeadImageWithText
@@ -31,24 +29,28 @@ export default function LiveCourses() {
         </div>
       </HeadImageWithText>
       <div className="flex flex-col gap-5 items-center mb-10">
-        {courses.data.data.map((course) => (
-          <LiveCourseComponent
-            key={course.id}
-            id={course.id}
-            name={course.attributes.name}
-            img={course.attributes.courseImage.data.attributes.url}
-            isSale={course.attributes.isSale}
-            duration={course.attributes.duration}
-            classType="Live 1 to 1 Interactive Course"
-            price={course.attributes.price.price_inr}
-            discountedPrice={course.attributes.price.disc_price_inr}
-            rating={{
-              stars: course.attributes.ratings.Stars,
-              reviews: course.attributes.ratings.TotalReviews,
-            }}
-            width="90vw"
-          />
-        ))}
+        {isLoading ? (
+          <LoaderIcon className="w-20 h-20" />
+        ) : (
+          courses.data.data.map((course) => (
+            <LiveCourseComponent
+              key={course.id}
+              id={course.id}
+              name={course.attributes.name}
+              img={course.attributes.courseImage.data.attributes.url}
+              isSale={course.attributes.isSale}
+              duration={course.attributes.duration}
+              classType="Live 1 to 1 Interactive Course"
+              price={course.attributes.price.price_inr}
+              discountedPrice={course.attributes.price.disc_price_inr}
+              rating={{
+                stars: course.attributes.ratings.Stars,
+                reviews: course.attributes.ratings.TotalReviews,
+              }}
+              width="90vw"
+            />
+          ))
+        )}
       </div>
     </div>
   );

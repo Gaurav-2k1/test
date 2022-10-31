@@ -10,6 +10,8 @@ import { fetchLiveCourseDetail } from "../../service/live";
 import { getCurrency } from "../../store/currencySlice";
 import { useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
+import { isNull, isUndefined } from "lodash";
+import { LoaderIcon } from "react-hot-toast";
 
 export default function LiveCourse() {
   const router = useRouter();
@@ -21,11 +23,17 @@ export default function LiveCourse() {
     // },
   });
 
+  const isLoading =
+    isUndefined(courseDetail) ||
+    isNull(courseDetail) ||
+    courseDetail.isFetching ||
+    courseDetail.isLoading;
+
   courseDetail = courseDetail && courseDetail.data;
   const prices =
     courseDetail &&
     getCurrencyAmounts(currency, courseDetail.data.attributes.price);
-  return courseDetail ? (
+  return !isLoading ? (
     <div>
       <HeadImage
         src={courseDetail.data.attributes.courseImage.data.attributes.url}
@@ -69,6 +77,8 @@ export default function LiveCourse() {
       />
     </div>
   ) : (
-    <div></div>
+    <div className="h-[50vh] w-full flex flex-row justify-center items-center">
+      <LoaderIcon className="w-20 h-20" />
+    </div>
   );
 }
