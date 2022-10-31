@@ -151,6 +151,7 @@ const CurrencySelect = ({
   const handleCurrency = (currency) => {
     dispatch(setCurrency(currency));
     dispatch(setCurrencyToggle(false));
+    dispatch(setMenuToggle(false));
   };
   return (
     <div
