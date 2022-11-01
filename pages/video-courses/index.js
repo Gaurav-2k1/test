@@ -26,7 +26,7 @@ export default function VideoCourses() {
         className="mb-10"
       >
         <div className="text-white text-xl p-5 font-semibold">
-          Explore Live Courses
+          Explore Video Courses
         </div>
       </HeadImageWithText>
 
@@ -44,7 +44,7 @@ export default function VideoCourses() {
               }
               isSale={course.attributes.isSale}
               duration={course.attributes.duration}
-              classType="Live 1 to 1 Interactive Course"
+              classType="Recorded Video Course"
               price={course.attributes.price.price_inr}
               discountedPrice={course.attributes.price.disc_price_inr}
               rating={{
