@@ -42,10 +42,12 @@ export default function VideoCourses() {
       <HeadImage
         src={
           isUndefined(
-            course.attributes.courseImage.data.attributes.formats.small
+            courseDetail.data.attributes.courseImage.data.attributes.formats
+              .small
           )
-            ? course.attributes.courseImage.data.attributes.url
-            : course.attributes.courseImage.data.attributes.formats.small.url
+            ? courseDetail.data.attributes.courseImage.data.attributes.url
+            : courseDetail.data.attributes.courseImage.data.attributes.formats
+                .small.url
         }
         alt={courseDetail.data.attributes.name}
         className=""
