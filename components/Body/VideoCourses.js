@@ -1,11 +1,25 @@
 import React from "react";
-import { videoCoursesList } from "../../config/config";
 import VideoCourseComponent from "../Shared/VideoCourseComponent";
 import NewSection from "../Shared/NewSection";
 import Link from "next/link";
 import { Button } from "@mui/material";
+import { useQuery } from "react-query";
+import { LoaderIcon } from "react-hot-toast";
+import { isNull, isUndefined } from "lodash";
+import { fetchVideoCourses } from "../../service/video";
 
 export default function VideoCourses() {
+  const courses = useQuery(["video-courses-top", 1, 5], fetchVideoCourses, {
+    // onSuccess: (data) => {
+    //   setCourse(data.data);
+    // },
+  });
+  const isLoading =
+    isUndefined(courses) ||
+    isNull(courses) ||
+    courses.isFetching ||
+    courses.isLoading;
+
   return (
     <div>
       <NewSection
@@ -19,25 +33,40 @@ export default function VideoCourses() {
 
       <div className="flex flex-row overflow-x-auto text-white mt-5">
         <div className="flex flex-row">
-          {videoCoursesList.slice(0, 5).map((course, index) => (
-            <VideoCourseComponent
-              key={course.id}
-              id={course.id}
-              name={course.name}
-              img={course.image}
-              isSale={course.isSale}
-              price={course.price}
-              discountedPrice={course.discountedPrice}
-              rating={{ stars: course.stars, reviews: course.reviewNos }}
-              width="70vw"
-            />
-          ))}
+          {isLoading ? (
+            <LoaderIcon className="w-20 h-20" />
+          ) : (
+            courses.data.data.map((course) => (
+              <VideoCourseComponent
+                key={course.id}
+                id={course.id}
+                name={course.attributes.name}
+                img={
+                  isUndefined(
+                    course.attributes.courseImage.data.attributes.formats.small
+                  )
+                    ? course.attributes.courseImage.data.attributes.url
+                    : course.attributes.courseImage.data.attributes.formats
+                        .small.url
+                }
+                isSale={course.attributes.isSale}
+                duration={course.attributes.duration}
+                classType="Recorded Video Course"
+                price={course.attributes.price}
+                rating={{
+                  stars: course.attributes.ratings.Stars,
+                  reviews: course.attributes.ratings.TotalReviews,
+                }}
+                width="70vw"
+              />
+            ))
+          )}
         </div>
-        <div className="w-full flex flex-row justify-center mb-5">
-          <Link href="/video-courses" passHref>
-            <Button className="bg-primary">Explore All Video Courses</Button>
-          </Link>
-        </div>
+      </div>
+      <div className="w-full flex flex-row justify-center mb-5">
+        <Link href="/video-courses" passHref>
+          <Button className="bg-primary">Explore All Video Courses</Button>
+        </Link>
       </div>
     </div>
   );

@@ -50,8 +50,7 @@ export default function VideoCourses() {
               isSale={course.attributes.isSale}
               duration={course.attributes.duration}
               classType="Recorded Video Course"
-              price={course.attributes.price.price_inr}
-              discountedPrice={course.attributes.price.disc_price_inr}
+              price={course.attributes.price}
               rating={{
                 stars: course.attributes.ratings.Stars,
                 reviews: course.attributes.ratings.TotalReviews,

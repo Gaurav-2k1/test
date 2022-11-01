@@ -7,7 +7,9 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import RecordVoiceOverOutlinedIcon from "@mui/icons-material/RecordVoiceOverOutlined";
 import { useRouter } from "next/router";
-import { liveCoursesList } from "../../config/config";
+import { getCurrencyAmounts, liveCoursesList } from "../../config/config";
+import { useSelector } from "react-redux";
+import { getCurrency } from "../../store/currencySlice";
 export default function LiveCourseComponent({
   id,
   name,
@@ -15,13 +17,14 @@ export default function LiveCourseComponent({
   duration,
   classType,
   price,
-  discountedPrice,
   rating,
   isSale,
   averageSalary,
   width,
 }) {
   const router = useRouter();
+  const currency = useSelector(getCurrency);
+  const prices = getCurrencyAmounts(currency, price);
   const handlePageRoute = () => {
     router.push(`/live-courses/${id}`);
   };
@@ -59,8 +62,8 @@ export default function LiveCourseComponent({
               text={classType}
             />
             {/* <div className="flex flex-row gap-1 items-center">
-              <p className="text-lg pr-1">₹{discountedPrice}</p>
-              <p className="text-sm line-through">₹{price}</p>
+              <p className="text-lg pr-1">₹{prices.discountedPrice}</p>
+              <p className="text-sm line-through">₹{prices.price}</p>
             </div> */}
           </div>
 
