@@ -17,25 +17,27 @@ export default function VideoCourses() {
           gibberish."
       />
 
-      <div className="flex flex-row overflow-x-auto whitespace-nowrap mt-5">
-        {videoCoursesList.slice(0, 5).map((course, index) => (
-          <VideoCourseComponent
-            key={course.id}
-            id={course.id}
-            name={course.name}
-            img={course.image}
-            isSale={course.isSale}
-            price={course.price}
-            discountedPrice={course.discountedPrice}
-            rating={{ stars: course.stars, reviews: course.reviewNos }}
-            width="70vw"
-          />
-        ))}
-      </div>
-      <div className="w-full flex flex-row justify-center mb-5">
-        <Link href="/video-courses" passHref>
-          <Button className="bg-primary">Explore All Video Courses</Button>
-        </Link>
+      <div className="flex flex-row overflow-x-auto text-white mt-5">
+        <div className="flex flex-row">
+          {videoCoursesList.slice(0, 5).map((course, index) => (
+            <VideoCourseComponent
+              key={course.id}
+              id={course.id}
+              name={course.name}
+              img={course.image}
+              isSale={course.isSale}
+              price={course.price}
+              discountedPrice={course.discountedPrice}
+              rating={{ stars: course.stars, reviews: course.reviewNos }}
+              width="70vw"
+            />
+          ))}
+        </div>
+        <div className="w-full flex flex-row justify-center mb-5">
+          <Link href="/video-courses" passHref>
+            <Button className="bg-primary">Explore All Video Courses</Button>
+          </Link>
+        </div>
       </div>
     </div>
   );

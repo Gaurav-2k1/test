@@ -30,7 +30,16 @@ export default function LiveCourseComponent({
       className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative`}
       onClick={handlePageRoute}
     >
-      <Image src={img} alt={name} layout="fill" objectFit="cover" />
+      <Image
+        src={img}
+        alt={name}
+        layout="responsive"
+        width={width}
+        height="38vh"
+        objectFit="cover"
+        className="rounded"
+      />
+
       {isSale && (
         <div className="absolute top-4 left-0 z-20 w-12">
           <Image src={SaleIcon} alt="Sale"></Image>

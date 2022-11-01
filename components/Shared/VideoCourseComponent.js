@@ -29,9 +29,14 @@ export default function VideoCourseComponent({
       className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative`}
       onClick={handlePageRoute}
     >
-      <div
-        style={{ backgroundImage: `url(${img})` }}
-        className={`h-full w-[${width}] rounded-md`}
+      <Image
+        src={img}
+        alt={name}
+        layout="responsive"
+        width={width}
+        height="38vh"
+        objectFit="cover"
+        className="rounded"
       />
       {isSale && (
         <div className="absolute top-4 left-0 z-20 w-12">
