@@ -38,7 +38,12 @@ export default function LiveCourses() {
               id={course.id}
               name={course.attributes.name}
               img={
-                course.attributes.courseImage.data.attributes.formats.small.url
+                isUndefined(
+                  course.attributes.courseImage.data.attributes.formats.small
+                )
+                  ? course.attributes.courseImage.data.attributes.url
+                  : course.attributes.courseImage.data.attributes.formats.small
+                      .url
               }
               isSale={course.attributes.isSale}
               duration={course.attributes.duration}

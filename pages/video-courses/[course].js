@@ -41,8 +41,11 @@ export default function VideoCourses() {
     <div>
       <HeadImage
         src={
-          courseDetail.data.attributes.courseImage.data.attributes.formats.small
-            .url
+          isUndefined(
+            course.attributes.courseImage.data.attributes.formats.small
+          )
+            ? course.attributes.courseImage.data.attributes.url
+            : course.attributes.courseImage.data.attributes.formats.small.url
         }
         alt={courseDetail.data.attributes.name}
         className=""
