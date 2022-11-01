@@ -41,13 +41,15 @@ export default function HorizontalMultiSection({
                 </div>
               ))}
             </div>
-            <Button
-              className="bg-primary z-10 mb-5"
-              fullWidth
-              onClick={handleDownloadSyllabus}
-            >
-              Download Syllabus
-            </Button>
+            {!(pdfUrl === "") && (
+              <Button
+                className="bg-primary z-10 mb-5"
+                fullWidth
+                onClick={handleDownloadSyllabus}
+              >
+                Download Syllabus
+              </Button>
+            )}
           </Section>
 
           <Section id="reviews">

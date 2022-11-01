@@ -4,7 +4,6 @@ import { LoaderIcon } from "react-hot-toast";
 import { useQuery } from "react-query";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
 import LiveCourseComponent from "../../components/Shared/LiveCourseComponent";
-import { liveCoursesList } from "../../config/config";
 import { fetchLiveCourses } from "../../service/live";
 export default function LiveCourses() {
   const courses = useQuery("live-courses", fetchLiveCourses, {

@@ -6,22 +6,26 @@ import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithou
 import HorizontalMultiSection from "../../components/Shared/HorizontalMultiSection";
 import HeadImage from "../../components/Shared/HeadImage";
 import { useQuery } from "react-query";
-import { fetchLiveCourseDetail } from "../../service/live";
 import { getCurrency } from "../../store/currencySlice";
 import { useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
 import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
+import { fetchVideoCourseDetail } from "../../service/video";
 
 export default function VideoCourses() {
   const router = useRouter();
   const { course } = router.query;
   const currency = useSelector(getCurrency);
-  var courseDetail = useQuery(["live-course", course], fetchLiveCourseDetail, {
-    // onSuccess: (data) => {
-    //   setCourse(data.data);
-    // },
-  });
+  var courseDetail = useQuery(
+    ["video-course", course],
+    fetchVideoCourseDetail,
+    {
+      // onSuccess: (data) => {
+      //   setCourse(data.data);
+      // },
+    }
+  );
 
   const isLoading =
     isUndefined(courseDetail) ||
@@ -67,13 +71,13 @@ export default function VideoCourses() {
           </div>
         </div>
         <ShowMore showMoreText={"READ MORE"} hideText="HIDE">
-          {courseDetail.data.attributes.courseOverview.description}
+          {courseDetail.data.attributes.courseDetail.description}
         </ShowMore>
       </div>
       <HorizontalMultiSection
-        overview={courseDetail.data.attributes.courseOverview.overview}
+        overview={courseDetail.data.attributes.courseDetail.overview}
         skillsCovered={courseDetail.data.attributes.skills}
-        pdfUrl={courseDetail.data.attributes.coursePdf.data.attributes.url}
+        pdfUrl=""
         reviews={courseDetail.data.attributes.reviews}
         certificate={
           courseDetail.data.attributes.certificateImage.data.attributes.url
