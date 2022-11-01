@@ -3,8 +3,8 @@ import React from "react";
 
 export default function HeadImage({ src, alt, className, children }) {
   return (
-    <div className={`w-full h-[30vh] relative ${className}`}>
-      <Image src={src} alt={alt} layout="fill" />
+    <div className={`w-full h-[25vh] relative ${className}`}>
+      <Image src={src} alt={alt} layout="fill" objectFit="cover" />
       <div>{children}</div>
     </div>
   );

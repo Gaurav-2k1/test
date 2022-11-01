@@ -36,7 +36,10 @@ export default function LiveCourse() {
   return !isLoading ? (
     <div>
       <HeadImage
-        src={courseDetail.data.attributes.courseImage.data.attributes.url}
+        src={
+          courseDetail.data.attributes.courseImage.data.attributes.formats.small
+            .url
+        }
         alt={courseDetail.data.attributes.name}
         className=""
       />
@@ -70,6 +73,7 @@ export default function LiveCourse() {
       <HorizontalMultiSection
         overview={courseDetail.data.attributes.courseOverview.overview}
         skillsCovered={courseDetail.data.attributes.skills}
+        pdfUrl={courseDetail.data.attributes.coursePdf.data.attributes.url}
         reviews={courseDetail.data.attributes.reviews}
         certificate={
           courseDetail.data.attributes.certificateImage.data.attributes.url

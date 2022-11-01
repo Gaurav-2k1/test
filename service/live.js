@@ -5,14 +5,13 @@ export const fetchLiveCourses = async () => {
   const query = stringify(
     {
       fields: ["name", "duration"],
-      populate: "*",
+      populate: ["courseImage", "ratings", "reviews", "price"],
     },
     {
       encodeValuesOnly: true, // prettify URL
     }
   );
   const { data } = await axios.get(`/live-courses?${query}`);
-  console.log(data);
   return data;
 };
 

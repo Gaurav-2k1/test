@@ -28,6 +28,7 @@ export default function LiveCourses() {
           Explore Live Courses
         </div>
       </HeadImageWithText>
+
       <div className="flex flex-col gap-5 items-center mb-10">
         {isLoading ? (
           <LoaderIcon className="w-20 h-20" />
@@ -37,7 +38,9 @@ export default function LiveCourses() {
               key={course.id}
               id={course.id}
               name={course.attributes.name}
-              img={course.attributes.courseImage.data.attributes.url}
+              img={
+                course.attributes.courseImage.data.attributes.formats.small.url
+              }
               isSale={course.attributes.isSale}
               duration={course.attributes.duration}
               classType="Live 1 to 1 Interactive Course"

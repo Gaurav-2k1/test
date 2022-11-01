@@ -13,9 +13,14 @@ import ReviewCard from "./ReviewCard";
 export default function HorizontalMultiSection({
   overview,
   skillsCovered,
+  pdfUrl,
   reviews,
   certificate,
 }) {
+  const handleDownloadSyllabus = () => {
+    console.log(pdfUrl);
+    window.open(pdfUrl, "_blank");
+  };
   return (
     <div>
       <ScrollingProvider offset={-120}>
@@ -36,7 +41,11 @@ export default function HorizontalMultiSection({
                 </div>
               ))}
             </div>
-            <Button className="bg-primary z-10 mb-5" fullWidth>
+            <Button
+              className="bg-primary z-10 mb-5"
+              fullWidth
+              onClick={handleDownloadSyllabus}
+            >
               Download Syllabus
             </Button>
           </Section>
