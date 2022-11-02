@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import { Provider as ReduxProvider } from "react-redux";
 import store from "../store";
 import Layout from "../components/Shared/Layout";
+
 function MyApp({ Component, pageProps }) {
   return (
     <ReduxProvider store={store}>

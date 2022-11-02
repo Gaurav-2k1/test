@@ -29,7 +29,7 @@ export default function Layout({ children }) {
           strategy="lazyOnload"
           src="https://embed.tawk.to/62875780b0d10b6f3e732f96/1g3garkem"
         />
-        <div className="sticky w-16 h-16 z-50 left-4 bottom-4">
+        <div className="fixed w-16 h-16 z-50 left-4 bottom-4">
           <Image
             src={WhatsappLogo}
             alt="Connect on Whatsapp"
