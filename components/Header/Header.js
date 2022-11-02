@@ -1,10 +1,9 @@
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import { useMediaQuery } from "@mui/material";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../../public/logo.png";
 import { theme } from "../../utils/theme";
 import { useDispatch, useSelector } from "react-redux";
