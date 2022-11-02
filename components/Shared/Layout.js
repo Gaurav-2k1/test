@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Script from "next/script";
 import React from "react";
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
@@ -21,9 +22,14 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
+
       <body>
         {children}
         <ActionButton />
+        <Script
+          strategy="lazyOnload"
+          src="https://embed.tawk.to/62875780b0d10b6f3e732f96/1g3garkem"
+        />
       </body>
 
       <footer>
