@@ -1,5 +1,5 @@
 import React from "react";
-import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 import ChatOutlinedIcon from "@mui/icons-material/ChatOutlined";
 import { Divider } from "@mui/material";
 
@@ -14,7 +14,7 @@ export default function ActionButton() {
           );
         }}
       >
-        <CallOutlinedIcon color="secondary" fontSize="large" />
+        <WhatsAppIcon color="secondary" fontSize="large" />
         <p className="text-secondary text-sm ml-4">Connect on Whatsapp</p>
       </div>
       <Divider orientation="vertical" />
