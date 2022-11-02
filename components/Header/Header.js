@@ -37,7 +37,9 @@ export default function Header() {
           </div>
         </Link>
         <div className="w-20 flex flex-row justify-end">
-          <SearchOutlinedIcon />
+          <Link href="/search?query=" passHref>
+            <SearchOutlinedIcon />
+          </Link>
           {/* <ShoppingCartOutlinedIcon /> */}
         </div>
       </div>

@@ -1,7 +1,6 @@
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 import { InputAdornment } from "@mui/material";
 import GroupsIcon from "@mui/icons-material/Groups";
-import success from "../../public/images/home/success.svg";
 import UpgradeImg from "../../public/images/home/subLanding/upgrade-img.png";
 import { Button, TextField } from "@mui/material";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
@@ -9,10 +8,6 @@ import { React, useState } from "react";
 import PublicIcon from "@mui/icons-material/Public";
 import Image from "next/image";
 import Router from "next/router";
-import { isEmpty } from "lodash";
-import toast from "react-hot-toast";
-import { ToastBar } from "react-hot-toast";
-import { Toaster } from "react-hot-toast";
 
 export default function LandingScreen() {
   const [search, setSearch] = useState("");

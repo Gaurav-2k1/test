@@ -1,6 +1,9 @@
+import { TextField } from "@mui/material";
 import { isEmpty, isNull, isUndefined } from "lodash";
 import { useRouter } from "next/router";
-import React from "react";
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+import { InputAdornment } from "@mui/material";
+import { React, useEffect, useState } from "react";
 import { LoaderIcon } from "react-hot-toast";
 import { useQuery } from "react-query";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
@@ -9,14 +12,24 @@ import NewSection from "../../components/Shared/NewSection";
 import VideoCourseComponent from "../../components/Shared/VideoCourseComponent";
 import { searchLiveCourse } from "../../service/live";
 import { searchVideoCourse } from "../../service/video";
+import { Button } from "@mui/material";
 
 export default function Search() {
   const router = useRouter();
+  const [search, setSearch] = useState("");
+  const [searchEnable, setSearchEnable] = useState("");
+  var query = router.query.query;
 
-  const query = router.query.query;
-
-  const searchLive = useQuery(["search-live", query], searchLiveCourse, {});
-  const searchVideo = useQuery(["search-video", query], searchVideoCourse, {});
+  const searchLive = useQuery(
+    ["search-live", searchEnable],
+    searchLiveCourse,
+    {}
+  );
+  const searchVideo = useQuery(
+    ["search-video", searchEnable],
+    searchVideoCourse,
+    {}
+  );
 
   const isLoadingVideo =
     isUndefined(searchVideo) ||
@@ -29,17 +42,51 @@ export default function Search() {
     isNull(searchLive) ||
     searchLive.isFetching ||
     searchLive.isLoading;
+
+  useEffect(() => {
+    setSearch(query);
+    setSearchEnable(query);
+  }, [query]);
+
+  const handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  };
+
+  const handleSearchTrigger = () => {
+    setSearchEnable(search);
+  };
+
   return (
     <div>
       <HeadImageWithText
         src=" bg-[url(/images/business/infodal-business.png)]"
-        className="mb-10"
+        className="mb-5"
       >
         <div className="text-white text-xl p-5 font-semibold">
           Search Results
         </div>
       </HeadImageWithText>
-
+      <div className="flex flex-row gap-1 p-3 items-center">
+        <TextField
+          inputRef={(input) => input && input.focus()}
+          value={search}
+          onChange={handleSearchChange}
+          variant="outlined"
+          className="rounded w-full"
+          size="normal"
+          placeholder="What do you want to learn today?"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchOutlinedIcon />
+              </InputAdornment>
+            ),
+          }}
+        />
+        <Button className="bg-primary h-10" onClick={handleSearchTrigger}>
+          Search
+        </Button>
+      </div>
       <NewSection title="Video Courses" />
       {isLoadingVideo ? (
         <div className="flex flex-row justify-center p-5">
