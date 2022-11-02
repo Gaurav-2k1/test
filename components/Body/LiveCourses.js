@@ -33,13 +33,14 @@ export default function LiveCourses() {
           of the website. It originates from the Latin text but is seen as
           gibberish."
       />
-
-      <div className="flex flex-row overflow-x-auto text-white mt-5">
-        <div className="flex flex-row">
-          {isLoading ? (
-            <LoaderIcon className="w-20 h-20" />
-          ) : (
-            courses.data.data.map((course) => (
+      {isLoading ? (
+        <div className="flex flex-row justify-center p-5">
+          <LoaderIcon className="w-20 h-20" />
+        </div>
+      ) : (
+        <div className="flex flex-row overflow-x-auto text-white mt-5">
+          <div className="flex flex-row">
+            {courses.data.data.map((course) => (
               <LiveCourseComponent
                 key={course.id}
                 id={course.id}
@@ -62,10 +63,10 @@ export default function LiveCourses() {
                 }}
                 width="70vw"
               />
-            ))
-          )}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <div className="w-full flex flex-row justify-center mb-5">
         <Link href="/live-courses" passHref>
           <Button className="bg-primary">Explore All Live Courses</Button>

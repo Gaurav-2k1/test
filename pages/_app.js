@@ -17,10 +17,10 @@ function MyApp({ Component, pageProps }) {
         <ThemeWrapper>
           <Layout>
             <Toaster
-              position="bottom-center"
+              position="top-center"
               toastOptions={{
                 duration: 4000,
-                className: "toast",
+                className: "z-50",
               }}
             />
             <Component {...pageProps} />

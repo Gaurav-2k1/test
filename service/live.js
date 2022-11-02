@@ -39,3 +39,35 @@ export const fetchLiveCourseDetail = async ({ queryKey }) => {
   const { data } = await axios.get(`/live-courses/${id}?${query}`);
   return data;
 };
+
+export const searchLiveCourse = async ({ queryKey }) => {
+  const [_, query] = queryKey;
+  const queryParams = stringify(
+    {
+      filters: {
+        $or: [
+          {
+            name: {
+              $containsi: query,
+            },
+          },
+          {
+            skills: {
+              name: {
+                $containsi: query,
+              },
+            },
+          },
+        ],
+      },
+      fields: ["name", "duration"],
+      populate: ["courseImage", "ratings", "reviews", "price"],
+    },
+    {
+      encodeValuesOnly: true, // prettify URL
+    }
+  );
+
+  const { data } = await axios.get(`/live-courses?${queryParams}`);
+  return data;
+};

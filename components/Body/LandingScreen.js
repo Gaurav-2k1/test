@@ -3,13 +3,24 @@ import { InputAdornment } from "@mui/material";
 import GroupsIcon from "@mui/icons-material/Groups";
 import success from "../../public/images/home/success.svg";
 import UpgradeImg from "../../public/images/home/subLanding/upgrade-img.png";
-import { Button, IconButton, TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import SmartDisplayIcon from "@mui/icons-material/SmartDisplay";
-import React from "react";
+import { React, useState } from "react";
 import PublicIcon from "@mui/icons-material/Public";
 import Image from "next/image";
+import Router from "next/router";
+import { isEmpty } from "lodash";
+import toast from "react-hot-toast";
+import { ToastBar } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 export default function LandingScreen() {
+  const [search, setSearch] = useState("");
+  const handleSearchClick = () => {
+    // !isEmpty(search) ? (
+    Router.push({ pathname: "/search", query: { query: search } });
+  };
+
   return (
     <div>
       <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-black">
@@ -18,6 +29,8 @@ export default function LandingScreen() {
             <div>Crack dream jobs with top rated certificate courses</div>
             <div className="flex flex-row justify-between items-center">
               <TextField
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
                 variant="outlined"
                 className="m-3 bg-white align-center w-[70vw] rounded"
                 size="normal"
@@ -30,7 +43,9 @@ export default function LandingScreen() {
                   ),
                 }}
               />
-              <Button className="bg-primary">Search</Button>
+              <Button className="bg-primary" onClick={handleSearchClick}>
+                Search
+              </Button>
             </div>
           </div>
 
