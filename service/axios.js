@@ -5,6 +5,17 @@ import { logout } from "../store/authSlice";
 
 const axios = _axios.create({ baseURL: BASE_URL });
 
+axios.interceptors.request.use((config) => {
+  const { token } = store.getState().auth;
+
+  config.headers = {
+    ...config.headers,
+    Authorization: `Bearer ${token}`,
+  };
+
+  return config;
+});
+
 axios.interceptors.response.use(
   (response) => {
     console.log(response);
