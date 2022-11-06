@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
@@ -8,20 +8,47 @@ import HeadImage from "../../components/Shared/HeadImage";
 import { useQuery } from "react-query";
 import { fetchLiveCourseDetail } from "../../service/live";
 import { getCurrency } from "../../store/currencySlice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
 import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
+import { Button } from "@mui/material";
+import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
+import { setSignUpToggle } from "../../store/modalSlice";
+import { useForm } from "react-hook-form";
+import { createOrder } from "../../service/payment";
 
 export default function LiveCourse() {
   const router = useRouter();
   const { course } = router.query;
+  const dispatch = useDispatch();
+
   const currency = useSelector(getCurrency);
-  var courseDetail = useQuery(["live-course", course], fetchLiveCourseDetail, {
-    // onSuccess: (data) => {
-    //   setCourse(data.data);
-    // },
-  });
+  const isAuthenticated = useIsAuthenticated();
+  var courseDetail = useQuery(
+    ["live-course", course],
+    fetchLiveCourseDetail,
+    {}
+  );
+
+  var paymentData = useQuery(
+    ["create-order", course, "live", currency],
+    createOrder,
+    { refetchOnWindowFocus: false, enabled: false }
+  );
+
+  const isLoadingPayment = paymentData.isFetching || paymentData.isLoading;
+  console.log(isLoadingPayment);
+
+  const handlePay = async () => {
+    if (isAuthenticated) {
+      await paymentData.refetch();
+      paymentData.isFetched &&
+        router.push(`/pay?orderId=${paymentData.data.order_token}`);
+    } else {
+      dispatch(setSignUpToggle(true));
+    }
+  };
 
   const isLoading =
     isUndefined(courseDetail) ||
@@ -84,6 +111,15 @@ export default function LiveCourse() {
           courseDetail.data.attributes.certificateImage.data.attributes.url
         }
       />
+      <div className="flex flex-row w-full justify-center">
+        <Button
+          className="bg-primary my-4 text-white w-[90vw]"
+          onClick={handlePay}
+          disabled={isLoadingPayment}
+        >
+          {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
+        </Button>
+      </div>
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">

@@ -9,6 +9,7 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   autoprefixer: ^10.4.4
   axios: ^0.26.1
+  cashfree-dropjs: ^1.1.4
   cssnano: ^5.1.7
   eslint: 8.11.0
   eslint-config-next: 12.1.0
@@ -20,12 +21,14 @@ specifiers:
   qs: ^6.11.0
   react: 17.0.2
   react-dom: 17.0.2
+  react-hook-form: ^7.39.1
   react-hot-toast: ^2.2.0
   react-phone-input-mui: ^2.9.4
   react-query: ^3.34.19
   react-redux: ^7.2.8
   react-responsive-carousel: ^3.2.23
   react-scroll-section: ^3.2.5
+  redux-persist: ^6.0.0
   sass: ^1.50.0
   tailwindcss: ^3.0.23
 
@@ -36,6 +39,7 @@ dependencies:
   '@mui/material': 5.10.11_mpum5pu5vxdmtbvcevx44455ti
   '@reduxjs/toolkit': 1.8.6_csuupx2mfbspdz76fkecdgkise
   axios: 0.26.1
+  cashfree-dropjs: 1.1.4
   cssnano: 5.1.13_postcss@8.4.18
   lodash: 4.17.21
   material-ui-phone-number: 3.0.0_4je53n7atnhrupiny3mofhpqwu
@@ -44,12 +48,14 @@ dependencies:
   qs: 6.11.0
   react: 17.0.2
   react-dom: 17.0.2_react@17.0.2
+  react-hook-form: 7.39.1_react@17.0.2
   react-hot-toast: 2.4.0_sfoxds7t5ydpegc3knd667wn6m
   react-phone-input-mui: 2.9.4_sfoxds7t5ydpegc3knd667wn6m
   react-query: 3.39.2_sfoxds7t5ydpegc3knd667wn6m
   react-redux: 7.2.9_sfoxds7t5ydpegc3knd667wn6m
   react-responsive-carousel: 3.2.23
   react-scroll-section: 3.2.5_sfoxds7t5ydpegc3knd667wn6m
+  redux-persist: 6.0.0_react@17.0.2
   sass: 1.55.0
 
 devDependencies:
@@ -1123,6 +1129,10 @@ packages:
 
   /caseless/0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
+
+  /cashfree-dropjs/1.1.4:
+    resolution: {integrity: sha512-fuVaYqQyjzH1h+w2Ojj/JbmxYA6zoRHTgnxY4Ccz8/gGatQ4KuPhGcTLlwjwCHBAx2RZEmBIBSHZpv2zJRDJpw==}
+    dev: false
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -3532,6 +3542,15 @@ packages:
       prop-types: 15.8.1
     dev: false
 
+  /react-hook-form/7.39.1_react@17.0.2:
+    resolution: {integrity: sha512-MiF9PCILN5KulhSGbnjohMiTOrB47GerDTichMNP0y2cPUu1GTRFqbunOxCE9N1499YTLMV/ne4gFzqCp1rxrQ==}
+    engines: {node: '>=12.22.0'}
+    peerDependencies:
+      react: ^16.8.0 || ^17 || ^18
+    dependencies:
+      react: 17.0.2
+    dev: false
+
   /react-hot-toast/2.4.0_sfoxds7t5ydpegc3knd667wn6m:
     resolution: {integrity: sha512-qnnVbXropKuwUpriVVosgo8QrB+IaPJCpL8oBI6Ov84uvHZ5QQcTp2qg6ku2wNfgJl6rlQXJIQU5q+5lmPOutA==}
     engines: {node: '>=10'}
@@ -3708,6 +3727,18 @@ packages:
     dependencies:
       indent-string: 4.0.0
       strip-indent: 3.0.0
+
+  /redux-persist/6.0.0_react@17.0.2:
+    resolution: {integrity: sha512-71LLMbUq2r02ng2We9S215LtPu3fY0KgaGE0k8WRgl6RkqxtGfl7HUozz1Dftwsb0D/5mZ8dwAaPbtnzfvbEwQ==}
+    peerDependencies:
+      react: '>=16'
+      redux: '>4.0.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
+    dependencies:
+      react: 17.0.2
+    dev: false
 
   /redux-thunk/2.4.1_redux@4.2.0:
     resolution: {integrity: sha512-OOYGNY5Jy2TWvTL1KgAlVy6dcx3siPJ1wTq741EPyUKfn6W6nChdICjZwCd0p8AZBs5kWpZlbkXW2nE/zjUa+Q==}

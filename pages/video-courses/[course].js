@@ -17,15 +17,7 @@ export default function VideoCourses() {
   const router = useRouter();
   const { course } = router.query;
   const currency = useSelector(getCurrency);
-  var courseDetail = useQuery(
-    ["video-course", course],
-    fetchVideoCourseDetail,
-    {
-      // onSuccess: (data) => {
-      //   setCourse(data.data);
-      // },
-    }
-  );
+  var courseDetail = useQuery(["video-course", course], fetchVideoCourseDetail);
 
   const isLoading =
     isUndefined(courseDetail) ||

@@ -25,6 +25,9 @@ export default function Layout({ children }) {
 
       <body>
         {children}
+        <div id="payment-form"></div>
+
+        {/* <Script src="https://sdk.cashfree.com/js/ui/1.0.20/dropinClient.sandbox.js"></Script> */}
         <Script
           strategy="lazyOnload"
           src="https://embed.tawk.to/62875780b0d10b6f3e732f96/1g3garkem"

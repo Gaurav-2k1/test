@@ -8,6 +8,9 @@ import { React, useState } from "react";
 import PublicIcon from "@mui/icons-material/Public";
 import Image from "next/image";
 import Router from "next/router";
+import useIsAuthenticated from "../Hooks/useIsAuthenticated";
+import { useDispatch } from "react-redux";
+import { setSignUpToggle } from "../../store/modalSlice";
 
 export default function LandingScreen() {
   const [search, setSearch] = useState("");
@@ -15,7 +18,11 @@ export default function LandingScreen() {
     // !isEmpty(search) ? (
     Router.push({ pathname: "/search", query: { query: search } });
   };
-
+  const isAuthenticated = useIsAuthenticated();
+  const dispatch = useDispatch();
+  const handleSignUpModalOpen = () => {
+    dispatch(setSignUpToggle(true));
+  };
   return (
     <div>
       <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-black">
@@ -67,7 +74,11 @@ export default function LandingScreen() {
               convenience of your own home, complete with practice activities to
               ensure that you get the most out of the course.
             </p>
-            <Button className="bg-primary">Register Now</Button>
+            {!isAuthenticated && (
+              <Button className="bg-primary" onClick={handleSignUpModalOpen}>
+                Register Now
+              </Button>
+            )}
           </div>
         </div>
         <Image src={UpgradeImg} alt="Infodal" className="" />

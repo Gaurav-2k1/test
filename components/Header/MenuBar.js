@@ -7,7 +7,9 @@ import {
   getCurrencyToggle,
   getMenuToggle,
   setCurrencyToggle,
+  setLoginToggle,
   setMenuToggle,
+  setSignUpToggle,
 } from "../../store/modalSlice";
 import ClearIcon from "@mui/icons-material/Clear";
 import { IconButton } from "@mui/material";
@@ -17,20 +19,36 @@ import { Button } from "@mui/material";
 import { useRouter } from "next/router";
 import { getCurrency, setCurrency } from "../../store/currencySlice";
 import { isEqual } from "lodash";
+import { logout } from "../../store/authSlice";
+import useIsAuthenticated from "../Hooks/useIsAuthenticated";
+
 export default function MenuBar() {
   const isMenuOpen = useSelector(getMenuToggle);
   const isCurrencyToggleOpen = useSelector(getCurrencyToggle);
   const currency = useSelector(getCurrency);
+
   const dispatch = useDispatch();
   const toggleDrawer = (bool) => {
     dispatch(setMenuToggle(bool));
   };
 
+  const setSignUpModalOpenHandler = () => {
+    dispatch(setSignUpToggle(true));
+  };
+
+  const setLoginModalOpenHandler = () => {
+    dispatch(setLoginToggle(true));
+  };
   const toggleCurrencyDrawer = (bool) => {
     dispatch(setCurrencyToggle(bool));
   };
 
+  const logoutHandler = () => {
+    dispatch(logout());
+  };
   const router = useRouter();
+
+  const isAuthenticated = useIsAuthenticated();
 
   const routeToPage = (path) => {
     router.push(path);
@@ -56,7 +74,7 @@ export default function MenuBar() {
           </IconButton>
         </div>
 
-        <div className="flex flex-col justify-evenly h-[70vh] p-4">
+        <div className="flex flex-col justify-evenly gap-5 px-4 py-5">
           {topMenuList.map((item, index) => (
             <div
               key={index}
@@ -84,18 +102,36 @@ export default function MenuBar() {
           ))}
           <Divider className="bg-slate" />
         </div>
-        <div className="flex flex-row w-full justify-center py-2 px-5">
+
+        <div className="flex flex-col items-center w-full gap-2">
           <Button
-            className="bg-primary"
+            className="bg-secondary w-[80vw]"
             onClick={() => toggleCurrencyDrawer(true)}
           >
             Select Currency - {currency}
           </Button>
+          {!isAuthenticated && (
+            <Button
+              className="bg-primary w-[80vw]"
+              onClick={setSignUpModalOpenHandler}
+            >
+              Sign Up
+            </Button>
+          )}
+          {!isAuthenticated && (
+            <Button
+              className="bg-primary w-[80vw]"
+              onClick={setLoginModalOpenHandler}
+            >
+              Login
+            </Button>
+          )}
+          {isAuthenticated && (
+            <Button color="error" className="w-[80vw]" onClick={logoutHandler}>
+              Logout
+            </Button>
+          )}
         </div>
-        {/* <div className="flex flex-col justify-between items-center w-full h-20">
-          <Button className="bg-primary w-[80vw]">Sign Up</Button>
-          <Button className="bg-primary w-[80vw]">Login</Button>
-        </div> */}
       </div>
       <SwipeableDrawer
         open={isCurrencyToggleOpen}
