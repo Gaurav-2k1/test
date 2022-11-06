@@ -12,7 +12,7 @@ const reducers = combineReducers({
 });
 
 const persistedReducers = persistReducer(
-  { key: "infodal-store", storage },
+  { key: "infodal-store-dev", storage },
   reducers
 );
 

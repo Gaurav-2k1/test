@@ -12,7 +12,7 @@ const authSlice = createSlice({
     setToken(state, action) {
       state.token = action.payload;
     },
-    logout(state) {
+    logout(state, action) {
       state.token = "";
     },
   },

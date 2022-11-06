@@ -3,6 +3,7 @@ import React from "react";
 import { LoaderIcon } from "react-hot-toast";
 import { useQuery } from "react-query";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
+
 import VideoCourseComponent from "../../components/Shared/VideoCourseComponent";
 
 import { fetchVideoCourses } from "../../service/video";

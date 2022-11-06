@@ -1,3 +1,4 @@
+import { stringify } from "qs";
 import axios from "./axios";
 
 export const createOrder = async ({ queryKey }) => {
@@ -8,9 +9,20 @@ export const createOrder = async ({ queryKey }) => {
   return data;
 };
 
-export const updateStatus = async ({ identifier, password }) => {
-  const body = { identifier, password };
-  const { data } = await axios.post(`/auth/local/`, body);
+export const updateStatus = async ({ queryKey }) => {
+  const [_, id, orderJson] = queryKey;
+  const body = { id, orderJson };
+  const { data } = await axios.put(`/payment/update`, body);
+
+  return data;
+};
+
+export const verifyIfOrderExists = async ({ queryKey }) => {
+  const [_, course_id, course_type] = queryKey;
+
+  const { data } = await axios.get(
+    `/payment/order/verify?course_id=${course_id}&course_type=${course_type}`
+  );
 
   return data;
 };

@@ -15,8 +15,7 @@ import { LoaderIcon } from "react-hot-toast";
 import { Button } from "@mui/material";
 import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
 import { setSignUpToggle } from "../../store/modalSlice";
-import { useForm } from "react-hook-form";
-import { createOrder } from "../../service/payment";
+import { createOrder, verifyIfOrderExists } from "../../service/payment";
 
 export default function LiveCourse() {
   const router = useRouter();
@@ -37,18 +36,28 @@ export default function LiveCourse() {
     { refetchOnWindowFocus: false, enabled: false }
   );
 
+  var isExists = useQuery(
+    ["verify-order-exists-live", course, "live"],
+    verifyIfOrderExists,
+    { retry: false, refetchOnWindowFocus: true }
+  );
+
   const isLoadingPayment = paymentData.isFetching || paymentData.isLoading;
-  console.log(isLoadingPayment);
 
   const handlePay = async () => {
     if (isAuthenticated) {
       await paymentData.refetch();
-      paymentData.isFetched &&
-        router.push(`/pay?orderId=${paymentData.data.order_token}`);
     } else {
       dispatch(setSignUpToggle(true));
     }
   };
+
+  useEffect(() => {
+    paymentData.isFetchedAfterMount &&
+      router.push(
+        `/pay?orderId=${paymentData.data.order_token}&id=${paymentData.data.order_id}`
+      );
+  }, [paymentData.isFetchedAfterMount]);
 
   const isLoading =
     isUndefined(courseDetail) ||
@@ -112,13 +121,23 @@ export default function LiveCourse() {
         }
       />
       <div className="flex flex-row w-full justify-center">
-        <Button
-          className="bg-primary my-4 text-white w-[90vw]"
-          onClick={handlePay}
-          disabled={isLoadingPayment}
-        >
-          {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
-        </Button>
+        {isAuthenticated &&
+        isExists.isFetchedAfterMount &&
+        isExists.data &&
+        isExists.data.purchased ? (
+          <div className="text-sm p-4">
+            You have already purchased this course, please check your email for
+            further details
+          </div>
+        ) : (
+          <Button
+            className="bg-primary my-4 text-white w-[90vw]"
+            onClick={handlePay}
+            disabled={isLoadingPayment}
+          >
+            {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
+          </Button>
+        )}
       </div>
     </div>
   ) : (

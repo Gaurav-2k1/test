@@ -1,19 +1,34 @@
 import { cashfreeSandbox } from "cashfree-dropjs";
-import { isUndefined } from "lodash";
+import { isEmpty, isUndefined } from "lodash";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
+import { updateStatus } from "../../service/payment";
 
 export default function Pay() {
   const router = useRouter();
-  const { orderId } = router.query;
+  const { orderId, id } = router.query;
+  const [orderResponse, setResponse] = useState({});
+  var paymentData = useQuery(
+    ["update-order", id, orderResponse],
+    updateStatus,
+    { refetchOnWindowFocus: false, enabled: false }
+  );
+
+  useEffect(() => {
+    console.log(isEmpty(orderResponse));
+    if (!isEmpty(orderResponse)) {
+      console.log("chala");
+      console.log(orderResponse);
+      paymentData.refetch();
+    }
+  }, [orderResponse]);
 
   useEffect(() => {
     let testCashfree = new cashfreeSandbox.Cashfree();
     if (typeof window !== "undefined" && !isUndefined(orderId)) {
       // your code with access to window or document object here
       let parent = document.getElementById("drop_in_container");
-      console.log(parent);
-      // parent.innerHTML = "";
 
       testCashfree.initialiseDropin(parent, {
         components: [
@@ -28,14 +43,16 @@ export default function Pay() {
         ],
         orderToken: orderId,
 
-        onSuccess: function (data) {
+        onSuccess: async function (data) {
           //on payment flow complete
-          if (data.order && data.order.status == "PAID") {
-            router.back();
-          }
+          console.log(data);
+
+          setResponse(data);
+          router.back();
         },
         onFailure: function (data) {
-          console.log(data);
+          setResponse(data);
+          router.back();
           //on failure during payment initiation
         },
         style: {

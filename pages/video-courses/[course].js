@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
@@ -7,17 +7,53 @@ import HorizontalMultiSection from "../../components/Shared/HorizontalMultiSecti
 import HeadImage from "../../components/Shared/HeadImage";
 import { useQuery } from "react-query";
 import { getCurrency } from "../../store/currencySlice";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
 import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
 import { fetchVideoCourseDetail } from "../../service/video";
+import { Button } from "@mui/material";
+import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
+import { createOrder, verifyIfOrderExists } from "../../service/payment";
+import { setSignUpToggle } from "../../store/modalSlice";
 
 export default function VideoCourses() {
   const router = useRouter();
   const { course } = router.query;
   const currency = useSelector(getCurrency);
+  const dispatch = useDispatch();
+
+  const isAuthenticated = useIsAuthenticated();
   var courseDetail = useQuery(["video-course", course], fetchVideoCourseDetail);
+
+  var paymentData = useQuery(
+    ["create-order", course, "video", currency],
+    createOrder,
+    { refetchOnWindowFocus: false, enabled: false }
+  );
+
+  var isExists = useQuery(
+    ["verify-order-exists-video", course, "video"],
+    verifyIfOrderExists,
+    { retry: false }
+  );
+
+  const isLoadingPayment = paymentData.isFetching || paymentData.isLoading;
+
+  const handlePay = async () => {
+    if (isAuthenticated) {
+      await paymentData.refetch();
+    } else {
+      dispatch(setSignUpToggle(true));
+    }
+  };
+
+  useEffect(() => {
+    paymentData.isFetchedAfterMount &&
+      router.push(
+        `/pay?orderId=${paymentData.data.order_token}&id=${paymentData.data.order_id}`
+      );
+  }, [paymentData.isFetchedAfterMount]);
 
   const isLoading =
     isUndefined(courseDetail) ||
@@ -80,6 +116,25 @@ export default function VideoCourses() {
           courseDetail.data.attributes.certificateImage.data.attributes.url
         }
       />
+      <div className="flex flex-row w-full justify-center">
+        {isAuthenticated &&
+        isExists.isFetchedAfterMount &&
+        isExists.data &&
+        isExists.data.purchased ? (
+          <div className="text-sm p-4">
+            You have already purchased this course, please check your email for
+            further details
+          </div>
+        ) : (
+          <Button
+            className="bg-primary my-4 text-white w-[90vw]"
+            onClick={handlePay}
+            disabled={isLoadingPayment}
+          >
+            {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
+          </Button>
+        )}
+      </div>
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">
