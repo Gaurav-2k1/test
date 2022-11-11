@@ -14,7 +14,10 @@ export default function ShowMore({
   return (
     <div className={`text-justify ${className}`}>
       <div className={!showMore && `line-clamp-6`}>{children}</div>
-      <div className="text-primary underline" onClick={showHandler}>
+      <div
+        className="text-primary underline font-semibold"
+        onClick={showHandler}
+      >
         {!showMore ? `${showMoreText}` : hideText}
       </div>
     </div>
