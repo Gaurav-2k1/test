@@ -3,8 +3,9 @@ import Partners from "../components/Body/Partners";
 import LiveCourses from "../components/Body/LiveCourses";
 import VideoCourses from "../components/Body/VideoCourses";
 import WhyChose from "../components/Body/WhyChose";
-import BecomeInstructor from "../components/Body/BecomeInstructor";
+import RequestADemo from "../components/Body/RequestADemo";
 import InstructorForm from "../components/Forms/InstructorForm";
+import RequestADemoForm from "../components/Forms/RequestADemoForm";
 
 export default function Home() {
   return (
@@ -14,8 +15,8 @@ export default function Home() {
       <Partners />
       <LiveCourses />
       <VideoCourses />
-      <BecomeInstructor />
-      <InstructorForm />
+      <RequestADemo />
+      <RequestADemoForm />
     </div>
   );
 }

@@ -106,7 +106,7 @@ export default function PayButton({ amount, course_id, course_type }) {
             onClick={handlePayButtonClick}
             disabled={isLoadingPayment}
           >
-            {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
+            {!isLoadingPayment ? "Checkout" : "Fetching Payment Details.."}
           </Button>
         )}
       </form>

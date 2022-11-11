@@ -62,8 +62,8 @@ export default function MenuBar() {
       onOpen={() => toggleDrawer(true)}
     >
       <div className="w-[100vw]">
-        <div className="flex flex-row justify-center py-4 px-2 items-center shadow-md">
-          <div className="w-20 h-10">
+        <div className="flex flex-row justify-center px-2 pt-2 items-center shadow-md">
+          <div className="w-20 h-fit">
             <Image src={Logo} alt="Infodal Logo" />
           </div>
           <IconButton
@@ -74,7 +74,7 @@ export default function MenuBar() {
           </IconButton>
         </div>
 
-        <div className="flex flex-col justify-evenly gap-5 px-4 py-5">
+        <div className="flex flex-col justify-evenly gap-6 px-4 py-5">
           {topMenuList.map((item, index) => (
             <div
               key={index}

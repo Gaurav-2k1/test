@@ -78,10 +78,10 @@ export const menuList = [
     image: Instructor,
     link: "/become-an-instructor",
   },
-  {
-    name: "Blog",
-    image: Blog,
-  },
+  // {
+  //   name: "Blog",
+  //   image: Blog,
+  // },
   {
     name: "About Us/Contact Us",
     image: About,

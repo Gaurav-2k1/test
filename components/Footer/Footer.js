@@ -39,7 +39,7 @@ export default function Footer() {
           <Link href="/about" passHref>
             About Us
           </Link>
-          <Link href="/blog">Blog</Link>
+          {/* <Link href="/blog">Blog</Link> */}
           <Link href="request-a-course" passHref>
             Request a Course
           </Link>
