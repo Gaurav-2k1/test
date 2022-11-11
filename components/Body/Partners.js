@@ -1,10 +1,14 @@
 import React from "react";
 import Image from "next/image";
-import Udemy from "../../public//images/home/partners/udemy.png";
-import Reed from "../../public//images/home/partners/reed.png";
-import Liamoon from "../../public//images/home/partners/liamoon.png";
-import Unisnacks from "../../public//images/home/partners/unisnacks.png";
-import UrbanPro from "../../public//images/home/partners/up.jpg";
+import AWS from "../../public//images/home/labs/1.png";
+import AZURE from "../../public//images/home/labs/2.png";
+import GCP from "../../public//images/home/labs/3.png";
+import LINUX from "../../public//images/home/labs/4.png";
+import SF from "../../public//images/home/labs/5.png";
+import DEVOPS from "../../public//images/home/labs/6.png";
+import SEC from "../../public//images/home/labs/7.png";
+import K8S from "../../public//images/home/labs/8.png";
+import TF from "../../public//images/home/labs/8.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
@@ -12,7 +16,7 @@ export default function Partners() {
   return (
     <div>
       <div className="text-primary text-center text-base mt-4 w-full font-bold">
-        OUR PARTNERS
+        Unlimited Access to 400+ Courses and 1800+ hands on labs
       </div>
 
       <Carousel
@@ -27,19 +31,31 @@ export default function Partners() {
         centerSlidePercentage={30}
       >
         <div className="w-20 h-fit">
-          <Image src={Udemy} alt="Udemy Logo" />
+          <Image src={AWS} alt="AWS Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={Reed} alt="Reed Logo" />
+          <Image src={AZURE} alt="Azure Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={Liamoon} alt="Liamoon Logo" />
+          <Image src={GCP} alt="GCP Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={Unisnacks} alt="Liamoon Logo" />
+          <Image src={LINUX} alt="Linux Logo" />
         </div>
         <div className="w-20 h-fit">
-          <Image src={UrbanPro} alt="Liamoon Logo" />
+          <Image src={SF} alt="SF Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={DEVOPS} alt="Devops Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={SEC} alt="SEC Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={K8S} alt="K8s Logo" />
+        </div>
+        <div className="w-20 h-fit">
+          <Image src={TF} alt="Tensorflow Logo" />
         </div>
       </Carousel>
     </div>
