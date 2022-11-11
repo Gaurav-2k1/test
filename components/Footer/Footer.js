@@ -40,11 +40,14 @@ export default function Footer() {
             About Us
           </Link>
           <Link href="/blog">Blog</Link>
+          <Link href="request-a-course" passHref>
+            Request a Course
+          </Link>
           <Link href="/refund-and-cancellation">Refund and Cancellation</Link>
           <Link href="/terms-and-conditions">Terms and Conditions</Link>
           <Link href="/privacy-policy">Privacy Policy</Link>
-          <Link href="request-a-course" passHref>
-            Request a Course
+          <Link href="https://merchant.razorpay.com/policy/KeEJbH2eaH8gm4/shipping">
+            Shipping & Delivery policy
           </Link>
         </div>
       </div>
