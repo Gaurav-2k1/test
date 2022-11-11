@@ -9,7 +9,7 @@ import { useQuery } from "react-query";
 import { getCurrency } from "../../store/currencySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
-import { isNull, isUndefined } from "lodash";
+import { isEqual, isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
 import { fetchVideoCourseDetail } from "../../service/video";
 import { Button } from "@mui/material";
@@ -87,11 +87,20 @@ export default function VideoCourses() {
           courseDetail.data.attributes.certificateImage.data.attributes.url
         }
       />
-      <PayButton
-        amount={prices.discountedPrice}
-        course_id={course}
-        course_type="live"
-      />
+      {isEqual(
+        courseDetail.data.attributes.courseOverview.isPaymentAllowed,
+        true
+      ) ||
+        (isEqual(
+          courseDetail.data.attributes.courseOverview.isPaymentAllowed,
+          null
+        ) && (
+          <PayButton
+            amount={prices.discountedPrice}
+            course_id={course}
+            course_type="live"
+          />
+        ))}
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">

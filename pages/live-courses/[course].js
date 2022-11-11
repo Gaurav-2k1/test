@@ -10,7 +10,7 @@ import { fetchLiveCourseDetail } from "../../service/live";
 import { getCurrency } from "../../store/currencySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
-import { isNull, isUndefined } from "lodash";
+import { isEqual, isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
 import { Button } from "@mui/material";
 import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
@@ -93,11 +93,20 @@ export default function LiveCourse() {
         }
       />
 
-      <PayButton
-        amount={prices.discountedPrice}
-        course_id={course}
-        course_type="live"
-      />
+      {isEqual(
+        courseDetail.data.attributes.courseOverview.isPaymentAllowed,
+        true
+      ) ||
+        (isEqual(
+          courseDetail.data.attributes.courseOverview.isPaymentAllowed,
+          null
+        ) && (
+          <PayButton
+            amount={prices.discountedPrice}
+            course_id={course}
+            course_type="live"
+          />
+        ))}
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">
