@@ -77,7 +77,7 @@ export default function PayButton({ amount, course_id, course_type }) {
         <input
           type="hidden"
           name="image"
-          value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.jpg"
+          value="https://infodal-ui-chandiwalaaadhar.vercel.app/logo.png"
         />
 
         <input type="hidden" name="prefill[email]" value={userDetails.email} />

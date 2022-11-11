@@ -87,20 +87,13 @@ export default function VideoCourses() {
           courseDetail.data.attributes.certificateImage.data.attributes.url
         }
       />
-      {isEqual(
-        courseDetail.data.attributes.courseOverview.isPaymentAllowed,
-        true
-      ) ||
-        (isEqual(
-          courseDetail.data.attributes.courseOverview.isPaymentAllowed,
-          null
-        ) && (
-          <PayButton
-            amount={prices.discountedPrice}
-            course_id={course}
-            course_type="live"
-          />
-        ))}
+      {courseDetail.data.attributes.courseDetail.isPaymentAllowed && (
+        <PayButton
+          amount={prices.discountedPrice}
+          course_id={course}
+          course_type="live"
+        />
+      )}
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">

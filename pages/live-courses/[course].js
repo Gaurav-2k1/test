@@ -93,13 +93,9 @@ export default function LiveCourse() {
         }
       />
 
-      {isEqual(
-        courseDetail.data.attributes.courseOverview.isPaymentAllowed,
-        true
-      ) ||
-        (isEqual(
-          courseDetail.data.attributes.courseOverview.isPaymentAllowed,
-          null
+      {courseDetail.data.attributes.courseOverview.isPaymentAllowed ||
+        (isNull(
+          courseDetail.data.attributes.courseOverview.isPaymentAllowed
         ) && (
           <PayButton
             amount={prices.discountedPrice}
