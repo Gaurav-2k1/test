@@ -8,7 +8,7 @@ import SF from "../../public//images/home/labs/5.png";
 import DEVOPS from "../../public//images/home/labs/6.png";
 import SEC from "../../public//images/home/labs/7.png";
 import K8S from "../../public//images/home/labs/8.png";
-import TF from "../../public//images/home/labs/8.png";
+import TF from "../../public//images/home/labs/9.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 
