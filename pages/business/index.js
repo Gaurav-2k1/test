@@ -9,19 +9,22 @@ export default function Business() {
         src="bg-[url(/images/business/infodal-business.png)]"
         className="flex flex-col justify-center p-5 text-white"
       >
-        <p className="text-lg font-semibold">Infodal For Business</p>
-        <div className="pt-5 w-full h-full">
-          <div className="z-20 text-center text-justify">
-            Infodal For Business is a customized training solution for colleges
-            & universities, recruitment agencies, small & medium businesses, and
-            large corporations. Infodal provides high-quality training across
-            all technology domains. The training is conducted in two different
-            formats
-          </div>
-          <p>a) Online Instructor-led classes</p>
-          <p>b) Self-paced video courses</p>
-        </div>
+        <p className="text-2xl font-semibold">Infodal For Business</p>
       </HeadImageWithText>
+      <p className="p-5">
+        INFODAL FOR BUSINESSES is an adaptable training solution that can be
+        utilized by educational institutions such as colleges and universities,
+        employment agencies, small and medium businesses, & large corporations.
+        INFODAL offers high-standard training in all areas of the technology
+        industry. The training by INFODAL is provided in two distinct formats:
+        Live online classes led by an instructor Video lessons that students can
+        watch at their own pace.
+      </p>
+      <p className="p-5">
+        Please fill out the following form as it requires some of your details,
+        or get in touch with us at contact@infodal.com to receive a quote that
+        is tailored to your organizations specific needs.
+      </p>
       <BusinessForm />
     </div>
   );

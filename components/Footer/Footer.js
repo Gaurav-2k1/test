@@ -41,6 +41,8 @@ export default function Footer() {
           </Link>
           <Link href="/blog">Blog</Link>
           <Link href="/refund-and-cancellation">Refund and Cancellation</Link>
+          <Link href="/terms-and-conditions">Terms and Conditions</Link>
+          <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="request-a-course" passHref>
             Request a Course
           </Link>

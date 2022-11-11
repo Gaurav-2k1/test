@@ -15,8 +15,8 @@ import { Carousel } from "react-responsive-carousel";
 export default function Partners() {
   return (
     <div>
-      <div className="text-primary text-center text-base mt-4 w-full font-bold">
-        Unlimited Access to 400+ Courses and 1800+ hands on labs
+      <div className="text-primary text-center text-base mt-4 w-full font-bold px-2">
+        Unlimited Access to 250+ Courses and 1800+ hands on labs
       </div>
 
       <Carousel

@@ -21,9 +21,11 @@ export default function RequestCourse() {
         <div className="py-5 px-6">
           <form className="bg-gray-200 rounded w-full text-center p-3 flex flex-col justify-between gap-4">
             <p className="text-primary">What do you want to learn?</p>
-            <p className="">
-              Call us at +44 7454666010 or +91 9302584342 or Email to
-              contact@infodal.com or Browse our Live Courses
+            <p className="text-justify py-2">
+              Thank you tremendously for the connection with INFODAL. Please
+              fill out the following form to REQUEST A COURSE that meets the
+              requirements, and someone from our INFODAL TRAINING team will get
+              in touch with you as soon as possible.
             </p>
             <TextField label="Name" fullWidth variant="filled" required />
             <TextField label="Email" fullWidth variant="filled" required />

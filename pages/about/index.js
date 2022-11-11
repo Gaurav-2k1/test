@@ -13,10 +13,17 @@ export default function About() {
           ONE STOP FOR YOUR TRAINING & LEARNING NEEDS
         </p>
         <p className="text-white text-justify">
-          Put your concerns to rest, because INFODAL offers you certified,
-          digital, and leading edge finest courses that you can take in the
-          convenience of your own home, complete with practice activities to
-          ensure that you get the most out of the course.
+          {`Are you concerned about the unknown or concerned about keeping up with
+          today's technologically evolved society? Put your concerns to rest;
+          INFODAL will give you the most excellent accredited, digital, and
+          renowned courses right in the convenience of your own home, complete
+          with practice exercises to ensure you get the most out of your time
+          spent learning. There is a massive audience of potential users, from
+          solo entrepreneurs to established digital enterprises. Courses were
+          compiled after careful consideration of their usefulness and
+          necessity. Being one of the industry's most well-known names, we
+          guarantee you'll receive the most cutting-edge information and courses
+          available anywhere online.`}
         </p>
       </div>
 

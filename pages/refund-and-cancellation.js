@@ -30,11 +30,14 @@ export default function RefundAndCancellation() {
         <h2 className={classes.subheading}>Video Course</h2>
         <ul className={classes.list}>
           <li>
-            Refund Policy - Once a video course has been purchased, we will
-            issue a refund into the back account provided, only within 7 days
-            from the date of purchase,. Kindly watch the preview video of the
-            course you want to purchase or talk to our team if you have any
-            queries before buying the course.
+            Following the guidelines outlined in the Swap and Wallet Refund
+            Policy, no cash refunds will be issued after a video course has been
+            paid for in full. Within seven days after the date of purchase,
+            however, you can request either a course switch or a credit in your
+            INFODAL wallet (in the form of a coupon). Before you buy the course,
+            we kindly ask that you watch the introduction video first or get in
+            touch with our support team if you have any questions about the
+            content of the course.
           </li>
         </ul>
       </div>
