@@ -27,11 +27,8 @@ export default function LiveCourses() {
     <div>
       <NewSection
         title="LIVE INTERACTIVE COURSES"
-        para1="One or two liner title: It helps the designer plan where the content
-          will sit."
-        para2="Sub-content: It helps in creating drafts of the content on the pages
-          of the website. It originates from the Latin text but is seen as
-          gibberish."
+        para1="Take specialized courses with a live instructor to enhance your skills."
+        para2="You'll learn new skills in a specific area with our live 1:1 instructor-led training. Take a series of in-depth classes to improve your practical skills. Get a recognized digital certificate and show potential employers your new skills and accomplishments."
       />
       {isLoading ? (
         <div className="flex flex-row justify-center p-5">

@@ -69,10 +69,10 @@ export default function LandingScreen() {
           <div>
             <h1 className="font-bold text-lg">{`Learn the latest digital skills for tomorrow's jobs`}</h1>
             <p className="text-sm my-3">
-              Put your concerns to rest, because INFODAL offers you certified,
-              digital, and leading-edge finest courses that you can take in the
-              convenience of your own home, complete with practice activities to
-              ensure that you get the most out of the course.
+              Begin, Switch or Enhance your career with more than 250+ online
+              and self-paced courses, professional certificates, and job
+              placements. Hassle free training & learning experience with world
+              class trainers and mentorship.
             </p>
             {!isAuthenticated && (
               <Button className="bg-primary" onClick={handleSignUpModalOpen}>
