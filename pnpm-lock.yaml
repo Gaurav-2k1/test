@@ -9,7 +9,6 @@ specifiers:
   '@tailwindcss/line-clamp': ^0.4.2
   autoprefixer: ^10.4.4
   axios: ^0.26.1
-  cashfree-dropjs: ^1.1.4
   cssnano: ^5.1.7
   eslint: 8.11.0
   eslint-config-next: 12.1.0
@@ -39,7 +38,6 @@ dependencies:
   '@mui/material': 5.10.11_mpum5pu5vxdmtbvcevx44455ti
   '@reduxjs/toolkit': 1.8.6_csuupx2mfbspdz76fkecdgkise
   axios: 0.26.1
-  cashfree-dropjs: 1.1.4
   cssnano: 5.1.13_postcss@8.4.18
   lodash: 4.17.21
   material-ui-phone-number: 3.0.0_4je53n7atnhrupiny3mofhpqwu
@@ -1129,10 +1127,6 @@ packages:
 
   /caseless/0.12.0:
     resolution: {integrity: sha512-4tYFyifaFfGacoiObjJegolkwSU4xQNGbVgUiNYVUxbQ2x2lUsFvY4hVgVzGiIe6WLOPqycWXA40l+PWsxthUw==}
-
-  /cashfree-dropjs/1.1.4:
-    resolution: {integrity: sha512-fuVaYqQyjzH1h+w2Ojj/JbmxYA6zoRHTgnxY4Ccz8/gGatQ4KuPhGcTLlwjwCHBAx2RZEmBIBSHZpv2zJRDJpw==}
-    dev: false
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}

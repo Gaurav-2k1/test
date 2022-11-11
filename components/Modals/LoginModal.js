@@ -7,7 +7,7 @@ import { getLoginToggle, setLoginToggle } from "../../store/modalSlice";
 import { useForm } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import { login } from "../../service/auth";
-import { setToken } from "../../store/authSlice";
+import { setToken, setUserDetails } from "../../store/authSlice";
 import { debounce } from "lodash";
 
 export default function LoginModal() {
@@ -36,6 +36,7 @@ export default function LoginModal() {
     response.error &&
       setError("login", { types: { message: response.error.message } });
     response.jwt && dispatch(setToken(response.jwt));
+    response.user && dispatch(setUserDetails(response.user));
     response.jwt && closeModalHandler();
     response.jwt && reset();
   };

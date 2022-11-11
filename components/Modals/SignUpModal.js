@@ -11,7 +11,7 @@ import {
 import { useForm } from "react-hook-form";
 import { Controller } from "react-hook-form";
 import { signUp } from "../../service/auth";
-import { getToken, setToken } from "../../store/authSlice";
+import { getToken, setToken, setUserDetails } from "../../store/authSlice";
 import Link from "next/link";
 import { LoaderIcon } from "react-hot-toast";
 
@@ -46,6 +46,7 @@ export default function SignUpModal() {
     response.error &&
       setError("signup", { types: { message: response.error.message } });
     response.jwt && dispatch(setToken(response.jwt));
+    response.user && dispatch(setUserDetails(response.user));
     response.jwt && closeModalHandler();
     response.jwt && reset();
   };

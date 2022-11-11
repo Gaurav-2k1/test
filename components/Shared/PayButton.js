@@ -1,0 +1,116 @@
+import { Button } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import toast from "react-hot-toast";
+import { useQuery } from "react-query";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  BASE_URL,
+  DEPLOYMENT_URL,
+  razorpay_key_id,
+} from "../../constants/constants";
+import { createOrder, verifyIfOrderExists } from "../../service/payment";
+import { getUserDetails } from "../../store/authSlice";
+import { getCurrency } from "../../store/currencySlice";
+import { setSignUpToggle } from "../../store/modalSlice";
+import useIsAuthenticated from "../Hooks/useIsAuthenticated";
+
+export default function PayButton({ amount, course_id, course_type }) {
+  const [orderDetails, setOrderDetails] = useState({
+    order_token: "",
+    order_id: "",
+  });
+  const currency = useSelector(getCurrency);
+  const isAuthenticated = useIsAuthenticated();
+  const dispatch = useDispatch();
+  const userDetails = useSelector(getUserDetails);
+  var paymentData = useQuery(
+    ["create-order", course_id, course_type, currency],
+    createOrder,
+    { refetchOnWindowFocus: false, enabled: false }
+  );
+
+  const handlePayButtonClick = async (e) => {
+    if (isAuthenticated) {
+      await paymentData.refetch();
+      e.target.form.submit();
+    } else {
+      dispatch(setSignUpToggle(true));
+    }
+  };
+
+  var isExists = useQuery(
+    [`verify-order-exists-${course_type}`, course_id, course_type],
+    verifyIfOrderExists,
+    { retry: false }
+  );
+
+  useEffect(() => {
+    if (paymentData.isFetchedAfterMount) {
+      setOrderDetails(paymentData.data);
+    }
+  }, [paymentData.isFetchedAfterMount]);
+
+  const isLoadingPayment = paymentData.isFetching || paymentData.isLoading;
+
+  const getCancelUrl = () => {
+    switch (course_type) {
+      case "live":
+        return `live-courses/${course_id}`;
+      case "video":
+        return `video-courses/${course_id}`;
+    }
+  };
+  return (
+    <div className="h-full w-full flex flex-row justify-center">
+      <form
+        method="POST"
+        action="https://api.razorpay.com/v1/checkout/embedded"
+      >
+        <input type="hidden" name="key_id" value={razorpay_key_id} />
+        <input type="hidden" name="amount" value={Math.floor(amount * 100)} />
+        <input type="hidden" name="order_id" value={orderDetails.order_token} />
+        <input type="hidden" name="name" value="Infodal6 Trainings" />
+        <input
+          type="hidden"
+          name="description"
+          value="World's No.1 Professsional Training Platform"
+        />
+        <input
+          type="hidden"
+          name="image"
+          value="https://cdn.razorpay.com/logos/BUVwvgaqVByGp2_large.jpg"
+        />
+
+        <input type="hidden" name="prefill[email]" value={userDetails.email} />
+
+        <input
+          type="hidden"
+          name="callback_url"
+          value={`${BASE_URL}/payment/update`}
+        />
+        <input
+          type="hidden"
+          name="cancel_url"
+          value={`${DEPLOYMENT_URL}/${getCancelUrl()}`}
+        />
+        {isAuthenticated &&
+        isExists.isFetchedAfterMount &&
+        isExists.data &&
+        isExists.data.purchased ? (
+          <div className="text-sm p-4">
+            You have already purchased this course, please check your email for
+            further details
+          </div>
+        ) : (
+          <Button
+            className="bg-primary my-4 text-white w-[90vw]"
+            onClick={handlePayButtonClick}
+            disabled={isLoadingPayment}
+          >
+            {!isLoadingPayment ? "Pay" : "Fetching Payment Details.."}
+          </Button>
+        )}
+      </form>
+    </div>
+  );
+}

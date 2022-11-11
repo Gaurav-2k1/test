@@ -15,7 +15,6 @@
     "@mui/material": "^5.5.3",
     "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.26.1",
-    "cashfree-dropjs": "^1.1.4",
     "cssnano": "^5.1.7",
     "lodash": "^4.17.21",
     "material-ui-phone-number": "^3.0.0",
