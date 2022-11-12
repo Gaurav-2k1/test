@@ -28,7 +28,7 @@ export default function LandingScreen() {
       <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-black">
         <div className="flex flex-col justify-end h-1/2 items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
           <div className="p-3">
-            <div>Crack dream jobs with top rated certificate courses</div>
+            <div>Upskill, Learn & Certify</div>
             <div className="flex flex-row justify-between items-center">
               <TextField
                 value={search}
@@ -69,10 +69,10 @@ export default function LandingScreen() {
           <div>
             <h1 className="font-bold text-lg">{`Learn the latest digital skills for tomorrow's jobs`}</h1>
             <p className="text-sm my-3">
-              Begin, Switch or Enhance your career with more than 250+ online
-              and self-paced courses, professional certificates, and job
-              placements. Hassle free training & learning experience with world
-              class trainers and mentorship.
+              Learning without borders Begin, Switch or Enhance your career with
+              more than 250+ online and self-paced courses, professional
+              certificates, and job placements. Hassle free training & learning
+              experience with world class trainers and mentorship.
             </p>
             {!isAuthenticated && (
               <Button className="bg-primary" onClick={handleSignUpModalOpen}>

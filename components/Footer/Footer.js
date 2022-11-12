@@ -24,10 +24,32 @@ export default function Footer() {
         <a href="mailto:contact@infodal.com">contact@infodal.com</a>
       </p>
       <div className="flex flex-row justify-evenly w-1/2">
-        <FacebookOutlinedIcon color="primary" fontSize="medium" />
-        <YouTubeIcon color="primary" fontSize="medium" />
-        <TwitterIcon color="primary" fontSize="medium" />
-        <InstagramIcon color="primary" fontSize="medium" />
+        <Link passHref href="https://facebook.com/Infodal-106882495314634">
+          <a target="_blank" rel="noopener noreferrer">
+            <FacebookOutlinedIcon color="primary" fontSize="medium" />
+          </a>
+        </Link>
+        <Link
+          passHref
+          href="https://www.youtube.com/channel/UCIurBigscr4IRU55dXFgseg"
+        >
+          <a target="_blank" rel="noopener noreferrer">
+            <YouTubeIcon color="primary" fontSize="medium" />
+          </a>
+        </Link>
+        <Link
+          passHref
+          href="https://www.youtube.com/channel/UCIurBigscr4IRU55dXFgseg"
+        >
+          <a target="_blank" rel="noopener noreferrer">
+            <TwitterIcon color="primary" fontSize="medium" />
+          </a>
+        </Link>
+        <Link passHref href="https://www.instagram.com/infodal_/">
+          <a target="_blank" rel="noopener noreferrer">
+            <InstagramIcon color="primary" fontSize="medium" />
+          </a>
+        </Link>
       </div>
       <Divider
         orientation="horizontal"
