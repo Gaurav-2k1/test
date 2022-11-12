@@ -59,7 +59,7 @@ export default function Footer() {
         <p className="text-lg font-semibold">Company</p>
         <div className="flex flex-col justify-between mt-3">
           <Link href="/about" passHref>
-            About Us
+            About Us/Contact Us
           </Link>
           {/* <Link href="/blog">Blog</Link> */}
           <Link href="request-a-course" passHref>
