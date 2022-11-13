@@ -66,7 +66,7 @@ export default function PayButton({ amount, course_id, course_type }) {
         action="https://api.razorpay.com/v1/checkout/embedded"
       >
         <input type="hidden" name="key_id" value={razorpay_key_id} />
-        <input type="hidden" name="amount" value={Math.floor(amount * 100)} />
+        <input type="hidden" name="amount" value={Math.floor(amount)} />
         <input type="hidden" name="order_id" value={orderDetails.order_token} />
         <input type="hidden" name="name" value="Infodal6 Trainings" />
         <input

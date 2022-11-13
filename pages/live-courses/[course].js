@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React from "react";
 import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
@@ -10,12 +10,9 @@ import { fetchLiveCourseDetail } from "../../service/live";
 import { getCurrency } from "../../store/currencySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
-import { isEqual, isNull, isUndefined } from "lodash";
+import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
-import { Button } from "@mui/material";
 import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
-import { setSignUpToggle } from "../../store/modalSlice";
-import { createOrder, verifyIfOrderExists } from "../../service/payment";
 import PayButton from "../../components/Shared/PayButton";
 
 export default function LiveCourse() {
@@ -93,16 +90,13 @@ export default function LiveCourse() {
         }
       />
 
-      {courseDetail.data.attributes.courseOverview.isPaymentAllowed ||
-        (isNull(
-          courseDetail.data.attributes.courseOverview.isPaymentAllowed
-        ) && (
-          <PayButton
-            amount={prices.discountedPrice}
-            course_id={course}
-            course_type="live"
-          />
-        ))}
+      {courseDetail.data.attributes.courseOverview.isPaymentAllowed && (
+        <PayButton
+          amount={prices.discountedPrice}
+          course_id={course}
+          course_type="live"
+        />
+      )}
     </div>
   ) : (
     <div className="h-[50vh] w-full flex flex-row justify-center items-center">
