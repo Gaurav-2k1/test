@@ -91,7 +91,7 @@ export default function VideoCourses() {
         <PayButton
           amount={prices.discountedPrice}
           course_id={course}
-          course_type="live"
+          course_type="video"
         />
       )}
     </div>
