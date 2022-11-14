@@ -7,13 +7,19 @@ import { useQuery } from "react-query";
 import { LoaderIcon } from "react-hot-toast";
 import { isNull, isUndefined } from "lodash";
 import { fetchVideoCourses } from "../../service/video";
+import useIsDesktop from "../Hooks/useIsDesktop";
 
 export default function VideoCourses() {
-  const courses = useQuery(["video-courses-top", 1, 5], fetchVideoCourses, {
-    // onSuccess: (data) => {
-    //   setCourse(data.data);
-    // },
-  });
+  const isDesktop = useIsDesktop();
+  const courses = useQuery(
+    ["video-courses-top", 1, isDesktop ? 6 : 5],
+    fetchVideoCourses,
+    {
+      // onSuccess: (data) => {
+      //   setCourse(data.data);
+      // },
+    }
+  );
   const isLoading =
     isUndefined(courses) ||
     isNull(courses) ||
@@ -21,7 +27,7 @@ export default function VideoCourses() {
     courses.isLoading;
 
   return (
-    <div>
+    <div className="md:px-5">
       <NewSection
         title="VIDEO COURSES"
         para1="One or two liner title: It helps the designer plan where the content
@@ -36,7 +42,7 @@ export default function VideoCourses() {
         </div>
       ) : (
         <div className="flex flex-row overflow-x-auto text-white mt-5">
-          <div className="flex flex-row">
+          <div className="flex flex-row md:grid md:grid-cols-3 md:gap-4">
             {courses.data.data.map((course) => (
               <VideoCourseComponent
                 key={course.id}
@@ -66,7 +72,9 @@ export default function VideoCourses() {
       )}
       <div className="w-full flex flex-row justify-center mb-5">
         <Link href="/video-courses" passHref>
-          <Button className="bg-primary">Explore All Video Courses</Button>
+          <Button className="bg-primary md:text-lg">
+            Explore All Video Courses
+          </Button>
         </Link>
       </div>
     </div>
