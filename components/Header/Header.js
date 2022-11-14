@@ -12,7 +12,6 @@ import MenuBar from "./MenuBar";
 import Link from "next/link";
 
 export default function Header() {
-  const isDesktop = useMediaQuery(theme.breakpoints.up("sm"));
   const isMenuOpen = useSelector(getMenuToggle);
   const dispatch = useDispatch();
   const toggleDrawer = () => {

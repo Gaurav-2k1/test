@@ -8,10 +8,12 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { liveCoursesList } from "../../config/config";
 import { fetchLiveCourses } from "../../service/live";
+import useIsDesktop from "../Hooks/useIsDesktop";
 import LiveCourseComponent from "../Shared/LiveCourseComponent";
 import NewSection from "../Shared/NewSection";
 
 export default function LiveCourses() {
+  const isDesktop = useIsDesktop();
   const courses = useQuery(["live-courses-top", 1, 5], fetchLiveCourses, {
     // onSuccess: (data) => {
     //   setCourse(data.data);
