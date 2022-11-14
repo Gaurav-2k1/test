@@ -61,7 +61,7 @@ export default function MenuBar() {
       onClose={() => toggleDrawer(false)}
       onOpen={() => toggleDrawer(true)}
     >
-      <div className="w-[100vw]">
+      <div className="w-[100vw] md:w-[33vw]">
         <div className="flex flex-row justify-center px-2 pt-2 items-center shadow-md">
           <div className="w-20 h-fit">
             <Image src={Logo} alt="Infodal Logo" />
@@ -105,14 +105,14 @@ export default function MenuBar() {
 
         <div className="flex flex-col items-center w-full gap-2">
           <Button
-            className="bg-secondary w-[80vw]"
+            className="bg-secondary w-[80vw] md:w-1/2"
             onClick={() => toggleCurrencyDrawer(true)}
           >
             Select Currency - {currency}
           </Button>
           {!isAuthenticated && (
             <Button
-              className="bg-primary w-[80vw]"
+              className="bg-primary w-[80vw] md:w-1/2"
               onClick={setSignUpModalOpenHandler}
             >
               Sign Up
@@ -120,14 +120,18 @@ export default function MenuBar() {
           )}
           {!isAuthenticated && (
             <Button
-              className="bg-primary w-[80vw]"
+              className="bg-primary w-[80vw] md:w-1/2"
               onClick={setLoginModalOpenHandler}
             >
               Login
             </Button>
           )}
           {isAuthenticated && (
-            <Button color="error" className="w-[80vw]" onClick={logoutHandler}>
+            <Button
+              color="error"
+              className="w-[80vw] md:w-1/2"
+              onClick={logoutHandler}
+            >
               Logout
             </Button>
           )}
@@ -138,7 +142,7 @@ export default function MenuBar() {
         onClose={() => toggleCurrencyDrawer(false)}
         onOpen={() => toggleCurrencyDrawer(true)}
       >
-        <div className="w-[100vw]">
+        <div className="w-[100vw] md:w-[30vw]">
           <div className="flex flex-row justify-center py-4 px-2 items-center shadow-md">
             <div className="w-20 h-10">
               <Image src={Logo} alt="Infodal Logo" />

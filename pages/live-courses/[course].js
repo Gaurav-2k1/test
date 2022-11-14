@@ -44,11 +44,11 @@ export default function LiveCourse() {
         src={
           isUndefined(
             courseDetail.data.attributes.courseImage.data.attributes.formats
-              .small
+              .medium
           )
             ? courseDetail.data.attributes.courseImage.data.attributes.url
             : courseDetail.data.attributes.courseImage.data.attributes.formats
-                .small.url
+                .medium.url
         }
         alt={courseDetail.data.attributes.name}
         className=""

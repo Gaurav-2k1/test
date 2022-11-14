@@ -102,7 +102,7 @@ export default function PayButton({ amount, course_id, course_type }) {
           </div>
         ) : (
           <Button
-            className="bg-primary my-4 text-white w-[90vw]"
+            className="bg-primary my-4 text-white w-[90vw] md:w-[40vw] md:h-12"
             onClick={handlePayButtonClick}
             disabled={isLoadingPayment}
           >

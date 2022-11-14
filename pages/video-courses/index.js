@@ -31,9 +31,9 @@ export default function VideoCourses() {
         </div>
       </HeadImageWithText>
 
-      <div className="flex flex-col gap-5 items-center mb-10">
+      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 md:relative">
         {isLoading ? (
-          <LoaderIcon className="w-20 h-20" />
+          <LoaderIcon className="w-20 h-20 md:absolute md:left-1/2" />
         ) : (
           courses.data.data.map((course) => (
             <VideoCourseComponent
