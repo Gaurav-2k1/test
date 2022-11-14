@@ -25,10 +25,10 @@ export default function LandingScreen() {
   };
   return (
     <div>
-      <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center h-[40vh] bg-blend-screen bg-black">
-        <div className="flex flex-col justify-end h-1/2 items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
-          <div className="p-3">
-            <div>Upskill, Learn & Certify</div>
+      <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center md:h-[80vh] h-[40vh] bg-blend-screen bg-black">
+        <div className="flex flex-col justify-end h-1/2 md:h-full items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
+          <div className="p-3 md:absolute md:top-[35vh] md:text-3xl">
+            <div>Learn, Upskill & Certify</div>
             <div className="flex flex-row justify-between items-center">
               <TextField
                 value={search}
@@ -64,24 +64,27 @@ export default function LandingScreen() {
           </div>
         </div>
       </div>
-      <div className="my-4">
+      <div className="my-4 md:flex md:flex-row">
         <div className="w-full bg-secondary text-white flex flex-row p-4">
-          <div>
-            <h1 className="font-bold text-lg">{`Learn the latest digital skills for tomorrow's jobs`}</h1>
-            <p className="text-sm my-3">
+          <div className="md:pt-5 md:px-5">
+            <h1 className="font-bold text-lg md:text-3xl">{`Learn the latest digital skills for tomorrow's jobs`}</h1>
+            <p className="text-sm my-3 md:text-lg">
               Learning without borders Begin, Switch or Enhance your career with
               more than 250+ online and self-paced courses, professional
               certificates, and job placements. Hassle free training & learning
               experience with world class trainers and mentorship.
             </p>
             {!isAuthenticated && (
-              <Button className="bg-primary" onClick={handleSignUpModalOpen}>
+              <Button
+                className="bg-primary md:w-32 md:h-10"
+                onClick={handleSignUpModalOpen}
+              >
                 Register Now
               </Button>
             )}
           </div>
         </div>
-        <Image src={UpgradeImg} alt="Infodal" className="" />
+        <Image src={UpgradeImg} alt="Infodal" objectFit="contain" />
       </div>
     </div>
   );
@@ -89,11 +92,11 @@ export default function LandingScreen() {
 
 function Feature({ icon, title, subtitle }) {
   return (
-    <div className="flex flex-row justify-start items-center text-center text-primary text-sm font-normal">
+    <div className="flex flex-row justify-start items-center text-center text-primary text-sm font-normal md:justify-center">
       {icon}
-      <div className="flex flex-col w-full justify-center align-center rounded-md h-20">
+      <div className="flex flex-col w-full justify-center align-center rounded-md h-20 md:w-fit md:pl-2 md:text-lg">
         <p>{title}</p>
-        <p className="text-xs">{subtitle}</p>
+        <p className="text-xs md:text-md">{subtitle}</p>
       </div>
     </div>
   );
