@@ -4,7 +4,7 @@ import React from "react";
 
 export default function RequestADemo() {
   return (
-    <div className="relative w-full bg-[url('/images/home/instructor/instructor.png')] bg-cover bg-center h-[40vh] bg-blend-overlay bg-slate-900/60 p-3">
+    <div className="relative w-full bg-[url('/images/home/instructor/instructor.png')] bg-cover bg-center h-[40vh] md:h-[60vh] md:w-[50vw] bg-blend-overlay bg-slate-900/60 p-3">
       <div className="text-lg font-semibold text-white">
         <span>Request a Demo from</span>
         <span className="pl-2 text-primary">Infodal</span>

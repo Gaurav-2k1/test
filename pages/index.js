@@ -14,8 +14,10 @@ export default function Home() {
       <Partners />
       <LiveCourses />
       <VideoCourses />
-      <RequestADemo />
-      <RequestADemoForm />
+      <div className="md:flex md:flex-row md:justify-between md:items-center md:mt-8">
+        <RequestADemo />
+        <RequestADemoForm />
+      </div>
     </div>
   );
 }
