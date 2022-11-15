@@ -22,7 +22,7 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
-      <Script id="clarity" type="text/javascript" strategy="afterInteractive">
+      <Script id="ms_clarity" strategy="afterInteractive">
         {`(function(c,l,a,r,i,t,y){
         c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
         t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
