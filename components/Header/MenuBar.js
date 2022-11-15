@@ -56,25 +56,8 @@ export default function MenuBar() {
   };
 
   return (
-    <SwipeableDrawer
-      open={isMenuOpen}
-      onClose={() => toggleDrawer(false)}
-      onOpen={() => toggleDrawer(true)}
-    >
-      <div className="w-[100vw] md:w-[33vw]">
-        <div className="flex flex-row justify-center px-2 pt-2 items-center shadow-md">
-          <div className="w-20 h-fit">
-            <Image src={Logo} alt="Infodal Logo" />
-          </div>
-          <IconButton
-            onClick={() => toggleDrawer(false)}
-            className="absolute right-5"
-          >
-            <ClearIcon />
-          </IconButton>
-        </div>
-
-        <div className="flex flex-col justify-evenly gap-6 px-4 py-5">
+    <div>
+      <div className="flex flex-col justify-evenly gap-6 px-4 py-5">
           {topMenuList.map((item, index) => (
             <div
               key={index}
@@ -91,7 +74,7 @@ export default function MenuBar() {
           {menuList.map((item, index) => (
             <div
               key={index}
-              className="w-[60vw] flex flex-row"
+              className="w-[20vw] flex flex-row"
               onClick={() => routeToPage(item.link)}
             >
               <div className="w-5 h-5 mr-2">
@@ -103,7 +86,7 @@ export default function MenuBar() {
           <Divider className="bg-slate" />
         </div>
 
-        <div className="flex flex-col items-center w-full gap-2">
+        {/* <div className="flex flex-col items-center w-full gap-2">
           <Button
             className="bg-secondary w-[80vw] md:w-1/2"
             onClick={() => toggleCurrencyDrawer(true)}
@@ -135,9 +118,9 @@ export default function MenuBar() {
               Logout
             </Button>
           )}
-        </div>
-      </div>
-      <SwipeableDrawer
+        </div> */}
+
+      {/* <SwipeableDrawer
         open={isCurrencyToggleOpen}
         onClose={() => toggleCurrencyDrawer(false)}
         onOpen={() => toggleCurrencyDrawer(true)}
@@ -177,8 +160,9 @@ export default function MenuBar() {
             />
           </div>
         </div>
-      </SwipeableDrawer>
-    </SwipeableDrawer>
+      </SwipeableDrawer> */}
+    </div>
+        
   );
 }
 //

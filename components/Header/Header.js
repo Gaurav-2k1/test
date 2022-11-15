@@ -10,7 +10,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { getMenuToggle, setMenuToggle } from "../../store/modalSlice";
 import MenuBar from "./MenuBar";
 import Link from "next/link";
-import { ArrowDropDown, MoreVertOutlined } from "@mui/icons-material";
+import { AccountCircle, ArrowDropDown, LoginOutlined, Logout, MoreVertOutlined } from "@mui/icons-material";
+import useIsAuthenticated from "../Hooks/useIsAuthenticated";
 
 export default function Header() {
   const isMenuOpen = useSelector(getMenuToggle);
@@ -21,27 +22,53 @@ export default function Header() {
 
   return (
     <div className="sticky top-0 left-0 right-0 bg-white z-30 shadow-md flex flex-row ">
-      <div className="flex flex-row py-2 px-2 items-center">
-        <div className="w-20 h-fit flex flex-row pl-4">
-            <Image src={Logo} alt="Infodal Logo" />  
+        <div className="flex flex-row py-2 px-2 items-center">
+            <div className="w-20 h-fit flex flex-row pl-4">
+                <Image src={Logo} alt="Infodal Logo" />  
+            </div>
+            <div className="w-25 h-fit flex flex-row px-8 relative group">
+              <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white w-full bg-primary md:w-auto px-8 rounded text-base font-bold focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">EXPLORE <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
+              <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
+              
+              <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
+                <div className="">
+                  <MenuBar />
+                </div>
+              </div>
+            </div>
         </div>
-        <div className="w-25 h-fit flex flex-row px-8">
-          <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white bg-primary px-8 rounded text-base font-bold focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-4 py-2.5 text-center inline-flex items-center" type="button">EXPLORE <svg className="ml-2 w-4 h-4" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg></button>
-        </div>
-      </div>
-      
-      <div className="flex flex-row py-2 px-2 items-center absolute top-0 right-0 px-4">
-        <div className="w-25 h-fit flex flex-row px-4">
-          <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-primary rounded font-bold px-4 py-2.5" type="button">LOGIN</button>
-        </div>
-        <div className="w-25 h-fit flex flex-row px-4">
-          <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded w-32 text-center font-bold bg-primary px-4 py-2.5" type="button">SIGN UP</button>
-        </div>
-        <div className="w-25 h-fit flex flex-row px-4 rounded">
-          <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center" type="button">INDIAN RUPEES - INR</button>
-        </div>
-      </div>
+        
+        {(useIsAuthenticated) && (
+          <div className="flex flex-row py-2 px-2 items-center absolute top-0 right-0 px-4">
+            <div className="w-25 h-fit flex flex-row px-4">
+              <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-primary rounded font-bold px-4 py-2.5" type="button">LOGIN</button>
+            </div>
+            <div className="w-25 h-fit flex flex-row px-4">
+              <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded w-32 text-center font-bold bg-primary px-4 py-2.5" type="button">SIGN UP</button>
+            </div>
+            <div className="w-25 h-fit flex flex-row px-4 rounded">
+              <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center" type="button">INDIAN RUPEES - INR</button>
+            </div>
+          </div>
+        )}
+
+        {(!useIsAuthenticated) && (
+          <div className="flex flex-row py-2 px-2 items-center absolute top-0 right-0 px-4">
+            <div className="relative group h-fit px-4 rounded">
+              <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded-full w-20 text-center font-bold bg-primary px-4 py-2.5 " type="button"><AccountCircle /></button>
+
+              <div className="absolute hidden bg-grey-200 group-hover:block">
+                <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
+                  <Button>LOGOUT</Button>
+                </div>
+              </div>
+              </div>
+            </div>  
+          
+        )}
+
     </div>
+  </div>
   );
 }
 
