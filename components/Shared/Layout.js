@@ -22,7 +22,13 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
-
+      <Script
+        type="text/javascript"
+        id="hs-script-loader"
+        async
+        defer
+        src="//js-eu1.hs-scripts.com/25912002.js"
+      />
       <body>
         <Script
           async
@@ -34,13 +40,7 @@ export default function Layout({ children }) {
             gtag('js', new Date());
             gtag('config', 'G-27Y62T04VX');`}
         </Script>
-        <Script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="//js-eu1.hs-scripts.com/25912002.js"
-        />
+
         {children}
         <div id="payment-form"></div>
 
