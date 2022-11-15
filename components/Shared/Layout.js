@@ -22,14 +22,15 @@ export default function Layout({ children }) {
       </Head>
 
       <Header />
-      <Script
-        type="text/javascript"
-        id="hs-script-loader"
-        async
-        defer
-        src="//js-eu1.hs-scripts.com/25912002.js"
-      />
+
       <body>
+        <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-eu1.hs-scripts.com/25912002.js"
+        />
         {children}
         <div id="payment-form"></div>
 
