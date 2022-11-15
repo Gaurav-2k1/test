@@ -27,6 +27,14 @@ export default function Layout({ children }) {
         {children}
         <div id="payment-form"></div>
 
+        <Script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="//js-eu1.hs-scripts.com/25912002.js"
+        />
+
         {/* <Script src="https://sdk.cashfree.com/js/ui/1.0.20/dropinClient.sandbox.js"></Script> */}
         <Script
           strategy="lazyOnload"
