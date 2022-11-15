@@ -25,6 +25,16 @@ export default function Layout({ children }) {
 
       <body>
         <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-27Y62T04VX"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-27Y62T04VX');`}
+        </Script>
+        <Script
           type="text/javascript"
           id="hs-script-loader"
           async
