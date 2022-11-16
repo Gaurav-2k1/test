@@ -53,12 +53,11 @@ export default function SignUpModal() {
 
   return (
     <Modal open={isSignupModalOpen} onClose={closeModalHandler}>
-      <div className="bg-white p-5 rounded">
-        <div className="text-primary text-lg w-[80vw] text-center">
+      <div className="bg-white p-5 rounded md:w-1/2">
+        <div className="text-primary text-lg w-[80vw] md:w-full text-center">
           <p className="font-semibold">SIGNUP</p>
           <p className="text-sm text-black">
-            One or two liner title: It helps the designer plan where the content
-            will sit.
+            Create an account with Infodal to gain access to exclusive content
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Controller

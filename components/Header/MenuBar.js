@@ -21,6 +21,7 @@ import { getCurrency, setCurrency } from "../../store/currencySlice";
 import { isEqual } from "lodash";
 import { logout } from "../../store/authSlice";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
+import useIsDesktop from "../Hooks/useIsDesktop";
 
 export default function MenuBar() {
   const isMenuOpen = useSelector(getMenuToggle);
@@ -54,6 +55,8 @@ export default function MenuBar() {
     router.push(path);
     toggleDrawer(false);
   };
+
+  //console.log(useIsDesktop);
 
   return (
     <SwipeableDrawer
