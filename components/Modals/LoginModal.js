@@ -43,12 +43,11 @@ export default function LoginModal() {
 
   return (
     <Modal open={isLoginModalOpen} onClose={closeModalHandler}>
-      <div className="bg-white p-5 rounded">
-        <div className="text-primary text-lg w-[80vw] text-center">
+      <div className="bg-white p-5 rounded md:w-1/2">
+        <div className="text-primary text-lg w-[80vw] md:w-full text-center">
           <p className="font-semibold">LOGIN</p>
           <p className="text-sm text-black">
-            One or two liner title: It helps the designer plan where the content
-            will sit.
+            Please login to your account to gain access to exclusive content
           </p>
           <form onSubmit={handleSubmit(onSubmit)}>
             <Controller
