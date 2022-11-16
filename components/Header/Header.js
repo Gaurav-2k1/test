@@ -29,8 +29,8 @@ import useIsDesktop from "../Hooks/useIsDesktop";
 export default function Header() {
   const isMenuOpen = useSelector(getMenuToggle);
   const currency = useSelector(getCurrency);
-  const [currencyState, setState] = useState('INR - Indian Rupees');
 
+  
   const setSignUpModalOpenHandler = () => {
     dispatch(setSignUpToggle(true));
   };
@@ -46,10 +46,18 @@ export default function Header() {
     dispatch(logout());
   };
 
+  const router = useRouter();
+
   const dispatch = useDispatch();
   const toggleDrawer = () => {
     dispatch(setMenuToggle(!isMenuOpen));
   };
+
+  const routeToPage = (path) => {
+    router.push(path);
+    toggleDrawer(false);
+  };
+
   var isDesktop = useIsDesktop();
 
   return (
@@ -66,18 +74,18 @@ export default function Header() {
             
             <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
             <div className="flex flex-col justify-evenly gap-6 px-4 py-5">
-          {topMenuList.map((item, index) => (
-            <div
-              key={index}
-              className="w-[60vw] flex flex-row"
-              onClick={() => routeToPage(item.link)}
-            >
-              <div className="w-5 h-5 mr-2">
-                <Image src={item.image} alt={item.name} />
-              </div>
-              {item.name}
-            </div>
-          ))}
+              {topMenuList.map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[60vw] flex flex-row"
+                  onClick={() => routeToPage(item.link)}
+                >
+                  <div className="w-5 h-5 mr-2">
+                    <Image src={item.image} alt={item.name} />
+                  </div>
+                  {item.name}
+                </div>
+              ))}
           <Divider className="bg-slate" />
             {menuList.map((item, index) => (
               <div
@@ -93,7 +101,6 @@ export default function Header() {
             ))}
           <Divider className="bg-slate" />
         </div>
-
             </div>
           </div>
       </div>
@@ -107,7 +114,7 @@ export default function Header() {
             <button onClick={setSignUpModalOpenHandler} id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded w-32 text-center font-bold bg-primary px-4 py-2.5" type="button">SIGN UP</button>
           </div>
           <div className="w-25 h-fit flex flex-row px-4 rounded relative group">
-            <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center" type="button">{currencyState}</button>
+            <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center" type="button">Select Currency - {currency}</button>
           
             <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
             
@@ -143,8 +150,7 @@ export default function Header() {
       {(!useIsAuthenticated) && (
         <div className="flex flex-row py-2 px-2 items-center absolute top-0 right-0 px-4">
           <div className="relative group h-fit px-4 rounded">
-            <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded-full w-20 text-center font-bold bg-primary px-4 py-2.5 " type="button"><AccountCircle /></button>
-
+            <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded-full w-20 text-center font-bold px-4 py-2.5 " type="button"><AccountCircle fontSize="large" color="primary"/></button>
             <div className="absolute hidden bg-grey-200 group-hover:block">
               <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
                 <Button onClick={logoutHandler}>LOGOUT</Button>
@@ -152,9 +158,7 @@ export default function Header() {
             </div>
             </div>
           </div>  
-        
       )}
-
       </div>
     </div>
     )}
