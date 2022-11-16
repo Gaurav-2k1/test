@@ -115,7 +115,7 @@ export default function Header() {
             <button onClick={setLoginModalOpenHandler} id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-primary rounded font-bold px-4 py-2.5" type="button">LOGIN</button>
           </div>
           <div className="w-25 h-fit flex flex-row px-4">
-            <button onClick={setSignUpModalOpenHandler} id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded w-32 text-center font-bold bg-primary px-4 py-2.5" type="button">SIGN UP</button>
+            <button onClick={setSignUpModalOpenHandler} id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-white rounded text-center font-bold bg-primary px-4 py-2.5" type="button">SIGN UP</button>
           </div>
           <div className="w-25 h-fit flex flex-row px-4 rounded relative group">
             <button id="dropdownDefault" data-dropdown-toggle="dropdown" className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center" type="button">Select Currency - {currency}</button>
