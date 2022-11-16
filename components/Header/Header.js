@@ -69,7 +69,7 @@ export default function Header() {
   return (
     <div>
       {isDesktop && (
-        <div className="sticky top-0 left-0 right-0 bg-white z-30 shadow-md flex flex-row ">
+        <div className="fixed top-0 left-0 right-0 bg-white z-30 shadow-md flex flex-row ">
           <div className="flex flex-row py-2 px-2 items-center">
             <div className="w-20 h-fit flex flex-row pl-4">
               <Image src={Logo} alt="Infodal Logo" />
@@ -81,7 +81,7 @@ export default function Header() {
                 className="text-white w-32 bg-primary md:w-auto px-8 rounded font-bold focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium px-4 py-2.5 text-center inline-flex items-center"
                 type="button"
               >
-                EXPLORE{" "}
+                EXPLORE
                 <svg
                   className="ml-2 w-4 h-4"
                   aria-hidden="true"
@@ -156,48 +156,13 @@ export default function Header() {
                     SIGN UP
                   </button>
                 </div>
-                <div className="w-25 h-fit flex flex-row px-4 rounded relative group">
-                  <button
-                    id="dropdownDefault"
-                    data-dropdown-toggle="dropdown"
-                    className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center"
-                    type="button"
-                  >
-                    Select Currency - {currency}
-                  </button>
-
-                  <div className="absolute pt-8 mt-3 hidden bg-grey-200 group-hover:block">
-                    <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
-                      <div className="flex flex-col gap-3 px-3 py-5 cursor-pointer">
-                        <CurrencySelect
-                          currencyName="INR - Indian Rupees"
-                          currentCurrencyCode="INR"
-                          currentCurrency={currency}
-                        />
-                        <CurrencySelect
-                          currencyName="USD - US Dollars"
-                          currentCurrencyCode="USD"
-                          currentCurrency={currency}
-                        />
-                        <CurrencySelect
-                          currencyName="EUR - Euro"
-                          currentCurrencyCode="EUR"
-                          currentCurrency={currency}
-                        />
-                        <CurrencySelect
-                          currencyName="GBP - British Pound Sterling"
-                          currentCurrencyCode="GBP"
-                          currentCurrency={currency}
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <CurrencyComponentDesktop currency={currency} />
               </div>
             )}
 
             {isAuth && (
               <div className="flex flex-row py-2 px-2 items-center absolute top-0 right-0 px-4">
+                <CurrencyComponentDesktop currency={currency} />
                 <div className="relative group h-fit px-4 rounded">
                   <button
                     id="dropdownDefault"
@@ -272,6 +237,48 @@ const CurrencySelect = ({
     </div>
   );
 };
+
+export function CurrencyComponentDesktop({ currency }) {
+  return (
+    <div className="w-25 h-fit flex flex-row px-4 rounded relative group">
+      <button
+        id="dropdownDefault"
+        data-dropdown-toggle="dropdown"
+        className="text-black border-2 border-indigo-500/100 rounded font-bold px-4 py-2.5 text-center inline-flex items-center"
+        type="button"
+      >
+        Select Currency - {currency}
+      </button>
+
+      <div className="absolute pt-8 mt-3 hidden bg-grey-200 group-hover:block">
+        <div className="px-2 pt-2 pb-4 bg-white bg-gray-200 shadow-lg">
+          <div className="flex flex-col gap-3 px-3 py-5 cursor-pointer">
+            <CurrencySelect
+              currencyName="INR - Indian Rupees"
+              currentCurrencyCode="INR"
+              currentCurrency={currency}
+            />
+            <CurrencySelect
+              currencyName="USD - US Dollars"
+              currentCurrencyCode="USD"
+              currentCurrency={currency}
+            />
+            <CurrencySelect
+              currencyName="EUR - Euro"
+              currentCurrencyCode="EUR"
+              currentCurrency={currency}
+            />
+            <CurrencySelect
+              currencyName="GBP - British Pound Sterling"
+              currentCurrencyCode="GBP"
+              currentCurrency={currency}
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function HeaderItem({ name, route }) {
   const router = useRouter();
