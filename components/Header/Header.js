@@ -69,11 +69,14 @@ export default function Header() {
   return (
     <div>
       {isDesktop && (
-        <div className="fixed top-0 left-0 right-0 bg-white z-30 shadow-md flex flex-row ">
+        <div className="sticky top-0 left-0 right-0 bg-white z-50 shadow-md w-full">
           <div className="flex flex-row py-2 px-2 items-center">
-            <div className="w-20 h-fit flex flex-row pl-4">
-              <Image src={Logo} alt="Infodal Logo" />
-            </div>
+            <Link href="/" passHref>
+              <div className="w-20 h-fit flex flex-row pl-4">
+                <Image src={Logo} alt="Infodal Logo" />
+              </div>
+            </Link>
+
             <div className="w-25 h-fit flex flex-row px-8 relative group">
               <button
                 id="dropdownDefault"
