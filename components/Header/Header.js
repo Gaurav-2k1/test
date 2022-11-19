@@ -67,9 +67,9 @@ export default function Header() {
   var isAuth = useIsAuthenticated();
 
   return (
-    <div>
+    <div className="sticky top-0 left-0 right-0 z-50">
       {isDesktop && (
-        <div className="sticky top-0 left-0 right-0 bg-white z-50 shadow-md w-full">
+        <div className="bg-white z-50 shadow-md w-full">
           <div className="flex flex-row py-2 px-2 items-center">
             <Link href="/" passHref>
               <div className="w-20 h-fit flex flex-row pl-4">
@@ -190,7 +190,7 @@ export default function Header() {
       )}
 
       {!isDesktop && (
-        <div className="sticky top-0 left-0 right-0 bg-white z-30 shadow-md">
+        <div className="bg-white z-30 shadow-md">
           <div className="flex flex-row justify-between py-2 px-2 items-center">
             <div className="w-20">
               <MenuIcon
