@@ -1,5 +1,4 @@
 import CheckIcon from "@mui/icons-material/Check";
-import { Card } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
 import Image from "next/image";
@@ -44,7 +43,7 @@ export default function HorizontalMultiSection({
             </div>
             {!(pdfUrl === "") && (
               <Button
-                className="bg-primary z-10 mb-5"
+                className="bg-primary z-10 mb-5 md:w-1/5 md:h-10"
                 fullWidth
                 onClick={handleDownloadSyllabus}
               >
@@ -105,8 +104,8 @@ const StaticMenu = () => {
   const reviews = useScrollSection("reviews");
   const certification = useScrollSection("certification");
   return (
-    <Card className="bg-white shadow-none sticky top-16 z-20">
-      <div className="flex flex-row justify-between md:justify-start md:gap-3 text-gray-800 p-3 cursor-pointer">
+    <div className="bg-white shadow-none sticky top-20 z-20 md:top-14">
+      <div className="flex flex-row justify-between md:justify-start md:gap-8 text-gray-800 p-3 cursor-pointer">
         <MenuItem
           onClick={overview.onClick}
           selected={overview.selected}
@@ -128,6 +127,6 @@ const StaticMenu = () => {
           name="CERTIFICATE"
         />
       </div>
-    </Card>
+    </div>
   );
 };
