@@ -15,7 +15,7 @@ import NewSection from "../Shared/NewSection";
 export default function LiveCourses() {
   const isDesktop = useIsDesktop();
   const courses = useQuery(
-    ["live-courses-top", 1, isDesktop ? 6 : 5],
+    ["live-courses-top", 1, isDesktop ? 8 : 5],
     fetchLiveCourses,
     {
       // onSuccess: (data) => {
@@ -30,7 +30,7 @@ export default function LiveCourses() {
     courses.isLoading;
 
   return (
-    <div className="md:px-5">
+    <div>
       <NewSection
         title="LIVE INTERACTIVE COURSES"
         para1="Take specialized courses with a live instructor to enhance your skills."
@@ -41,8 +41,8 @@ export default function LiveCourses() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div className="flex flex-row overflow-x-auto text-white mt-5">
-          <div className="flex flex-row md:grid md:grid-cols-3 md:gap-4">
+        <div className="flex flex-row overflow-x-auto w-full md:justify-center text-white mt-5 md:overflow-auto">
+          <div className="flex flex-row md:grid md:grid-cols-4 md:place-items-center md:gap-4 justify-between ">
             {courses.data.data.map((course) => (
               <LiveCourseComponent
                 key={course.id}

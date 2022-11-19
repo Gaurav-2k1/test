@@ -32,7 +32,7 @@ export default function VideoCourseComponent({
   };
   return (
     <div
-      className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative md:w-[30vw]`}
+      className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative  lg:w-[21vw] md:w-[28vw] self-center`}
       onClick={handlePageRoute}
     >
       <Image

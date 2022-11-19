@@ -12,7 +12,7 @@ import useIsDesktop from "../Hooks/useIsDesktop";
 export default function VideoCourses() {
   const isDesktop = useIsDesktop();
   const courses = useQuery(
-    ["video-courses-top", 1, isDesktop ? 6 : 5],
+    ["video-courses-top", 1, isDesktop ? 8 : 5],
     fetchVideoCourses,
     {
       // onSuccess: (data) => {
@@ -27,7 +27,7 @@ export default function VideoCourses() {
     courses.isLoading;
 
   return (
-    <div className="md:px-5">
+    <div>
       <NewSection
         title="VIDEO COURSES"
         para1="One or two liner title: It helps the designer plan where the content
@@ -41,8 +41,8 @@ export default function VideoCourses() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div className="flex flex-row overflow-x-auto text-white mt-5">
-          <div className="flex flex-row md:grid md:grid-cols-3 md:gap-4">
+        <div className="flex flex-row overflow-x-auto md:justify-center text-white mt-5 md:overflow-auto">
+          <div className="flex flex-row md:grid md:grid-cols-4 md:gap-4">
             {courses.data.data.map((course) => (
               <VideoCourseComponent
                 key={course.id}

@@ -31,7 +31,7 @@ export default function VideoCourses() {
         </div>
       </HeadImageWithText>
 
-      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 md:relative">
+      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center">
         {isLoading ? (
           <LoaderIcon className="w-20 h-20 md:absolute md:left-1/2" />
         ) : (
