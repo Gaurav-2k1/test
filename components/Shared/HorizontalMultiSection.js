@@ -1,4 +1,5 @@
 import CheckIcon from "@mui/icons-material/Check";
+import { Card } from "@mui/material";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
 import Image from "next/image";
@@ -104,27 +105,29 @@ const StaticMenu = () => {
   const reviews = useScrollSection("reviews");
   const certification = useScrollSection("certification");
   return (
-    <div className="flex flex-row justify-between bg-secondary text-white p-3 sticky top-16 z-20">
-      <MenuItem
-        onClick={overview.onClick}
-        selected={overview.selected}
-        name="OVERVIEW"
-      />
-      <MenuItem
-        onClick={syllabus.onClick}
-        selected={syllabus.selected}
-        name="SYLLABUS"
-      />
-      <MenuItem
-        onClick={reviews.onClick}
-        selected={reviews.selected}
-        name="REVIEWS"
-      />
-      <MenuItem
-        onClick={certification.onClick}
-        selected={certification.selected}
-        name="CERTIFICATE"
-      />
-    </div>
+    <Card className="bg-white shadow-none sticky top-16 z-20">
+      <div className="flex flex-row justify-between md:justify-start md:gap-3 text-gray-800 p-3 cursor-pointer">
+        <MenuItem
+          onClick={overview.onClick}
+          selected={overview.selected}
+          name="OVERVIEW"
+        />
+        <MenuItem
+          onClick={syllabus.onClick}
+          selected={syllabus.selected}
+          name="SYLLABUS"
+        />
+        <MenuItem
+          onClick={reviews.onClick}
+          selected={reviews.selected}
+          name="REVIEWS"
+        />
+        <MenuItem
+          onClick={certification.onClick}
+          selected={certification.selected}
+          name="CERTIFICATE"
+        />
+      </div>
+    </Card>
   );
 };
