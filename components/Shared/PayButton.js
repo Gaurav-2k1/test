@@ -13,7 +13,12 @@ import { getCurrency } from "../../store/currencySlice";
 import { setSignUpToggle } from "../../store/modalSlice";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
 
-export default function PayButton({ amount, course_id, course_type }) {
+export default function PayButton({
+  amount,
+  course_id,
+  course_type,
+  coupon_code,
+}) {
   const [orderDetails, setOrderDetails] = useState({
     order_token: "",
     order_id: "",
@@ -23,7 +28,7 @@ export default function PayButton({ amount, course_id, course_type }) {
   const dispatch = useDispatch();
   const userDetails = useSelector(getUserDetails);
   var paymentData = useQuery(
-    ["create-order", course_id, course_type, currency],
+    ["create-order", course_id, course_type, currency, coupon_code],
     createOrder,
     { refetchOnWindowFocus: false, enabled: false }
   );
@@ -40,13 +45,14 @@ export default function PayButton({ amount, course_id, course_type }) {
   var isExists = useQuery(
     [`verify-order-exists-${course_type}`, course_id, course_type],
     verifyIfOrderExists,
-    { retry: false }
+    { retry: false, enabled: false }
   );
 
   useEffect(() => {
     if (paymentData.isFetchedAfterMount) {
       setOrderDetails(paymentData.data);
     }
+    isAuthenticated && isExists.refetch();
   }, [paymentData.isFetchedAfterMount]);
 
   const isLoadingPayment = paymentData.isFetching || paymentData.isLoading;

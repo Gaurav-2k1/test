@@ -11,6 +11,7 @@ export default function HeadImage({ src, alt, className, children }) {
         alt={alt}
         layout="fill"
         objectFit={isDesktop ? "contain" : "cover"}
+        quality={100}
       />
       <div>{children}</div>
     </div>

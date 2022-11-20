@@ -6,17 +6,20 @@ import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithou
 import HorizontalMultiSection from "../../components/Shared/HorizontalMultiSection";
 import HeadImage from "../../components/Shared/HeadImage";
 import { useQuery } from "react-query";
-import { getCurrency } from "../../store/currencySlice";
+import {
+  getCurrency,
+  getUpdatedCurrencyValue,
+  getValidatedCouponCode,
+  setUpdatedCurrencyValue,
+  setValidatedCouponCode,
+} from "../../store/currencySlice";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrencyAmounts } from "../../config/config";
-import { isEqual, isNull, isUndefined } from "lodash";
+import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
 import { fetchVideoCourseDetail } from "../../service/video";
-import { Button } from "@mui/material";
-import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
-import { createOrder, verifyIfOrderExists } from "../../service/payment";
-import { setSignUpToggle } from "../../store/modalSlice";
 import PayButton from "../../components/Shared/PayButton";
+import ValidateCoupon from "../../components/Shared/ValidateCoupon";
 
 export default function VideoCourses() {
   const router = useRouter();
@@ -24,6 +27,8 @@ export default function VideoCourses() {
   const currency = useSelector(getCurrency);
   const dispatch = useDispatch();
 
+  const updatedCurrency = useSelector(getUpdatedCurrencyValue);
+  const validatedCouponCode = useSelector(getValidatedCouponCode);
   var courseDetail = useQuery(["video-course", course], fetchVideoCourseDetail);
 
   const isLoading =
@@ -36,6 +41,14 @@ export default function VideoCourses() {
   const prices =
     courseDetail &&
     getCurrencyAmounts(currency, courseDetail.data.attributes.price);
+
+  useEffect(() => {
+    return () => {
+      dispatch(setUpdatedCurrencyValue(undefined));
+      dispatch(setValidatedCouponCode(undefined));
+    };
+  }, [dispatch]);
+
   return !isLoading ? (
     <div>
       <HeadImage
@@ -60,7 +73,9 @@ export default function VideoCourses() {
             <div className="flex flex-row gap-2 items-center">
               <p>{currency}</p>
               <p className="line-through">{prices.price}</p>
-              <p className="text-lg">{prices.discountedPrice}</p>
+              <p className="text-lg">
+                {updatedCurrency ? updatedCurrency : prices.discountedPrice}
+              </p>
             </div>
             <div className="flex flex-row">
               <WatchLaterOutlinedIcon />
@@ -88,11 +103,16 @@ export default function VideoCourses() {
         }
       />
       {courseDetail.data.attributes.courseDetail.isPaymentAllowed && (
-        <PayButton
-          amount={prices.discountedPrice}
-          course_id={course}
-          course_type="video"
-        />
+        <div>
+          <ValidateCoupon courseId={course} courseType="video" />
+
+          <PayButton
+            amount={prices.discountedPrice}
+            course_id={course}
+            course_type="video"
+            coupon_code={validatedCouponCode}
+          />
+        </div>
       )}
     </div>
   ) : (
