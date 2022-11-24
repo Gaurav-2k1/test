@@ -28,46 +28,35 @@ export default function LiveCourseComponent({
   const handlePageRoute = () => {
     router.push(`/live-courses/${id}`);
   };
+
   return (
     <div
-      className={`w-[${width}] h-[38vh] bg-white pb-5 mx-3 mb-3 relative lg:w-[21vw] md:w-[28vw]`}
+      className="relative w-[85vw] md:w-[22vw] bg-white mx-3 h-[33vh]"
       onClick={handlePageRoute}
     >
-      <Image
-        src={img}
-        alt={name}
-        layout="responsive"
-        width={width}
-        height="38vh"
-        objectFit="cover"
-        className="rounded"
-      />
+      <div className="relative w-full h-1/2">
+        <Image
+          src={img}
+          alt={name}
+          layout="fill"
+          objectFit="cover"
+          objectPosition="top"
+          className="rounded"
+        />
+      </div>
 
       {isSale && (
         <div className="absolute top-4 left-0 z-20 w-12">
           <Image src={SaleIcon} alt="Sale"></Image>
         </div>
       )}
-      <div className="h-[38vh] bg-gradient-to-b from-secondary to-primary clip absolute bottom-0 left-0 right-0 rounded-md">
-        <div className="absolute top-[16vh] left-3 z-50 text-sm text-white">
-          <div className="font-semibold mb-3 truncate">{name}</div>
-
-          <div>
-            <CardDetail
-              icon={<WatchLaterOutlinedIcon />}
-              text={`${duration}h`}
-            />
-            <CardDetail
-              icon={<RecordVoiceOverOutlinedIcon />}
-              text={classType}
-            />
-            {/* <div className="flex flex-row gap-1 items-center">
-              <p className="text-lg pr-1">₹{prices.discountedPrice}</p>
-              <p className="text-sm line-through">₹{prices.price}</p>
-            </div> */}
+      <div className="absolute h-full bg-gradient-to-b from-secondary to-primary clip bottom-0 left-0 right-0 rounded-md">
+        <div className="flex flex-col-reverse h-full gap-4 md:gap-2 z-30 text-sm text-white">
+          <div className="z-50 w-full h-8">
+            <Divider color="white" />
+            <p className="text-white text-center">View Course</p>
           </div>
-
-          <div className="flex flex-row w-20 items-center mt-2">
+          <div className="flex flex-row w-20 items-center pl-2">
             {[...Array(rating.stars)].map((x, i) => (
               <StarOutlinedIcon color="yellow" key={i} fontSize="small" />
             ))}
@@ -76,10 +65,19 @@ export default function LiveCourseComponent({
             ))}
             {`(${rating.reviews})`}
           </div>
-        </div>
-        <div className="absolute bottom-0 z-50 w-full h-[5vh] flex flex-col justify-evenly ">
-          <Divider color="white" />
-          <p className="text-white text-center">View Course</p>
+
+          <div className="pl-2">
+            <CardDetail
+              icon={<WatchLaterOutlinedIcon />}
+              text={`${duration}h`}
+            />
+            <CardDetail
+              icon={<RecordVoiceOverOutlinedIcon />}
+              text={classType}
+            />
+          </div>
+
+          <div className="font-semibold truncate pl-2">{name}</div>
         </div>
       </div>
     </div>

@@ -42,8 +42,8 @@ export default function LiveCourses() {
         </div>
       ) : (
         <div className="flex flex-row overflow-x-auto w-full md:justify-center text-white mt-5 md:overflow-auto">
-          <div className="flex flex-row md:grid md:grid-cols-4 md:place-items-center md:gap-4 justify-between ">
-            {courses.data.data.map((course) => (
+          <div className="flex flex-row md:grid md:grid-cols-4 md:place-items-center md:gap-4 justify-between">
+            {courses.data.data.map((course, idx) => (
               <LiveCourseComponent
                 key={course.id}
                 id={course.id}
