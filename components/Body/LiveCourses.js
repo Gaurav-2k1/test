@@ -72,7 +72,7 @@ export default function LiveCourses() {
       )}
       <div className="w-full flex flex-row justify-center mb-5 md:pt-4">
         <Link href="/live-courses" passHref>
-          <Button className="bg-primary md:text-lg">
+          <Button className="bg-primary md:text-lg mt-3">
             Explore All Live Courses
           </Button>
         </Link>
