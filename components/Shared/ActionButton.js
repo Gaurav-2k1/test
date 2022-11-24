@@ -10,7 +10,7 @@ export default function ActionButton() {
         className="flex flex-row items-center w-1/2 justify-center"
         onClick={() => {
           window.open(
-            "https://wa.me/9302584342?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+            "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
           );
         }}
       >

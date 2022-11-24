@@ -52,7 +52,7 @@ export default function VideoCourseComponent({
       )}
       <div className="absolute h-full bg-gradient-to-b from-secondary to-primary clip bottom-0 left-0 right-0 rounded-md">
         <div className="flex flex-col-reverse h-full gap-1 md:gap-1 z-30 text-sm text-white">
-          <div className="z-50 w-full h-7">
+          <div className="z-50 w-full h-8 hover:cursor-pointer">
             <Divider color="white" />
             <p className="text-white text-center">View Course</p>
           </div>

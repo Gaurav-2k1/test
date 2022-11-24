@@ -52,7 +52,7 @@ export default function LiveCourseComponent({
       )}
       <div className="absolute h-full bg-gradient-to-b from-secondary to-primary clip bottom-0 left-0 right-0 rounded-md">
         <div className="flex flex-col-reverse h-full gap-4 md:gap-2 z-30 text-sm text-white">
-          <div className="z-50 w-full h-8">
+          <div className="z-50 w-full h-8 hover:cursor-pointer">
             <Divider color="white" />
             <p className="text-white text-center">View Course</p>
           </div>
