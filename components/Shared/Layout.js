@@ -63,7 +63,7 @@ export default function Layout({ children }) {
             objectFit="contain"
             onClick={() => {
               window.open(
-                "https://wa.me/9302584342?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+                "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
               );
             }}
           />

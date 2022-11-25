@@ -56,8 +56,8 @@ export default function ContactUs() {
                     <a href="tel: +44 7454 66601" className="pl-4">
                       +44 7454 666010
                     </a>
-                    <a href="tel: +91 9302584342" className="pl-4">
-                      +91 9302584342
+                    <a href="tel: +447454666010" className="pl-4">
+                      +447454666010
                     </a>
                   </div>
                 </div>
