@@ -31,7 +31,13 @@ export default function LandingScreen() {
   };
   return (
     <div>
-      <div className="relative w-full bg-[url('/images/home/landing-img.png')] bg-cover bg-center md:h-[80vh] h-[40vh] bg-blend-screen bg-black">
+      <div className="relative w-full bg-cover bg-center md:h-[80vh] h-[40vh] bg-blend-screen bg-black">
+        <Image
+          src="/images/home/landing-img.png"
+          alt="Landing Image"
+          layout="fill"
+          objectFit="cover"
+        ></Image>
         <div className="flex flex-col justify-end h-1/2 md:h-full items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
           <div className="p-3 md:absolute md:top-[35vh] md:text-3xl">
             <div>Learn, Upskill & Certify</div>
