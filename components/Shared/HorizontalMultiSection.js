@@ -68,20 +68,26 @@ export default function HorizontalMultiSection({
             </div>
           </Section>
 
-          <Section id="certification">
-            <div className="h-[40vh] bg-secondary text-primary py-4 px-3 md:h-auto">
-              <p className="text-lg font-bold md:text-2xl">Certificate</p>
-              <Divider className="h-1 bg-primary w-16" />
-              <div className="md:w-full md:flex md:flex-row md:justify-center">
-                <div className="w-full h-[30vh] relative mt-4 md:w-[80vw] md:h-[50vh]">
+          <Section id="certification" className="bg-secondary">
+
+            <div className="h-[40vh] bg-secondary text-primary md:h-auto ">
+              <p className="text-lg font-bold md:text-2xl ml-2 text-primary">Certificate</p>
+              <Divider className="h-1 bg-primary w-16 ml-2 mb-4" />
+
+              <div className="md:w-full flex flex-row justify-center">
+                <div className="w-full h-[30vh] relative md:h-[50vh]">
+                <div className="md:certificate-clip w-full h-full">
+                </div>
                   <Image
-                    src={certificate}
-                    alt="Certificate"
-                    layout="fill"
-                    objectFit="contain"
-                  />
+                      src={certificate}
+                      alt="Certificate"
+                      layout="fill"
+                      objectFit="contain"
+                      className="md:mb-4"
+                    />
                 </div>
               </div>
+
             </div>
           </Section>
         </div>
