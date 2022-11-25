@@ -27,7 +27,7 @@ export default function HorizontalMultiSection({
         <StaticMenu />
 
         <div>
-          <Section id="overview" className="p-5">
+          <Section id="overview" className="p-5 whitespace-pre-wrap">
             <div>{overview}</div>
           </Section>
 
