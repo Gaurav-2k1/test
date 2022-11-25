@@ -18,6 +18,12 @@ export default function LandingScreen() {
     // !isEmpty(search) ? (
     Router.push({ pathname: "/search", query: { query: search } });
   };
+
+  const handleKeyboardEnter = (e) => {
+    if (e.key === "Enter") {
+      Router.push({ pathname: "/search", query: { query: search } });
+    }
+  };
   const isAuthenticated = useIsAuthenticated();
   const dispatch = useDispatch();
   const handleSignUpModalOpen = () => {
@@ -31,6 +37,7 @@ export default function LandingScreen() {
             <div>Learn, Upskill & Certify</div>
             <div className="flex flex-row justify-between items-center">
               <TextField
+                onKeyDown={handleKeyboardEnter}
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 variant="outlined"

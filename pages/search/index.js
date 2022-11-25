@@ -52,6 +52,11 @@ export default function Search() {
     setSearch(e.target.value);
   };
 
+  const handleKeyboardEnter = (e) => {
+    if (e.key === "Enter") {
+      setSearchEnable(search);
+    }
+  };
   const handleSearchTrigger = () => {
     setSearchEnable(search);
   };
@@ -68,6 +73,7 @@ export default function Search() {
       </HeadImageWithText>
       <div className="flex flex-row gap-1 p-3 items-center">
         <TextField
+          onKeyDown={handleKeyboardEnter}
           inputRef={(input) => input && input.focus()}
           value={search}
           onChange={handleSearchChange}
