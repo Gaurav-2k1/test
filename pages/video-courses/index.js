@@ -1,5 +1,8 @@
+import { ExpandMore, ExpandMoreOutlined, SearchOutlined } from "@mui/icons-material";
+import { Button, Card, CardActions, CardContent, CardHeader, Collapse, Hidden, InputAdornment, TextField, Typography } from "@mui/material";
 import { isNull, isUndefined } from "lodash";
-import React from "react";
+import Router from "next/router";
+import React, { useState } from "react";
 import { LoaderIcon } from "react-hot-toast";
 import { useQuery } from "react-query";
 import HeadImageWithText from "../../components/Shared/HeadImageWithText";
@@ -14,6 +17,15 @@ export default function VideoCourses() {
     //   setCourse(data.data);
     // },
   });
+
+  const [search, setSearch] = useState("");
+  const handleSearchClick = () => {
+    // !isEmpty(search) ? (
+    Router.push({ pathname: "/search", query: { query: search } });
+  };
+
+
+
   const isLoading =
     isUndefined(courses) ||
     isNull(courses) ||
@@ -24,11 +36,31 @@ export default function VideoCourses() {
     <div>
       <HeadImageWithText
         src=" bg-[url(/images/business/infodal-business.png)]"
-        className="mb-10"
+        className="mb-10 flex justify-center"
       >
-        <div className="text-white text-xl p-5 font-semibold">
-          Explore Video Courses
-        </div>
+        <div className="p-16 md:p-4 md:absolute md:top-[5vh] md:text-3xl flex flex-col">
+            <div className="text-white text-center">Explore All Video Courses</div>
+            <div className="flex flex-row justify-between items-center">
+              <TextField
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                variant="outlined"
+                className="m-3 bg-white align-center  md:w-[50vw] w-[70vw] rounded"
+                size="normal"
+                placeholder="What do you want to learn today?"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <SearchOutlined />
+                    </InputAdornment>
+                  ),
+                }}
+              />
+              <Button className="bg-primary" onClick={handleSearchClick}>
+                Search
+              </Button>
+            </div>
+          </div>
       </HeadImageWithText>
 
       <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center">
@@ -61,6 +93,6 @@ export default function VideoCourses() {
           ))
         )}
       </div>
-    </div>
+        </div>
   );
 }

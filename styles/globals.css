@@ -32,12 +32,13 @@
 @layer utilities {
 
   .clip {
-      clip-path: polygon(0 30%, 100% 12%, 100% 100%, 0% 100%);
+      clip-path: polygon(0 40%, 100% 12%, 100% 100%, 0% 100%);
 
   }
 
   .certificate-clip{
-    clip-path: polygon(1% 86%, 6% 76%, 19% 58%, 31% 46%, 47% 35%, 60% 36%, 73% 43%, 89% 52%, 100% 55%, 99% 100%, 0% 100%);
+    background:#00b4d8;
+    clip-path: polygon(66% 4%, 100% 57%, 100% 100%, 0 100%, 0 61%);
   }
 
 }
