@@ -13,6 +13,7 @@ import VideoCourseComponent from "../../components/Shared/VideoCourseComponent";
 import { searchLiveCourse } from "../../service/live";
 import { searchVideoCourse } from "../../service/video";
 import { Button } from "@mui/material";
+import { ArrowLeft, ArrowLeftOutlined, ArrowRight, ArrowRightAlt } from "@mui/icons-material";
 
 export default function Search() {
   const router = useRouter();
@@ -99,13 +100,13 @@ export default function Search() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div className="flex flex-row overflow-x-auto text-white mt-5">
+        <div id="videoCourse" className="flex flex-row overflow-x-auto text-white mt-5">
           {isEmpty(searchVideo.data.data) ? (
             <div className="text-md text-black p-4">
               No Results Found in Video Courses
             </div>
           ) : (
-            <div className="flex flex-row">
+            <div className="flex flex-row" >
               {searchVideo.data.data.map((course) => (
                 <VideoCourseComponent
                   key={course.id}
@@ -133,8 +134,24 @@ export default function Search() {
               ))}
             </div>
           )}
+          
         </div>
+
       )}
+
+      <div className="flex flex-row gap-2 ml-3 pb-2">
+        <Button onClick={() => {
+            document.getElementById("videoCourse").scrollLeft -= 100;
+          }}>
+            <ArrowLeft />
+          </Button>
+          <Button onClick={() => {
+            document.getElementById("videoCourse").scrollLeft += 100;
+          }}>
+            <ArrowRight />
+        </Button>
+      </div>
+
 
       <NewSection title="Live Courses" />
       {isLoadingLive ? (
@@ -142,7 +159,7 @@ export default function Search() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div className="flex flex-row overflow-x-auto text-white mt-5">
+        <div id="liveCourse" className="flex flex-row overflow-x-auto text-white mt-5">
           {isEmpty(searchLive.data.data) ? (
             <div className="text-md text-black p-4">
               No Results Found in Live Courses
@@ -178,6 +195,19 @@ export default function Search() {
           )}
         </div>
       )}
+
+    <div className="flex flex-row gap-2 ml-3 pb-2">
+        <Button onClick={() => {
+          document.getElementById("liveCourse").scrollLeft -= 100;
+        }}>
+          <ArrowLeft />
+        </Button>
+        <Button onClick={() => {
+          document.getElementById("liveCourse").scrollLeft += 100;
+        }}>
+          <ArrowRight />
+        </Button>
+      </div>
     </div>
   );
 }
