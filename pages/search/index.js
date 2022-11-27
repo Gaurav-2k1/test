@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+import { Hidden, TextField } from "@mui/material";
 import { isEmpty, isNull, isUndefined } from "lodash";
 import { useRouter } from "next/router";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
@@ -139,18 +139,20 @@ export default function Search() {
 
       )}
 
-      <div className="flex flex-row gap-2 ml-3 pb-2">
-        <Button onClick={() => {
-            document.getElementById("videoCourse").scrollLeft -= 100;
-          }}>
-            <ArrowLeft />
-          </Button>
+      <Hidden lgDown mdDown>
+        <div className="flex flex-row gap-2 ml-3 pb-2 pt-2">
           <Button onClick={() => {
-            document.getElementById("videoCourse").scrollLeft += 100;
-          }}>
-            <ArrowRight />
-        </Button>
-      </div>
+              document.getElementById("videoCourse").scrollLeft -= 1300;
+            }}>
+              <ArrowLeft />
+            </Button>
+            <Button onClick={() => {
+              document.getElementById("videoCourse").scrollLeft += 1300;
+            }}>
+              <ArrowRight />
+          </Button>
+        </div>
+      </Hidden>
 
 
       <NewSection title="Live Courses" />
@@ -196,18 +198,20 @@ export default function Search() {
         </div>
       )}
 
-    <div className="flex flex-row gap-2 ml-3 pb-2">
-        <Button onClick={() => {
-          document.getElementById("liveCourse").scrollLeft -= 100;
-        }}>
-          <ArrowLeft />
-        </Button>
-        <Button onClick={() => {
-          document.getElementById("liveCourse").scrollLeft += 100;
-        }}>
-          <ArrowRight />
-        </Button>
-      </div>
+      <Hidden lgDown mdDown>
+        <div className="flex flex-row gap-2 ml-3 pb-2 pt-2">
+          <Button onClick={() => {
+              document.getElementById("liveCourse").scrollLeft -= 1300;
+            }}>
+              <ArrowLeft />
+            </Button>
+            <Button onClick={() => {
+              document.getElementById("liveCourse").scrollLeft += 1300;
+            }}>
+              <ArrowRight />
+          </Button>
+        </div>
+      </Hidden>
     </div>
   );
 }
