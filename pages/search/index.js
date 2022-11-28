@@ -61,6 +61,21 @@ export default function Search() {
   const handleSearchTrigger = () => {
     setSearchEnable(search);
   };
+  
+  function sideScroll(element,direction,speed,distance,step){
+    var scrollAmount = 0;
+    var slideTimer = setInterval(function(){
+        if(direction == 'left'){
+            element.scrollLeft -= step;
+        } else {
+            element.scrollLeft += step;
+        }
+        scrollAmount += step;
+        if(scrollAmount >= distance){
+            window.clearInterval(slideTimer);
+        }
+    }, speed);
+}
 
   return (
     <div>
@@ -72,14 +87,14 @@ export default function Search() {
           Search Results
         </div>
       </HeadImageWithText>
-      <div className="flex flex-row gap-1 p-3 items-center">
+      <div className="flex flex-row gap-1 p-3 items-center md:justify-center">
         <TextField
           onKeyDown={handleKeyboardEnter}
           inputRef={(input) => input && input.focus()}
           value={search}
           onChange={handleSearchChange}
           variant="outlined"
-          className="rounded w-full"
+          className="rounded md:w-2/4 w-full"
           size="normal"
           placeholder="What do you want to learn today?"
           InputProps={{
@@ -100,7 +115,7 @@ export default function Search() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div id="videoCourse" className="flex flex-row overflow-x-auto text-white mt-5">
+        <div id="videoCourse" className="flex flex-row overflow-x-scroll scroll-smooth text-white mt-5 ">
           {isEmpty(searchVideo.data.data) ? (
             <div className="text-md text-black p-4">
               No Results Found in Video Courses
@@ -141,13 +156,15 @@ export default function Search() {
 
       <Hidden lgDown mdDown>
         <div className="flex flex-row gap-2 ml-3 pb-2 pt-2">
-          <Button onClick={() => {
-              document.getElementById("videoCourse").scrollLeft -= 1300;
-            }}>
+          <Button onClick={() => {     
+            var container = document.getElementById('videoCourse');
+            sideScroll(container,'left',25,100,500);
+          }}>
               <ArrowLeft />
             </Button>
             <Button onClick={() => {
-              document.getElementById("videoCourse").scrollLeft += 1300;
+              var container = document.getElementById('videoCourse');
+              sideScroll(container,'right',25,100,500);
             }}>
               <ArrowRight />
           </Button>
@@ -161,7 +178,7 @@ export default function Search() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div id="liveCourse" className="flex flex-row overflow-x-auto text-white mt-5">
+        <div id="liveCourse" className="flex flex-row overflow-x-scroll scroll-smooth text-white mt-5">
           {isEmpty(searchLive.data.data) ? (
             <div className="text-md text-black p-4">
               No Results Found in Live Courses
@@ -200,13 +217,15 @@ export default function Search() {
 
       <Hidden lgDown mdDown>
         <div className="flex flex-row gap-2 ml-3 pb-2 pt-2">
-          <Button onClick={() => {
-              document.getElementById("liveCourse").scrollLeft -= 1300;
-            }}>
+          <Button onClick={() => {     
+            var container = document.getElementById('liveCourse');
+            sideScroll(container,'left',25,100,500);
+          }}>
               <ArrowLeft />
             </Button>
             <Button onClick={() => {
-              document.getElementById("liveCourse").scrollLeft += 1300;
+              var container = document.getElementById('liveCourse');
+              sideScroll(container,'right',25,100,500);
             }}>
               <ArrowRight />
           </Button>
