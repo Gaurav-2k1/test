@@ -70,11 +70,11 @@ export default function LiveCourse() {
         className=""
       />
       <div className="p-5">
-        <div className="flex flex-col h-[14vh] justify-between mb-2">
+        <div className="flex flex-col h-[14vh] justify-between mb-2 md:mb-4">
           <p className="text-secondary text-lg font-semibold">
             {courseDetail.data.attributes.name}
           </p>
-          <div>
+          <div className="pb-2">
             <div className="flex flex-row gap-2 items-center">
               <p>{currency}</p>
               <p className="line-through">{prices.price}</p>
@@ -94,9 +94,9 @@ export default function LiveCourse() {
             </p>
           </div>
         </div>
-        <ShowMore showMoreText={"READ MORE"} hideText="HIDE">
+        <div className="pt-2">
           {courseDetail.data.attributes.courseOverview.description}
-        </ShowMore>
+        </div>
       </div>
       <HorizontalMultiSection
         overview={courseDetail.data.attributes.courseOverview.overview}

@@ -31,7 +31,7 @@ export default function LiveCourseComponent({
 
   return (
     <div
-      className="relative w-[85vw] md:w-[22vw] bg-white mx-3 h-[33vh] md:h-[35vh]"
+      className="relative w-[85vw] md:w-[22vw] cursor-pointer bg-white mx-3 h-[33vh] md:h-[40vh]"
       onClick={handlePageRoute}
     >
       <div className="relative w-full h-1/2">
