@@ -89,9 +89,9 @@ export default function VideoCourses() {
             </p>
           </div>
         </div>
-        <div className="pt-2">
+        <ShowMore showMoreText={"READ MORE"} hideText="HIDE">
           {courseDetail.data.attributes.courseDetail.description}
-        </div>
+        </ShowMore>
       </div>
       <HorizontalMultiSection
         overview={courseDetail.data.attributes.courseDetail.overview}

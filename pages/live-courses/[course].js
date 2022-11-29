@@ -94,9 +94,9 @@ export default function LiveCourse() {
             </p>
           </div>
         </div>
-        <div className="pt-2">
+        <ShowMore showMoreText={"READ MORE"} hideText="HIDE">
           {courseDetail.data.attributes.courseOverview.description}
-        </div>
+        </ShowMore>
       </div>
       <HorizontalMultiSection
         overview={courseDetail.data.attributes.courseOverview.overview}
