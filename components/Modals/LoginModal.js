@@ -43,8 +43,15 @@ export default function LoginModal() {
 
   return (
     <Modal open={isLoginModalOpen} onClose={closeModalHandler}>
-      <div className="bg-white p-5 rounded md:w-1/2">
+      <div className="bg-white p-5 rounded md:w-1/4">
         <div className="text-primary text-lg w-[80vw] md:w-full text-center">
+        <div className="modal-close cursor-pointer text-black  text-sm z-50 pb-2">
+          <button className="float-right" onClick={closeModalHandler}>
+            <svg className="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z"></path>
+            </svg>
+          </button>
+        </div>
           <p className="font-semibold">LOGIN</p>
           <p className="text-sm text-black">
             Please login to your account to gain access to exclusive content

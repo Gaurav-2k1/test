@@ -65,7 +65,7 @@ export default function VideoCourses() {
         className=""
       />
       <div className="p-5">
-        <div className="flex flex-col h-[14vh] justify-between mb-2">
+        <div className="flex flex-col h-[14vh] mb-4">
           <p className="text-secondary text-lg font-semibold">
             {courseDetail.data.attributes.name}
           </p>
@@ -85,7 +85,7 @@ export default function VideoCourses() {
             </div>
             <p className="flex flex-row">
               <ConnectWithoutContactOutlinedIcon />
-              <p className="pl-2">1-1 Live Interactive Classes</p>
+              <p className="pl-2">Recorded Video Course</p>
             </p>
           </div>
         </div>
