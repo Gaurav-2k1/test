@@ -11,7 +11,7 @@ import React, { useEffect, useState } from "react";
 import Logo from "../../public/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrency, setCurrency } from "../../store/currencySlice";
-import MenuBar from "./MenuBar";
+import MenuBar, { CurrencySelect } from "./MenuBar";
 import { AccountCircle } from "@mui/icons-material";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -217,29 +217,6 @@ export default function Header() {
     </div>
   );
 }
-
-const CurrencySelect = ({
-  currencyName,
-  currentCurrency,
-  currentCurrencyCode,
-}) => {
-  const dispatch = useDispatch();
-  const handleCurrency = (currency) => {
-    dispatch(setCurrency(currency));
-  };
-  return (
-    <div
-      className={`w-full border text-center py-2 ${
-        isEqual(currentCurrencyCode, currentCurrency)
-          ? "border-primary text-primary"
-          : ""
-      }`}
-      onClick={() => handleCurrency(currentCurrencyCode)}
-    >
-      {currencyName}
-    </div>
-  );
-};
 
 export function CurrencyComponentDesktop({ currency }) {
   return (

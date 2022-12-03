@@ -17,11 +17,15 @@ import { menuList, topMenuList } from "../../config/config";
 import { Divider } from "@mui/material";
 import { Button } from "@mui/material";
 import { useRouter } from "next/router";
-import { getCurrency, setCurrency } from "../../store/currencySlice";
+import {
+  getCurrency,
+  setCurrency,
+  setUpdatedCurrencyValue,
+  setValidatedCouponCode,
+} from "../../store/currencySlice";
 import { isEqual } from "lodash";
 import { logout } from "../../store/authSlice";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
-import useIsDesktop from "../Hooks/useIsDesktop";
 
 export default function MenuBar() {
   const isMenuOpen = useSelector(getMenuToggle);
@@ -185,7 +189,7 @@ export default function MenuBar() {
   );
 }
 //
-const CurrencySelect = ({
+export const CurrencySelect = ({
   currencyName,
   currentCurrency,
   currentCurrencyCode,
@@ -195,6 +199,8 @@ const CurrencySelect = ({
     dispatch(setCurrency(currency));
     dispatch(setCurrencyToggle(false));
     dispatch(setMenuToggle(false));
+    dispatch(setUpdatedCurrencyValue(undefined));
+    dispatch(setValidatedCouponCode(undefined));
   };
   return (
     <div
