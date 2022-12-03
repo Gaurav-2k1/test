@@ -17,6 +17,7 @@ export default function HorizontalMultiSection({
   reviews,
   certificate,
 }) {
+  console.log(reviews);
   const handleDownloadSyllabus = () => {
     console.log(pdfUrl);
     window.open(pdfUrl, "_blank");
@@ -53,15 +54,15 @@ export default function HorizontalMultiSection({
           </Section>
 
           <Section id="reviews">
-            <div className="flex flex-row overflow-x-auto text-white">
+            <div className="flex flex-row overflow-x-auto text-white md:w-1/4 md:gap-3">
               <div className="flex flex-row">
                 {reviews.data.map((review) => (
                   <ReviewCard
-                    key={review.id}
-                    name={review.name}
-                    designation={review.designation}
-                    stars={review.rating}
-                    review={review.review}
+                    key={review.attributes.id}
+                    name={review.attributes.name}
+                    designation={review.attributes.designation}
+                    stars={review.attributes.rating}
+                    review={review.attributes.review}
                   />
                 ))}
               </div>
@@ -69,25 +70,24 @@ export default function HorizontalMultiSection({
           </Section>
 
           <Section id="certification" className="bg-secondary">
-
             <div className="h-[40vh] bg-secondary text-primary md:h-auto ">
-              <p className="text-lg font-bold md:text-2xl ml-2 text-primary">Certificate</p>
+              <p className="text-lg font-bold md:text-2xl ml-2 text-primary">
+                Certificate
+              </p>
               <Divider className="h-1 bg-primary w-16 ml-2 mb-4" />
 
               <div className="md:w-full flex flex-row justify-center">
                 <div className="w-full h-[30vh] relative md:h-[50vh]">
-                <div className="md:certificate-clip w-full h-full">
-                </div>
+                  <div className="md:certificate-clip w-full h-full"></div>
                   <Image
-                      src={certificate}
-                      alt="Certificate"
-                      layout="fill"
-                      objectFit="contain"
-                      className="md:mb-4"
-                    />
+                    src={certificate}
+                    alt="Certificate"
+                    layout="fill"
+                    objectFit="contain"
+                    className="md:mb-4"
+                  />
                 </div>
               </div>
-
             </div>
           </Section>
         </div>
