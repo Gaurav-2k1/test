@@ -20,6 +20,30 @@
     @apply leading-relaxed;
   }
 
+  h1 {
+    @apply font-extrabold text-2xl;
+  }
+
+  h2 {
+    @apply font-bold text-lg;
+  }
+
+  h3 {
+    @apply font-bold;
+  }
+
+  h4 {
+    @apply font-semibold;
+  }
+
+  u {
+    @apply underline;
+  }
+
+  li {
+    @apply list-disc;
+  }
+
   a {
     @apply cursor-pointer font-medium hover:underline;
   }

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
@@ -19,13 +19,15 @@ import ValidateCoupon from "../../components/Shared/ValidateCoupon";
 import { getCurrencyAmounts } from "../../config/config";
 import { isNull, isUndefined } from "lodash";
 import { LoaderIcon } from "react-hot-toast";
-import useIsAuthenticated from "../../components/Hooks/useIsAuthenticated";
+import { remark } from "remark";
+import remarkHtml from "remark-html";
 import PayButton from "../../components/Shared/PayButton";
 
 export default function LiveCourse() {
   const router = useRouter();
   const { course } = router.query;
   const dispatch = useDispatch();
+  const [overview, setOverview] = useState("");
   const currency = useSelector(getCurrency);
   const updatedCurrency = useSelector(getUpdatedCurrencyValue);
   const validatedCouponCode = useSelector(getValidatedCouponCode);
@@ -53,6 +55,24 @@ export default function LiveCourse() {
       dispatch(setValidatedCouponCode(undefined));
     };
   }, [dispatch]);
+
+  const contentHtml = async () => {
+    const processedContent = await remark()
+      .use(remarkHtml)
+      .process(
+        courseDetail.data.attributes.courseOverview.courseOverviewFinal
+          ? courseDetail.data.attributes.courseOverview.courseOverviewFinal
+          : ""
+      );
+    return processedContent.toString();
+  };
+
+  useEffect(async () => {
+    var data = courseDetail && (await contentHtml());
+    data =
+      data === "" ? courseDetail.data.attributes.courseOverview.overview : data;
+    setOverview(data);
+  }, [courseDetail]);
 
   return !isLoading ? (
     <div>
@@ -99,7 +119,7 @@ export default function LiveCourse() {
         </ShowMore>
       </div>
       <HorizontalMultiSection
-        overview={courseDetail.data.attributes.courseOverview.overview}
+        overview={overview}
         skillsCovered={courseDetail.data.attributes.skills}
         pdfUrl={courseDetail.data.attributes.coursePdf.data.attributes.url}
         reviews={courseDetail.data.attributes.reviews}

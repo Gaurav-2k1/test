@@ -29,7 +29,7 @@ export default function HorizontalMultiSection({
 
         <div>
           <Section id="overview" className="p-5 whitespace-pre-wrap">
-            <div>{overview}</div>
+            <div dangerouslySetInnerHTML={{ __html: overview }} />
           </Section>
 
           <Section id="syllabus" className="p-5">

@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import ShowMore from "../../components/Shared/ShowMore";
 import WatchLaterOutlinedIcon from "@mui/icons-material/WatchLaterOutlined";
 import ConnectWithoutContactOutlinedIcon from "@mui/icons-material/ConnectWithoutContactOutlined";
@@ -20,13 +20,15 @@ import { LoaderIcon } from "react-hot-toast";
 import { fetchVideoCourseDetail } from "../../service/video";
 import PayButton from "../../components/Shared/PayButton";
 import ValidateCoupon from "../../components/Shared/ValidateCoupon";
+import { remark } from "remark";
+import remarkHtml from "remark-html";
 
 export default function VideoCourses() {
   const router = useRouter();
   const { course } = router.query;
   const currency = useSelector(getCurrency);
   const dispatch = useDispatch();
-
+  const [overview, setOverview] = useState("");
   const updatedCurrency = useSelector(getUpdatedCurrencyValue);
   const validatedCouponCode = useSelector(getValidatedCouponCode);
   var courseDetail = useQuery(["video-course", course], fetchVideoCourseDetail);
@@ -49,6 +51,21 @@ export default function VideoCourses() {
     };
   }, [dispatch]);
 
+  const contentHtml = async () => {
+    const processedContent = await remark()
+      .use(remarkHtml)
+      .process(courseDetail.data.attributes.courseDetail.courseOverviewFinal);
+    return processedContent.toString();
+  };
+
+  useEffect(async () => {
+    var data = courseDetail && (await contentHtml());
+    data =
+      data === "" ? courseDetail.data.attributes.courseDetail.overview : data;
+    setOverview(data);
+  }, [courseDetail]);
+
+  console.log(overview);
   return !isLoading ? (
     <div>
       <HeadImage
@@ -94,7 +111,7 @@ export default function VideoCourses() {
         </ShowMore>
       </div>
       <HorizontalMultiSection
-        overview={courseDetail.data.attributes.courseDetail.overview}
+        overview={overview}
         skillsCovered={courseDetail.data.attributes.skills}
         pdfUrl=""
         reviews={courseDetail.data.attributes.reviews}
