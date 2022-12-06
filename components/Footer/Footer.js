@@ -23,9 +23,25 @@ export default function Footer() {
               Address: H-749 DIV Tech park, Republic of Whitefield, Bangalore -
               560066
               <br />
-              <a href="tel:+44 7454 666010">+44 7454 666010</a>
+              <div
+                onClick={() => {
+                  window.open(
+                    "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+                  );
+                }}
+              >
+                +44 7454 666010
+              </div>
               <br />
-              <a href="tel:+91 9302584342">+91 93025 84342</a>
+              <div
+                onClick={() => {
+                  window.open(
+                    "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+                  );
+                }}
+              >
+                +91 93025 84342
+              </div>
               <br />
               <a href="mailto:contact@infodal.com">contact@infodal.com</a>
             </p>
@@ -107,9 +123,25 @@ export default function Footer() {
               H-749 DIV Tech park, Republic of Whitefield, Bangalore - 560066
             </p>
             <br />
-            <a href="tel:+44 7454 666010">+44 7454 666010</a>
+            <div
+              onClick={() => {
+                window.open(
+                  "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+                );
+              }}
+            >
+              +44 7454 666010
+            </div>
             <br />
-            <a href="tel:+91 9302584342">+91 93025 84342</a>
+            <div
+              onClick={() => {
+                window.open(
+                  "https://wa.me/+447454666010?text=Hi%2C+I+am+exploring+some+Courses+on+Infodal%2C+will+you+be+able+to+assist+me%3F"
+                );
+              }}
+            >
+              +91 93025 84342
+            </div>
             <br />
             <a href="mailto:contact@infodal.com">contact@infodal.com</a>
           </p>

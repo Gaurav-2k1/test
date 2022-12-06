@@ -11,6 +11,7 @@ import Router from "next/router";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
 import { useDispatch } from "react-redux";
 import { setSignUpToggle } from "../../store/modalSlice";
+import Link from "next/link";
 
 export default function LandingScreen() {
   const [search, setSearch] = useState("");
@@ -97,7 +98,9 @@ export default function LandingScreen() {
             )}
           </div>
         </div>
-        <Image src={UpgradeImg} alt="Infodal" objectFit="contain" />
+        <Link href="/video-courses" passHref>
+          <Image src={UpgradeImg} alt="Infodal" objectFit="contain" />
+        </Link>
       </div>
     </div>
   );
