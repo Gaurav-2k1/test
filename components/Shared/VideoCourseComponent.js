@@ -33,7 +33,7 @@ export default function VideoCourseComponent({
   };
 
   return (
-    <div className="relative bg-slate-100 rounded-md w-full bg-white mx-3 h-[44vh] shadow px-2">
+    <div className="relative bg-slate-100 rounded-md w-[85vw] md:w-full bg-white mx-3 h-[44vh] shadow px-2">
       <div className="relative w-full h-1/2">
         <Image
           src={img}

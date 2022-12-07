@@ -31,7 +31,7 @@ export default function LiveCourseComponent({
   };
 
   return (
-    <div className="relative bg-slate-100 rounded-md w-full px-2 bg-white mx-3 h-[44vh] md:h-[40vh] shadow">
+    <div className="relative bg-slate-100 rounded-md w-[85vw] md:w-full px-2 bg-white mx-3 h-[44vh] md:h-[40vh] shadow">
       <div className="relative w-full h-1/2">
         <Image
           src={img}
