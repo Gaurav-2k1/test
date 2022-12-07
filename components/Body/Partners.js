@@ -29,6 +29,7 @@ export default function Partners() {
         autoPlay
         showStatus={false}
         showIndicators={false}
+        interval={800}
         centerMode
         centerSlidePercentage={isDesktop ? 15 : 30}
       >
