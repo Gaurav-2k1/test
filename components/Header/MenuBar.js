@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import Logo from "../../public/logo.png";
 import { SwipeableDrawer } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -26,6 +25,7 @@ import {
 import { isEqual } from "lodash";
 import { logout } from "../../store/authSlice";
 import useIsAuthenticated from "../Hooks/useIsAuthenticated";
+import Logo from "../Shared/Logo";
 
 export default function MenuBar() {
   const isMenuOpen = useSelector(getMenuToggle);
@@ -70,9 +70,7 @@ export default function MenuBar() {
     >
       <div className="w-[100vw] md:w-[33vw]">
         <div className="flex flex-row justify-center px-2 pt-2 items-center shadow-md">
-          <div className="w-20 h-fit">
-            <Image src={Logo} alt="Infodal Logo" />
-          </div>
+          <Logo />
           <IconButton
             onClick={() => toggleDrawer(false)}
             className="absolute right-5"

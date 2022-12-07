@@ -1,5 +1,3 @@
-import Image from "next/image";
-import Logo from "../../public/logo.png";
 import React from "react";
 import FacebookOutlinedIcon from "@mui/icons-material/FacebookOutlined";
 import YouTubeIcon from "@mui/icons-material/YouTube";
@@ -8,6 +6,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import { Divider } from "@mui/material";
 import Link from "next/link";
 import useIsDesktop from "../Hooks/useIsDesktop";
+import Logo from "../Shared/Logo";
 
 export default function Footer() {
   const isDesktop = useIsDesktop();
@@ -15,9 +14,7 @@ export default function Footer() {
     <div>
       <div className="w-full flex flex-col items-center bg-secondary pb-10 md:grid md:grid-cols-4 md:p-10 md:items-start">
         <div className="flex flex-col items-center md:pl-10">
-          <div className="w-20 h-fit my-5 md:w-auto">
-            <Image src={Logo} alt="Infodal Logo" />
-          </div>
+          <Logo />
           {!isDesktop && (
             <p className="text-center text-white w-2/3 mb-3">
               Address: H-749 DIV Tech park, Republic of Whitefield, Bangalore -

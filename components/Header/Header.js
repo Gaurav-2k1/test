@@ -8,7 +8,6 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import Logo from "../../public/logo.png";
 import { useDispatch, useSelector } from "react-redux";
 import { getCurrency, setCurrency } from "../../store/currencySlice";
 import MenuBar, { CurrencySelect } from "./MenuBar";
@@ -30,6 +29,7 @@ import {
 import { isEqual } from "lodash";
 import { logout } from "../../store/authSlice";
 import useIsDesktop from "../Hooks/useIsDesktop";
+import Logo from "../Shared/Logo";
 
 export default function Header() {
   const isMenuOpen = useSelector(getMenuToggle);
@@ -71,11 +71,7 @@ export default function Header() {
       {isDesktop && (
         <div className="bg-white z-50 shadow-md w-full">
           <div className="flex flex-row py-2 px-2 items-center">
-            <Link href="/" passHref>
-              <div className="w-20 h-fit flex flex-row pl-4">
-                <Image src={Logo} alt="Infodal Logo" />
-              </div>
-            </Link>
+            <Logo />
 
             <div className="w-25 h-fit flex flex-row px-8 relative group">
               <button
@@ -200,11 +196,7 @@ export default function Header() {
               />
               <MenuBar />
             </div>
-            <Link href="/" passHref>
-              <div className="w-20 h-fit">
-                <Image src={Logo} alt="Infodal Logo" />
-              </div>
-            </Link>
+            <Logo />
             <div className="w-20 flex flex-row justify-end">
               <Link href="/search?query=" passHref>
                 <SearchOutlinedIcon />
