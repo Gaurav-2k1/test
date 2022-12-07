@@ -42,7 +42,7 @@ export default function VideoCourses() {
         </div>
       ) : (
         <div className="flex flex-row overflow-x-auto md:justify-center mt-5 md:overflow-auto">
-          <div className="flex flex-row md:grid md:grid-cols-4 md:place-items-center md:gap-4 justify-between">
+          <div className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 md:place-items-center md:gap-4 justify-between">
             {courses.data.data.map((course) => (
               <VideoCourseComponent
                 key={course.id}
@@ -64,7 +64,6 @@ export default function VideoCourses() {
                   stars: course.attributes.ratings.Stars,
                   reviews: course.attributes.ratings.TotalReviews,
                 }}
-                width="70vw"
               />
             ))}
           </div>
