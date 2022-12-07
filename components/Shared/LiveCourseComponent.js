@@ -41,6 +41,12 @@ export default function LiveCourseComponent({
           className="rounded-md"
           objectPosition="top"
         />
+        <div className="absolute right-0 bottom-0 flex flex-row px-1 mb-1 items-center text-white bg-secondary rounded">
+          {rating.stars}
+          <StarOutlinedIcon color="yellow" fontSize="small" />
+
+          {`(${rating.reviews})`}
+        </div>
       </div>
       <div className="p-4 flex flex-col gap-2">
         <div className="font-semibold text-lg">{name}</div>
