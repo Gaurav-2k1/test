@@ -42,7 +42,7 @@ export default function VideoCourses() {
         image="/images/business/infodal-business.png"
         className="mb-10 flex justify-center"
       >
-        <div className="p-16 md:p-4 md:absolute md:top-[5vh] md:text-3xl flex flex-col">
+        <div className="absolute top-1/4 md:text-3xl text-white text-center">
           <div className="text-white text-center">
             Explore All Video Courses
           </div>
