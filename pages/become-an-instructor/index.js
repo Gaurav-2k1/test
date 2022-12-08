@@ -1,11 +1,12 @@
 import React from "react";
-import BecomeInstructor from "../../components/Body/BecomeAnInstructor";
+
+import InstructorImage from "../../components/Body/RequestADemo";
 import InstructorForm from "../../components/Forms/InstructorForm";
 export default function BecomeAnInstructor() {
   return (
-    <>
-      <BecomeInstructor />
+    <div className="md:flex flex-row">
+      <InstructorImage mainText="Become an Instructor at" subText="Infodal" />
       <InstructorForm />
-    </>
+    </div>
   );
 }
