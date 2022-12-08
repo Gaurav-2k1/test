@@ -149,9 +149,7 @@ export default function MenuBar() {
       >
         <div className="w-[100vw] md:w-[30vw]">
           <div className="flex flex-row justify-center py-4 px-2 items-center shadow-md">
-            <div className="w-20 h-10">
-              <Image src={Logo} alt="Infodal Logo" />
-            </div>
+            <Logo />
             <IconButton
               onClick={() => toggleCurrencyDrawer(false)}
               className="absolute right-5"
