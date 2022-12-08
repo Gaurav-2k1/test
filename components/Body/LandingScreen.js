@@ -38,6 +38,7 @@ export default function LandingScreen() {
           alt="Landing Image"
           layout="fill"
           objectFit="cover"
+          priority={true}
         ></Image>
         <div className="flex flex-col justify-end h-1/2 md:h-full items-center w-full text-white font-semibold text-xl text-center absolute bottom-0">
           <div className="p-3 md:absolute md:top-[35vh] md:text-3xl">
