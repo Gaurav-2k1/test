@@ -1,20 +1,5 @@
-import {
-  ExpandMore,
-  ExpandMoreOutlined,
-  SearchOutlined,
-} from "@mui/icons-material";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardHeader,
-  Collapse,
-  Hidden,
-  InputAdornment,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { SearchOutlined } from "@mui/icons-material";
+import { Button, InputAdornment, TextField } from "@mui/material";
 import { isNull, isUndefined } from "lodash";
 import Router from "next/router";
 import React, { useState } from "react";
@@ -54,7 +39,7 @@ export default function VideoCourses() {
   return (
     <div>
       <HeadImageWithText
-        src=" bg-[url(/images/business/infodal-business.png)]"
+        image="/images/business/infodal-business.png"
         className="mb-10 flex justify-center"
       >
         <div className="p-16 md:p-4 md:absolute md:top-[5vh] md:text-3xl flex flex-col">
@@ -85,7 +70,7 @@ export default function VideoCourses() {
         </div>
       </HeadImageWithText>
 
-      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center">
+      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center md:px-10">
         {isLoading ? (
           <LoaderIcon className="w-20 h-20 md:absolute md:left-1/2" />
         ) : (
@@ -110,7 +95,7 @@ export default function VideoCourses() {
                 stars: course.attributes.ratings.Stars,
                 reviews: course.attributes.ratings.TotalReviews,
               }}
-              width="90vw"
+              width="md:w-full"
             />
           ))
         )}

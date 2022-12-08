@@ -85,10 +85,10 @@ export default function Search() {
   return (
     <div>
       <HeadImageWithText
-        src=" bg-[url(/images/business/infodal-business.png)]"
-        className="mb-5"
+        image="/images/business/infodal-business.png"
+        className="mb-5 flex justify-center"
       >
-        <div className="text-white text-xl p-5 font-semibold">
+        <div className="absolute text-white text-2xl p-5 font-semibold top-1/4">
           Search Results
         </div>
       </HeadImageWithText>
@@ -122,7 +122,7 @@ export default function Search() {
       ) : (
         <div
           id="videoCourse"
-          className="flex flex-row overflow-x-scroll scroll-smooth mt-5 "
+          className="flex flex-row overflow-x-scroll scroll-smooth mt-5"
         >
           {isEmpty(searchVideo.data.data) ? (
             <div className="text-md text-black p-4">
@@ -152,7 +152,7 @@ export default function Search() {
                     stars: course.attributes.ratings.Stars,
                     reviews: course.attributes.ratings.TotalReviews,
                   }}
-                  width="70vw"
+                  width="md:w-[25vw]"
                 />
               ))}
             </div>
@@ -219,7 +219,7 @@ export default function Search() {
                     stars: course.attributes.ratings.Stars,
                     reviews: course.attributes.ratings.TotalReviews,
                   }}
-                  width="70vw"
+                  width="md:w-[25vw]"
                 />
               ))}
             </div>

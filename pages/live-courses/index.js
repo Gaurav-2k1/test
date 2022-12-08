@@ -36,36 +36,37 @@ export default function LiveCourses() {
   return (
     <div>
       <HeadImageWithText
-        src=" bg-[url(/images/business/infodal-business.png)]"
-        className="mb-10 flex justify-center"
+        image="/images/business/infodal-business.png"
+        className="mb-10 flex justify-center flex-col items-center"
       >
-        <div className="p-16 md:p-4 md:absolute md:top-[5vh] md:text-3xl flex flex-col">
-          <div className="text-white text-center">Explore All Live Courses</div>
-          <div className="flex flex-row justify-between items-center">
-            <TextField
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              variant="outlined"
-              className="m-3 bg-white align-center  md:w-[50vw] w-[70vw] rounded"
-              size="normal"
-              placeholder="What do you want to learn today?"
-              onKeyDown={handleKeyboardEnter}
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchOutlined />
-                  </InputAdornment>
-                ),
-              }}
-            />
-            <Button className="bg-primary" onClick={handleSearchClick}>
-              Search
-            </Button>
-          </div>
+        <div className="absolute top-1/4 md:text-3xl text-white text-center">
+          Explore All Live Courses
+        </div>
+
+        <div className="flex flex-row justify-between items-center">
+          <TextField
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            variant="outlined"
+            className="m-3 bg-white align-center  md:w-[50vw] w-[70vw] rounded"
+            size="normal"
+            placeholder="What do you want to learn today?"
+            onKeyDown={handleKeyboardEnter}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchOutlined />
+                </InputAdornment>
+              ),
+            }}
+          />
+          <Button className="bg-primary" onClick={handleSearchClick}>
+            Search
+          </Button>
         </div>
       </HeadImageWithText>
 
-      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center">
+      <div className="flex flex-col gap-5 items-center mb-10 md:grid md:grid-cols-3 lg:grid-cols-4 md:relative md:place-items-center md:px-10">
         {isLoading ? (
           <LoaderIcon className="w-20 h-20 md:absolute md:left-1/2" />
         ) : (
@@ -90,7 +91,7 @@ export default function LiveCourses() {
                 stars: course.attributes.ratings.Stars,
                 reviews: course.attributes.ratings.TotalReviews,
               }}
-              width="90vw"
+              width="md:w-full"
             />
           ))
         )}

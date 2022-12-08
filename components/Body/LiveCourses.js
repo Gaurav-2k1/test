@@ -39,7 +39,7 @@ export default function LiveCourses() {
           <LoaderIcon className="w-20 h-20" />
         </div>
       ) : (
-        <div className="flex flex-row overflow-x-auto w-full md:justify-center mt-5 md:overflow-auto">
+        <div className="flex flex-row overflow-x-auto w-full md:justify-center mt-5 px-2 md:overflow-auto">
           <div className="flex flex-row md:grid md:grid-cols-2 lg:grid-cols-4 md:place-items-center md:gap-4 justify-between">
             {courses.data.data.map((course, idx) => (
               <LiveCourseComponent
@@ -62,7 +62,7 @@ export default function LiveCourses() {
                   stars: course.attributes.ratings.Stars,
                   reviews: course.attributes.ratings.TotalReviews,
                 }}
-                width="70vw"
+                width="md:w-full"
               />
             ))}
           </div>

@@ -23,6 +23,7 @@ export default function VideoCourseComponent({
   isSale,
   averageSalary,
   width,
+  className,
 }) {
   const router = useRouter();
   const currency = useSelector(getCurrency);
@@ -33,7 +34,9 @@ export default function VideoCourseComponent({
   };
 
   return (
-    <div className="relative bg-slate-100 rounded-md w-[85vw] md:w-full bg-white mx-3 h-[47vh] shadow px-2">
+    <div
+      className={`relative bg-slate-100 rounded-md w-[85vw] bg-white mx-3 h-[47vh] shadow ${width}`}
+    >
       <div className="relative w-full h-1/2">
         <Image
           src={img}
