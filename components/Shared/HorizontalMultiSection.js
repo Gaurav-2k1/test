@@ -54,7 +54,7 @@ export default function HorizontalMultiSection({
           </Section>
 
           <Section id="reviews">
-            <div className="flex flex-row overflow-x-auto text-white md:w-1/4 md:gap-3">
+            <div className="flex flex-row overflow-x-auto text-white md:w-fit md:gap-3">
               <div className="flex flex-row">
                 {reviews.data.map((review) => (
                   <ReviewCard

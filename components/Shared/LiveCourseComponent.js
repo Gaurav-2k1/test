@@ -51,7 +51,7 @@ export default function LiveCourseComponent({
         </div>
       </div>
       <div className="p-4 flex flex-col gap-2">
-        <div className="font-semibold text-lg">{name}</div>
+        <div className="font-semibold text-md">{name}</div>
         <div>
           <CourseComponentCardDetail
             icon={<WatchLaterOutlinedIcon />}
