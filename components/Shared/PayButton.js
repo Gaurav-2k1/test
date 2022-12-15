@@ -18,6 +18,7 @@ export default function PayButton({
   course_id,
   course_type,
   coupon_code,
+  primary
 }) {
   const [orderDetails, setOrderDetails] = useState({
     order_token: "",
@@ -99,20 +100,24 @@ export default function PayButton({
           value={`${DEPLOYMENT_URL}/${getCancelUrl()}`}
         />
         {isAuthenticated &&
-        isExists.isFetchedAfterMount &&
-        isExists.data &&
-        isExists.data.purchased ? (
+          isExists.isFetchedAfterMount &&
+          isExists.data &&
+          isExists.data.purchased ? (
           <div className="text-sm p-4">
             You have already purchased this course, please check your email for
             further details
           </div>
         ) : (
           <Button
-            className="bg-primary my-4 text-white w-[90vw] md:w-[40vw] md:h-12"
+            className=
+            {`  bg-white text-secondary 
+                text-center p-2 my-2 font-semibold text-xl 
+                border-solid border-black border-2 cursor-pointer
+                hover:scale-105 transition-all ease-linear sm:p-2 sm:w-[60vw]`}
             onClick={handlePayButtonClick}
             disabled={isLoadingPayment}
           >
-            {!isLoadingPayment ? "Checkout" : "Fetching Payment Details.."}
+            {!isLoadingPayment ? "Buy Now" : "Fetching Payment Details.."}
           </Button>
         )}
       </form>
