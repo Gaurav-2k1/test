@@ -17,9 +17,9 @@ export default function PricingBox({
     course_type }) {
     return (
         <div className={`flex flex-col sticky  top-32  p-10 border-solid 
-                        border-black border-2 w-[22vw] h-full 
-                        justify-aroundbg-white ml-28 mb-4 sm:w-[75vw] 
-                        sm:ml-4 sm:p-5 
+                        border-black border-2 w-[25vw] h-[60vh] 
+                        justify-around bg-white ml-28 mb-4 sm:w-[75vw] 
+                        sm:ml-4 sm:p-5 sm:h-full
                         `}>
             <p className="text-2xl font-bold text-center sm:text-lg sm:mx-1">{courseDetail.data.attributes.name}</p>
             <span className="text-base font-normal my-1 text-center">
