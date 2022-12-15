@@ -65,10 +65,17 @@ export default function HorizontalMultiSection({
 
           <Section id="syllabus" className="p-5">
             <div className="border-2 border-solid border-secondary w-[25vw] pl-10 my-5 rounded-lg 
-            sm:w-full">
-              <p className="text-3xl font-semibold pb-5 mt-5 text-secondary">The Skill you will cover</p>
-              <ul className="pl-10 mb-5">
-                <li className="font-normal text-base">
+            sm:w-full sm:pl-4">
+              <p className="text-3xl font-semibold pb-5 mt-5 text-secondary sm:text-lg">The Skill you will cover</p>
+              <ul className="pl-10 mb-5 sm:pl-2">
+                {skillsCovered.data.map((skill, index) => (
+                  <div className="flex flex-row pt-2" key={index}>
+                    <CheckIcon color="secondary" />
+                    <p className="pl-2">{skill.attributes.name}</p>
+
+                  </div>
+                ))}
+                {/* <li className="font-normal text-base">
                   Basic Concepts of Programming
                 </li>
                 <li className="font-normal text-base">
@@ -79,12 +86,12 @@ export default function HorizontalMultiSection({
                   Arrays
                 </li><li className="font-normal text-base">
                   Functions
-                </li>
+                </li> */}
 
               </ul>
             </div>
             <div className="border p-3 my-4">
-              <p className="text-primary font-semibold">SKILLS COVERED</p>
+              {/* <p className="text-primary font-semibold">SKILLS COVERED</p>
 
               {skillsCovered.data.map((skill, index) => (
                 <div className="flex flex-row pt-2" key={index}>
@@ -92,7 +99,7 @@ export default function HorizontalMultiSection({
                   <p className="pl-2">{skill.attributes.name}</p>
 
                 </div>
-              ))}
+              ))} */}
             </div>
             {(pdfUrl === "") && (
               <Button
@@ -105,7 +112,7 @@ export default function HorizontalMultiSection({
             )}
             <div>
               <p>Detailed overview of the course is shown here</p>
-              
+
             </div>
           </Section>
 

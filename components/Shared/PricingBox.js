@@ -34,8 +34,8 @@ export default function PricingBox({
                 <CourseutilTile src={stream} des="Live 1 to 1" />
             </div>
             <div className="flex row p-4 items-center justify-center">
-                <span className="text-4xl font-bold text-black mx-2">{currency} {prices.price}</span>
-                <span className="text-xl font-normal line-through text-gray-600 mx-2">{currency}{updatedCurrency ? updatedCurrency : prices.discountedPrice}</span>
+                <span className="text-4xl font-bold text-black mx-2 sm:text-2xl">{currency} {prices.price}</span>
+                <span className="text-xl font-normal line-through text-gray-600 mx-2 sm:text-sm">{currency}{updatedCurrency ? updatedCurrency : prices.discountedPrice}</span>
             </div>
             <ShopButton content="Add To Cart" primary={true} />
             {/* <ShopButton content="Buy Now" primary={false} /> */}

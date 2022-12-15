@@ -26,7 +26,7 @@ import remarkHtml from "remark-html";
 import durationi from '../../public/images/course/duration.png'
 import stream from '../../public/images/course/stream.png'
 import type from '../../public/images/course/type.png'
-import certificate from '../../public/images/course/certificate.png'
+import certificate from '../../public/images/course/Certificate.png'
 
 import CourseutilTile from "../../components/Shared/CourseutilTile";
 import ShopButton from "../../components/Shared/ShopButton";
@@ -79,7 +79,7 @@ export default function VideoCourses() {
   console.log(overview);
   return !isLoading ? (
     <div className="flex flex-row sm:flex-col">
-      <div className="flex px-20 py-10 sm:px-10">
+      <div className="flex px-20 py-10 sm:px-10 w-[60vw]">
         <div>
           <div className="flex flex-col sm:flex-row">
             <p className="text-3xl font-semibold sm:text-lg">{courseDetail.data.attributes.name}</p>
