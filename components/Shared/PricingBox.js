@@ -11,8 +11,8 @@ export default function PricingBox({
     durationi,
     stream,
     updatedCurrency,
-    amount,
-    course_id,
+    
+    course,
     coupon_code,
     course_type }) {
     return (
@@ -39,11 +39,11 @@ export default function PricingBox({
             </div>
             <ShopButton content="Add To Cart" primary={true} />
             {/* <ShopButton content="Buy Now" primary={false} /> */}
-            <PayButton primary={false}
+            <PayButton
                 amount={prices.discountedPrice}
                 course_id={course}
-                course_type="video"
-                coupon_code={validatedCouponCode} />
+                course_type={course_type}
+                coupon_code={coupon_code} />
         </div>
     )
 }

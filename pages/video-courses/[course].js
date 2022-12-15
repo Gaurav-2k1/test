@@ -189,8 +189,7 @@ export default function VideoCourses() {
           stream={stream}
           certificate={certificate}
           updatedCurrency={updatedCurrency}
-          amount={prices.discountedPrice}
-          course_id={course}
+          course={course}
           course_type="video"
           coupon_code={validatedCouponCode}
         /> : <></>
